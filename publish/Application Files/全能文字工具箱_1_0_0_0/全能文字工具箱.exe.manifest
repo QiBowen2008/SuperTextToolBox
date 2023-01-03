@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="全能文字工具箱.exe" version="1.0.0.0" publicKeyToken="459d50a5a3d4198d" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="全能文字工具箱" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="全能文字工具箱.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC 清单选项
+          如果要更改 Windows 用户帐户控制级别，请用以下节点之一替换
+          requestedExecutionLevel 节点。
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+          如果要利用文件和注册表虚拟化提供
+          向后兼容性，请删除 requestedExecutionLevel 节点。
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Newtonsoft.Json.dll" size="584976">
+      <assemblyIdentity name="Newtonsoft.Json" version="13.0.0.0" publicKeyToken="30AD4FE6B2A6AEED" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>/K733vsEMB/VX7FCG7Fe+W1wQNY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="全能文字工具箱.exe" size="20440">
+      <assemblyIdentity name="全能文字工具箱" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>yOGo6o2HPY8BeOulTu8xM9MH5Zs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+<publisherIdentity name="CN=MIKE-PC\Administrator" issuerKeyHash="727b1cbdf759a3150c094e2e64f9ab5a5a3b562d" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>3pOnfS5NzDXy3cR0C6TV/gJzAQc=</DigestValue></Reference></SignedInfo><SignatureValue>HOSZtNnU6ANJ9orCrliBxElBmwa5JJtBYArbk73/JHV969/8SCaF0Cj3eOLUwlS0946nEjcY1BrYFZ1jda2fnNr/iOUgEFdAirs+8HwxEgPRion5tr1RVw7xaS1p8js0EG2xYvH+paZoNlWx8wGLyxYQ9cAb7UwklS+kEqwltms=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>lwkwO/ct7OYt6qVyYNLEcQ26o+uhwDMNaXxDQvRrYgxore2gkRWJ4Gbs42cBLermI3VuD4Xe4SB+s513MHVw7qbLTVRJDUYfCIQgQWWhN+cYwPY48sdz6+UTKO5+L+YT7IV4YjzwsKiiDyu8MOKPFo/OLnIza8sB/2UagJKSS98=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="07017302fed5a40b74c4ddf235cc4d2e7da793de" Description="" Url=""><as:assemblyIdentity name="全能文字工具箱.exe" version="1.0.0.0" publicKeyToken="459d50a5a3d4198d" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MIKE-PC\Administrator</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>bF2now8h58BSbl80ItZHVJVpXmE=</DigestValue></Reference></SignedInfo><SignatureValue>JAI8xgjG2Ik+GJHnEF4dwdZ11EFCV2nUEGCKdJSIdFLMBZJNXJbGvzfAm/ZQ1DO2p3VAF0pcacVAcCzKtZxMRnaTne2x8L5oHEB9/Tu3kCTNLfrn2GJNAXbPgbmuLrsH519pXTiJ14AmXSu3xR4A9nHlPc9gWCc4BQsrjWH4RD8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>lwkwO/ct7OYt6qVyYNLEcQ26o+uhwDMNaXxDQvRrYgxore2gkRWJ4Gbs42cBLermI3VuD4Xe4SB+s513MHVw7qbLTVRJDUYfCIQgQWWhN+cYwPY48sdz6+UTKO5+L+YT7IV4YjzwsKiiDyu8MOKPFo/OLnIza8sB/2UagJKSS98=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQRq+JbswVkqdIrubVRvfjyTANBgkqhkiG9w0BAQUFADA1MTMwMQYDVQQDHioATQBJAEsARQAtAFAAQwBcAEEAZABtAGkAbgBpAHMAdAByAGEAdABvAHIwHhcNMjMwMTAxMTEyNDU3WhcNMjQwMTAxMTcyNDU3WjA1MTMwMQYDVQQDHioATQBJAEsARQAtAFAAQwBcAEEAZABtAGkAbgBpAHMAdAByAGEAdABvAHIwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAJcJMDv3LezmLeqlcmDSxHENuqProcAzDWl8Q0L0a2IMaK3toJEVieBm7ONnAS3q5iN1bg+F3uEgfrOddzB1cO6my01USQ1GHwiEIEFloTfnGMD2OPLHc+vlEyjufi/mE+yFeGI88LCoog8rvDDijxaPzi5yM2vLAf9lGoCSkkvfAgMBAAEwDQYJKoZIhvcNAQEFBQADgYEAc8ZjBMwpHVgLsb/17NuiCEPVQGsS6IZlsRt2TfTFf6lFtlt+RgPr0bpUHo+wUXXNyBao5gBhTct3AIT/mH9YqNNwK46BkvePyFa90UKdoP8b9D4EVmZ5ZCNmHyB7Lftq/je8pPN7zrvqwGwBdFW5rhLVWjqfgSH/U8NdjTq8Jk0=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
