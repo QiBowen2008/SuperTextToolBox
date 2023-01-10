@@ -4,18 +4,34 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4705C235-CBEA-41AF-94A1-6236F6F538A2}</ProjectGuid>
+    <ProjectGuid>{A59F9ACA-8CE0-454E-9625-BB99A8C86963}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SuperWenZiToolBox</RootNamespace>
-    <AssemblyName>SuperWenZiToolBox</AssemblyName>
+    <AssemblyName>全能文字工具箱</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\个人文件\程序\万能文字工具箱\工程\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -36,6 +52,18 @@
   <PropertyGroup>
     <StartupObject>SuperWenZiToolBox.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>48A7A09003EC8E9B246A22CAA78BC3A34E9376DB</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SuperWenZiToolBox_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\x86\Debug\</OutputPath>
@@ -54,13 +82,18 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="PaddleOCRSharp, Version=2.2.0.0, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>packages\PaddleOCRSharp.2.2.0\lib\net40\PaddleOCRSharp.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Speech" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -80,20 +113,26 @@
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAbout.Designer.cs">
+    <Compile Include="frmAbout.designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmOCR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmOCR.Designer.cs">
-      <DependentUpon>frmOCR.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTexttoWave.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTexttoWave.Designer.cs">
+    <Compile Include="frmTexttoWave.designer.cs">
       <DependentUpon>frmTexttoWave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTranslate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTranslate.Designer.cs">
+      <DependentUpon>frmTranslate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWavetoText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWavetoText.Designer.cs">
+      <DependentUpon>frmWavetoText.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,11 +142,14 @@
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOCR.resx">
-      <DependentUpon>frmOCR.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmTexttoWave.resx">
       <DependentUpon>frmTexttoWave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTranslate.resx">
+      <DependentUpon>frmTranslate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWavetoText.resx">
+      <DependentUpon>frmWavetoText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,6 +159,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -128,13 +171,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SuperWenZiToolBox_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\PaddleOCRSharp.2.2.0\build\PaddleOCRSharp.targets" Condition="Exists('packages\PaddleOCRSharp.2.2.0\build\PaddleOCRSharp.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('packages\PaddleOCRSharp.2.2.0\build\PaddleOCRSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\PaddleOCRSharp.2.2.0\build\PaddleOCRSharp.targets'))" />
+    <Error Condition="!Exists('packages\Tesseract.4.1.1\build\Tesseract.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Tesseract.4.1.1\build\Tesseract.targets'))" />
   </Target>
+  <Import Project="packages\Tesseract.4.1.1\build\Tesseract.targets" Condition="Exists('packages\Tesseract.4.1.1\build\Tesseract.targets')" />
 </Project>

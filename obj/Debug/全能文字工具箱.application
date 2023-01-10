@@ -7,14 +7,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="全能文字工具箱.exe.manifest" size="4970">
+    <dependentAssembly dependencyType="install" codebase="全能文字工具箱.exe.manifest" size="3737">
       <assemblyIdentity name="全能文字工具箱.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>YVXrw+XBMTGuO07ttY7PgSrXEpQ=</dsig:DigestValue>
+        <dsig:DigestValue>9NW4y0W+LfR1hCUuJA1FOJrTAyA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

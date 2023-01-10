@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using static System.Net.WebRequestMethods;
 
 namespace SuperWenZiToolBox
 {
@@ -17,5 +18,12 @@ namespace SuperWenZiToolBox
         }
 
         private void button1_Click(object sender, EventArgs e) => Close();
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => System.Diagnostics.Process.Start("https://github.com/QiBowen2008/SuperCharactarToolBox");
+
+        private void frmAbout_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace 全能文字工具箱.Properties {
+namespace SuperWenZiToolBox.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
