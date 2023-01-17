@@ -13,6 +13,7 @@ namespace SuperWenZiToolBox
 {
     public partial class frmTexttoWave : Form
     {
+        private int yinliangvalue = 100;
         public frmTexttoWave()
         {
             InitializeComponent();
@@ -21,20 +22,29 @@ namespace SuperWenZiToolBox
         private void btnPlay_Click(object sender, EventArgs e)
         {
             SpeechSynthesizer voice = new SpeechSynthesizer();   //创建语音实例
-            voice.Rate = -1; //设置语速,[-10,10]
-            voice.Volume = 100; //设置音量,[0,100]
+            voice.Rate = trackBar2 .Value - 5; //设置语速,[-10,10]
+            voice.Volume = yinliangvalue ; //设置音量,[0,100]
             voice.SpeakAsync(textBox1.Text);  //播放指定的字符串,这是异步朗读
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (string .IsNullOrEmpty (textBox1 .Text ))
             {
-                saveFileDialog1.ShowDialog();
-                SpeechSynthesizer voice = new SpeechSynthesizer();   //创建语音实例
-                voice.SetOutputToWaveFile(saveFileDialog1.FileName);
-                voice.Speak(textBox1.Text);
-                voice.SetOutputToNull();
+                    MessageBox.Show("请先输入文本");  
+                
+            }
+            else
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    SpeechSynthesizer voice = new SpeechSynthesizer();   //创建语音实例
+                    voice.SetOutputToWaveFile(saveFileDialog1.FileName);
+                    voice.Rate = trackBar2.Value - 5; //设置语速,[-10,10]
+                    voice.Volume = yinliangvalue; //设置音量,[0,100]
+                    voice.Speak(textBox1.Text);
+                    voice.SetOutputToNull();
+                }
             }
         }
 
@@ -55,12 +65,26 @@ namespace SuperWenZiToolBox
 
         private void button3_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
             if (openFileDialog1.ShowDialog()==DialogResult.OK)
             {
                 StreamReader sr = new StreamReader(openFileDialog1.FileName);
                 textBox1.Text = sr.ReadToEnd();
             }
+
+        }
+
+        private void frmTexttoWave_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            yinliangvalue = trackBar1.Value * 10;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

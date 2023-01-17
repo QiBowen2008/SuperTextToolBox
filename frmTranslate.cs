@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Speech.Synthesis;
 using System.Net;
 using System.IO;
 using System.Security.Cryptography;
+using Chinese;
 using System.Web;
 using System.Runtime.InteropServices;
 using Newtonsoft.Json;
 using System.Resources;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Web.UI.WebControls;
 
 namespace SuperWenZiToolBox
 {
@@ -159,7 +163,6 @@ namespace SuperWenZiToolBox
 
         private void button4_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamReader sr = new StreamReader(openFileDialog1.FileName);
@@ -189,6 +192,50 @@ namespace SuperWenZiToolBox
                 sw.Close();
             }
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            richTextBox2 .Text = ChineseConverter.ToTraditional(richTextBox1 .Text );
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            richTextBox2 .Text = ChineseConverter.ToSimplified(richTextBox1 .Text);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SpeechSynthesizer voice = new SpeechSynthesizer();   //创建语音实例
+            voice.Rate = trackBar2.Value - 5;
+            voice.Volume = trackBar1 .Value *10; //设置音量,[0,100]
+            voice.SpeakAsync(richTextBox2 .Text);  //播放指定的字符串,这是异步朗读
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(richTextBox2.Text))
+            {
+                MessageBox.Show("请先输入文本");
+
+            }
+            else
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    SpeechSynthesizer voice = new SpeechSynthesizer();   //创建语音实例
+                    voice.SetOutputToWaveFile(saveFileDialog1.FileName);
+                    voice.Rate = trackBar2.Value - 5; //设置语速,[-10,10]
+                    voice.Volume = trackBar1 .Value *10; //设置音量,[0,100]
+                    voice.Speak(richTextBox2 .Text);
+                    voice.SetOutputToNull();
+                }
+            }
         }
     }
 }

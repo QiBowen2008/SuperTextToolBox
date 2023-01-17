@@ -3,10 +3,10 @@
   <PropertyGroup>
     <PublishUrlHistory>D:\个人文件\程序\万能文字工具箱\工程\publish\|D:\新建文件夹 %282%29\</PublishUrlHistory>
     <InstallUrlHistory />
-    <SupportUrlHistory />
+    <SupportUrlHistory>https://github.com/QiBowen2008/SuperCharactarToolBox</SupportUrlHistory>
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
-    <ErrorReportUrlHistory />
+    <ErrorReportUrlHistory>https://github.com/QiBowen2008/SuperCharactarToolBox</ErrorReportUrlHistory>
     <FallbackCulture>zh-CN</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
