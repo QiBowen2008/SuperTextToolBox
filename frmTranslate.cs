@@ -59,11 +59,11 @@ namespace SuperWenZiToolBox
             // 目标语言
             string to = "en";
             // 改成您的APP ID
-            string appId = "20230101001515968";
+            string appId = "xxxxxx";
             Random rd = new Random();
             string salt = rd.Next(100000).ToString();
             // 改成您的密钥
-            string secretKey = "4xaPms6ok7erM5n6MuuE";
+            string secretKey = "xxxxxx";
             string sign = EncryptString(appId + q + salt + secretKey);
             string url = "http://api.fanyi.baidu.com/api/trans/vip/translate?";
             url += "q=" + HttpUtility.UrlEncode(q);
@@ -119,11 +119,11 @@ namespace SuperWenZiToolBox
             // 目标语言
             string to = "zh";
             // 改成您的APP ID
-            string appId = "20230101001515968";
+            string appId = "xxxxxx";
             Random rd = new Random();
             string salt = rd.Next(100000).ToString();
             // 改成您的密钥
-            string secretKey = "4xaPms6ok7erM5n6MuuE";
+            string secretKey = "xxxxxxx";
             string sign = EncryptString(appId + q + salt + secretKey);
             string url = "http://api.fanyi.baidu.com/api/trans/vip/translate?";
             url += "q=" + HttpUtility.UrlEncode(q);
