@@ -14,7 +14,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>D:\个人文件\程序\万能文字工具箱\工程\publish\</PublishUrl>
+    <PublishUrl>D:\Users\Administrator\个人文件\程序\万能文字工具箱\工程\publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -31,8 +31,8 @@
     <PublisherName>齐博文</PublisherName>
     <SuiteName>全能文字工具箱</SuiteName>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.2.0</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.1.3.1</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>false</BootstrapperEnabled>
@@ -92,6 +92,9 @@
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>6e43a6ada1376bf8939cb13a20000a41.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Chinese, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Chinese.0.5.0\lib\net40\Chinese.dll</HintPath>
@@ -126,6 +129,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCyjl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCyjl.Designer.cs">
+      <DependentUpon>frmCyjl.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmFenci.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,14 +171,11 @@
     <Compile Include="frmTranslate.Designer.cs">
       <DependentUpon>frmTranslate.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmWavetoText.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmWavetoText.Designer.cs">
-      <DependentUpon>frmWavetoText.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCyjl.resx">
+      <DependentUpon>frmCyjl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFenci.resx">
       <DependentUpon>frmFenci.cs</DependentUpon>
     </EmbeddedResource>
@@ -187,9 +193,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTranslate.resx">
       <DependentUpon>frmTranslate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmWavetoText.resx">
-      <DependentUpon>frmWavetoText.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -225,6 +228,41 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Chinese.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="NAudio.xml">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="全能文字工具箱.exe">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="6e43a6ada1376bf8939cb13a20000a41.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
