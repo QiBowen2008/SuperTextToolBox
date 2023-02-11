@@ -1,0 +1,10 @@
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\bin\Debug\AddinWordCloudConnectLib.dll
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\bin\Debug\AddinWordCloudConnectLib.pdb
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\bin\Debug\AddinWordCloudConnectLib.xml
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\obj\Debug\AddinWordCloudConnectLib.vbproj.AssemblyReference.cache
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\obj\Debug\AddinWordCloudConnectLib.Resources.resources
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\obj\Debug\AddinWordCloudConnectLib.vbproj.GenerateResource.cache
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\obj\Debug\AddinWordCloudConnectLib.vbproj.CoreCompileInputs.cache
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\obj\Debug\AddinWordCloudConnectLib.dll
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\obj\Debug\AddinWordCloudConnectLib.xml
+D:\Users\Administrator\个人文件\编程\C#\万能文字工具箱\工程\OtherPorjs\AddinWordCloudConnectLib\obj\Debug\AddinWordCloudConnectLib.pdb
