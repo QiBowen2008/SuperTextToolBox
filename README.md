@@ -3,3 +3,4 @@
 OCR（需要64位和支持AUX的处理器），词云（netFramework4.5.2+）
 朗读，拼音标注
 高速下载地址:https://www.aliyundrive.com/s/zJoJqRAbgQC
+https://m.baidu.com
