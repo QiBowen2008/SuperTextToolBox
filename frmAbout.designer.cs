@@ -37,12 +37,16 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
             this.linkLabel6 = new System.Windows.Forms.LinkLabel();
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel7 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel8 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel9 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel10 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel11 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel12 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel13 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +63,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(118, 364);
+            this.button1.Location = new System.Drawing.Point(256, 266);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -131,18 +135,55 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.linkLabel13);
+            this.groupBox2.Controls.Add(this.linkLabel12);
+            this.groupBox2.Controls.Add(this.linkLabel11);
+            this.groupBox2.Controls.Add(this.linkLabel10);
             this.groupBox2.Controls.Add(this.linkLabel9);
             this.groupBox2.Controls.Add(this.linkLabel8);
             this.groupBox2.Controls.Add(this.linkLabel7);
             this.groupBox2.Controls.Add(this.linkLabel6);
             this.groupBox2.Controls.Add(this.linkLabel5);
             this.groupBox2.Controls.Add(this.linkLabel4);
-            this.groupBox2.Location = new System.Drawing.Point(35, 247);
+            this.groupBox2.Location = new System.Drawing.Point(305, 23);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(239, 111);
+            this.groupBox2.Size = new System.Drawing.Size(254, 218);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "感谢以下开源项目";
+            // 
+            // linkLabel9
+            // 
+            this.linkLabel9.AutoSize = true;
+            this.linkLabel9.Location = new System.Drawing.Point(144, 82);
+            this.linkLabel9.Name = "linkLabel9";
+            this.linkLabel9.Size = new System.Drawing.Size(89, 12);
+            this.linkLabel9.TabIndex = 5;
+            this.linkLabel9.TabStop = true;
+            this.linkLabel9.Text = "查看开源许可证";
+            this.linkLabel9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked);
+            // 
+            // linkLabel8
+            // 
+            this.linkLabel8.AutoSize = true;
+            this.linkLabel8.Location = new System.Drawing.Point(144, 52);
+            this.linkLabel8.Name = "linkLabel8";
+            this.linkLabel8.Size = new System.Drawing.Size(89, 12);
+            this.linkLabel8.TabIndex = 4;
+            this.linkLabel8.TabStop = true;
+            this.linkLabel8.Text = "查看开源许可证";
+            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            // 
+            // linkLabel7
+            // 
+            this.linkLabel7.AutoSize = true;
+            this.linkLabel7.Location = new System.Drawing.Point(144, 23);
+            this.linkLabel7.Name = "linkLabel7";
+            this.linkLabel7.Size = new System.Drawing.Size(89, 12);
+            this.linkLabel7.TabIndex = 3;
+            this.linkLabel7.TabStop = true;
+            this.linkLabel7.Text = "查看开源许可证";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
             // linkLabel6
             // 
@@ -176,44 +217,55 @@
             this.linkLabel4.Text = "Chinese";
             this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
-            // linkLabel7
+            // linkLabel10
             // 
-            this.linkLabel7.AutoSize = true;
-            this.linkLabel7.Location = new System.Drawing.Point(144, 23);
-            this.linkLabel7.Name = "linkLabel7";
-            this.linkLabel7.Size = new System.Drawing.Size(89, 12);
-            this.linkLabel7.TabIndex = 3;
-            this.linkLabel7.TabStop = true;
-            this.linkLabel7.Text = "查看开源许可证";
-            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
+            this.linkLabel10.AutoSize = true;
+            this.linkLabel10.Location = new System.Drawing.Point(15, 114);
+            this.linkLabel10.Name = "linkLabel10";
+            this.linkLabel10.Size = new System.Drawing.Size(65, 12);
+            this.linkLabel10.TabIndex = 6;
+            this.linkLabel10.TabStop = true;
+            this.linkLabel10.Text = "jieba.NET ";
+            this.linkLabel10.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel10_LinkClicked);
             // 
-            // linkLabel8
+            // linkLabel11
             // 
-            this.linkLabel8.AutoSize = true;
-            this.linkLabel8.Location = new System.Drawing.Point(144, 52);
-            this.linkLabel8.Name = "linkLabel8";
-            this.linkLabel8.Size = new System.Drawing.Size(89, 12);
-            this.linkLabel8.TabIndex = 4;
-            this.linkLabel8.TabStop = true;
-            this.linkLabel8.Text = "查看开源许可证";
-            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
+            this.linkLabel11.AutoSize = true;
+            this.linkLabel11.Location = new System.Drawing.Point(144, 114);
+            this.linkLabel11.Name = "linkLabel11";
+            this.linkLabel11.Size = new System.Drawing.Size(89, 12);
+            this.linkLabel11.TabIndex = 7;
+            this.linkLabel11.TabStop = true;
+            this.linkLabel11.Text = "查看开源许可证";
+            this.linkLabel11.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel11_LinkClicked);
             // 
-            // linkLabel9
+            // linkLabel12
             // 
-            this.linkLabel9.AutoSize = true;
-            this.linkLabel9.Location = new System.Drawing.Point(144, 82);
-            this.linkLabel9.Name = "linkLabel9";
-            this.linkLabel9.Size = new System.Drawing.Size(89, 12);
-            this.linkLabel9.TabIndex = 5;
-            this.linkLabel9.TabStop = true;
-            this.linkLabel9.Text = "查看开源许可证";
-            this.linkLabel9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked);
+            this.linkLabel12.AutoSize = true;
+            this.linkLabel12.Location = new System.Drawing.Point(15, 147);
+            this.linkLabel12.Name = "linkLabel12";
+            this.linkLabel12.Size = new System.Drawing.Size(89, 12);
+            this.linkLabel12.TabIndex = 8;
+            this.linkLabel12.TabStop = true;
+            this.linkLabel12.Text = "WordCloudSharp";
+            this.linkLabel12.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel12_LinkClicked);
+            // 
+            // linkLabel13
+            // 
+            this.linkLabel13.AutoSize = true;
+            this.linkLabel13.Location = new System.Drawing.Point(144, 147);
+            this.linkLabel13.Name = "linkLabel13";
+            this.linkLabel13.Size = new System.Drawing.Size(89, 12);
+            this.linkLabel13.TabIndex = 9;
+            this.linkLabel13.TabStop = true;
+            this.linkLabel13.Text = "查看开源许可证";
+            this.linkLabel13.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel13_LinkClicked);
             // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(310, 393);
+            this.ClientSize = new System.Drawing.Size(571, 301);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label3);
@@ -252,5 +304,9 @@
         private System.Windows.Forms.LinkLabel linkLabel9;
         private System.Windows.Forms.LinkLabel linkLabel8;
         private System.Windows.Forms.LinkLabel linkLabel7;
+        private System.Windows.Forms.LinkLabel linkLabel10;
+        private System.Windows.Forms.LinkLabel linkLabel11;
+        private System.Windows.Forms.LinkLabel linkLabel13;
+        private System.Windows.Forms.LinkLabel linkLabel12;
     }
 }

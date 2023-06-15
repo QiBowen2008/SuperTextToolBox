@@ -1,10 +1,8 @@
-﻿using System;
-using System.IO;
-using System.Speech.Synthesis;
-using System.Windows.Forms;
-using IKAnalyzerNet;
+﻿using IKAnalyzerNet;
 using Lucene.Net.Analysis;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System;
+using System.IO;
+using System.Windows.Forms;
 
 namespace SuperWenZiToolBox
 {
@@ -17,15 +15,6 @@ namespace SuperWenZiToolBox
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string teststring = richTextBox1.Text;                 //获取字符串
-       
-            IKAnalyzer ika = new IKAnalyzer();
-            System.IO.TextReader r = new System.IO.StringReader(teststring);
-            TokenStream ts = ika.TokenStream("TestField", r);      //分词
-            for (Token t = ts.Next(); t != null; t = ts.Next())
-            {
-                richTextBox2.Text += t.TermText() + "\r\n";        //显示内容
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -56,38 +45,14 @@ namespace SuperWenZiToolBox
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamReader sr = new StreamReader(openFileDialog1.FileName);
+                StreamReader sr = new StreamReader(openFileDialog1.FileName,System .Text .Encoding.GetEncoding(0));
                 richTextBox1.Text = sr.ReadToEnd();
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(richTextBox2.Text))
-            {
 
-                
-                    MessageBox.Show("请先输入文本");
-                
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(richTextBox2.Text))
-                {
-                    MessageBox.Show("请先翻译");
-
-                }
-                else
-                {
-                    if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                    {
-                        StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
-                        sw.Write(richTextBox2.Text);
-                        sw.Flush();
-                        sw.Close();
-                    }
-                }
-            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -99,12 +64,36 @@ namespace SuperWenZiToolBox
             }
             else
             {
-
-                saveFileDialog1.ShowDialog();
-                StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
-                sw.Write(richTextBox3.Text);
-                sw.Flush();
-                sw.Close();
+                saveFileDialog1.Filter = "文本文档 | *.txt";
+                string autosave = IniManager.getString("Set", "AutoSave", "", Set.INIpath);
+                if (autosave == "True")
+                {
+                    string filesavepath = IniManager.getString("Set", "FileSavePath", "", Set.INIpath);
+                    if (filesavepath != "")
+                    {
+                        string nowtime = DateTime.Now.ToShortTimeString().ToString();
+                        StreamWriter sw = new StreamWriter(filesavepath + "\\" + Guid.NewGuid().ToString() + ".txt");
+                        sw.Write(richTextBox3.Text);
+                        sw.Flush();
+                        sw.Close();
+                    }
+                    else
+                    {
+                        saveFileDialog1.ShowDialog();
+                        StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
+                        sw.Write(richTextBox3.Text);
+                        sw.Flush();
+                        sw.Close();
+                    }
+                }
+                else
+                {
+                    saveFileDialog1.ShowDialog();
+                    StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
+                    sw.Write(richTextBox3.Text);
+                    sw.Flush();
+                    sw.Close();
+                }
             }
         }
     }

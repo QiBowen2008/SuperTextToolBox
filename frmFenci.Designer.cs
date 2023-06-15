@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,16 +37,6 @@
             this.button5 = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(127, 100);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "开始分词";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // richTextBox1
             // 
@@ -59,31 +47,22 @@
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
-            // richTextBox2
-            // 
-            this.richTextBox2.Location = new System.Drawing.Point(30, 129);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.richTextBox2.Size = new System.Drawing.Size(259, 193);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "";
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(398, 100);
+            this.button2.Location = new System.Drawing.Point(249, 100);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "详细分词";
+            this.button2.Text = "分词";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(300, 129);
+            this.richTextBox3.Location = new System.Drawing.Point(27, 129);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.richTextBox3.Size = new System.Drawing.Size(259, 193);
+            this.richTextBox3.Size = new System.Drawing.Size(532, 193);
             this.richTextBox3.TabIndex = 1;
             this.richTextBox3.Text = "";
             // 
@@ -110,6 +89,7 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "文本文档|*.txt";
             // 
             // button5
             // 
@@ -121,6 +101,10 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "文本文档|*.txt";
+            // 
             // frmFenci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -131,9 +115,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmFenci";
             this.Text = "中文分词";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -143,10 +127,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private System.Windows.Forms.Label label1;

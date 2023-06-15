@@ -1,19 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using System.Speech.Synthesis;
 using System.IO;
+using System.Speech.Synthesis;
+using System.Windows.Forms;
 
 namespace SuperWenZiToolBox
 {
     public partial class frmTexttoWave : Form
     {
         private int yinliangvalue = 100;
+        public double yusu = 0;
         public frmTexttoWave()
         {
             InitializeComponent();
@@ -21,18 +16,25 @@ namespace SuperWenZiToolBox
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            SpeechSynthesizer voice = new SpeechSynthesizer();   //创建语音实例
-            voice.Rate = trackBar2 .Value - 5; //设置语速,[-10,10]
-            voice.Volume = yinliangvalue ; //设置音量,[0,100]
-            voice.SpeakAsync(textBox1.Text);  //播放指定的字符串,这是异步朗读
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("请输入文本");
+            }
+            else
+            {
+                SpeechSynthesizer voice = new SpeechSynthesizer();   //创建语音实例
+                voice.Rate = trackBar2.Value - 5; //设置语速,[-10,10]
+                voice.Volume = yinliangvalue; //设置音量,[0,100]
+                voice.SpeakAsync(textBox1.Text);  //播放指定的字符串,这是异步朗读
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (string .IsNullOrEmpty (textBox1 .Text ))
+            if (string.IsNullOrEmpty(textBox1.Text))
             {
-                    MessageBox.Show("请先输入文本");  
-                
+                MessageBox.Show("请先输入文本");
+
             }
             else
             {
@@ -51,7 +53,7 @@ namespace SuperWenZiToolBox
         private void button2_Click(object sender, EventArgs e)
         {
             SpeechSynthesizer speech = new SpeechSynthesizer();
-            if (button2.Text=="暂停")
+            if (button2.Text == "暂停")
             {
                 speech.Pause();
                 button2.Text = "继续";
@@ -65,9 +67,9 @@ namespace SuperWenZiToolBox
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog()==DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                StreamReader sr = new StreamReader(openFileDialog1.FileName);
+                StreamReader sr = new StreamReader(openFileDialog1.FileName,System .Text .Encoding.GetEncoding(0));
                 textBox1.Text = sr.ReadToEnd();
             }
 
@@ -75,17 +77,30 @@ namespace SuperWenZiToolBox
 
         private void frmTexttoWave_Load(object sender, EventArgs e)
         {
+            toolStripStatusLabel3.Text = yinliangvalue.ToString();
 
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             yinliangvalue = trackBar1.Value * 10;
+            toolStripStatusLabel3.Text = yinliangvalue.ToString();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            yusu = trackBar2.Value-5;
+            toolStripStatusLabel5.Text = yusu.ToString();
         }
     }
 }
