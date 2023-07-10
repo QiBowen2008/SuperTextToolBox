@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-
 namespace SuperWenZiToolBox
 {
-    public partial class frmCyjl : Form
+    public partial class frmCyjl : Sunny.UI.UIForm
     {
         public int settime;
         public string oldt;
@@ -11,12 +10,7 @@ namespace SuperWenZiToolBox
         {
             InitializeComponent();
         }
-
-        private void frmCyjl_Load(object sender, EventArgs e)
-        {
-            comboBox1.Text = "10";
-        }
-
+        private void frmCyjl_Load(object sender, EventArgs e) => comboBox1.Text = "10";
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 13)
@@ -24,19 +18,16 @@ namespace SuperWenZiToolBox
                 button1.Focus();
             }
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBox1.Text))
             {
                 MessageBox.Show("请先预设成语");
             }
-            else 
+            else
             {
                 lbltip.Text = "";
                 settime = Convert.ToInt32(comboBox1.Text);//读取时间
@@ -71,7 +62,7 @@ namespace SuperWenZiToolBox
                                 listBox1.Items.Add(newt);
                                 oldt = newt;
                                 newt = "";
-                                score = score + 1;//分数+1
+                                score++;//分数+1
                                 lblscore.Text = score.ToString();//赋值新分数
                             }
                             else
@@ -87,13 +78,12 @@ namespace SuperWenZiToolBox
                 }
             }
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (lbltime.Text != "0")//判断是否时间结束
             {
                 int lasttime = Convert.ToInt32(lbltime.Text);
-                lasttime = lasttime - 1;
+                lasttime--;
                 lbltime.Text = lasttime.ToString();
             }
             else
@@ -102,14 +92,13 @@ namespace SuperWenZiToolBox
                 button1.Enabled = false;//设置按钮不能输入
             }
         }
-
         private void button2_Click(object sender, EventArgs e)//复位游戏
         {
             listBox1.Items.Clear();//清理列表框
             textBox1.Text = "";//请客文本框
             comboBox1.Enabled = true;//激活组合框
             timer1.Enabled = false;//停止计时
-            lbltime.Text = settime.ToString () ;//复位时间
+            lbltime.Text = settime.ToString();//复位时间
             lblscore.Text = "0";//分数归零
         }
     }
