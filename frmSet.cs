@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Net;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using System.Security.Policy;
+
 namespace SuperWenZiToolBox
 {
     public partial class frmSet : Sunny.UI.UIForm
@@ -13,7 +16,7 @@ namespace SuperWenZiToolBox
         string IniPath = Set.INIpath;
         public static string selectlang;
         public readonly static string qt = "multilingual/";
-        public static string lang = "";
+        public static string lang = "ch";
         public static string oldpath;
         public readonly static string ed = "_PP-OCRv3_rec_infer";
         private void button2_Click(object sender, EventArgs e) => Close();
@@ -169,7 +172,18 @@ namespace SuperWenZiToolBox
                 label7.Visible = true;
                 label8.Visible = true;
                 progressBar1.Visible = true;
-                DownloadFile("https://paddleocr.bj.bcebos.com/PP-OCRv3/" + selectlang + ".tar", textBox2.Text + "\\" + lang + ".tar", progressBar1, label8);
+                if (lang == "ch")
+                {
+                    DownloadFile("https://gitee.com/raoyutian/paddle-ocrsharp/raw/master/models/PP-OCRv4/ch_PP-OCRv4.zip", textBox2.Text + "\\" + lang + ".tar");
+                }
+                else if (lang == "en")
+                {
+                    DownloadFile("https://gitee.com/raoyutian/paddle-ocrsharp/raw/master/models/PP-OCRv4/en_PP-OCRv4.zip", textBox2.Text + "\\" + lang + ".tar");
+                }
+                else
+                {
+                    DownloadFile("https://paddleocr.bj.bcebos.com/PP-OCRv3/" + selectlang + ".tar", textBox2.Text + "\\" + lang + ".tar", progressBar1, label8);
+                }
                 Process process = new Process();
                 process.StartInfo.FileName = "cmd.exe";
                 process.StartInfo.Arguments = "/c " + Application.StartupPath + "\\7z.exe x " + textBox2.Text + "\\" + lang + ".tar " + "-o" + textBox1.Text;
@@ -184,25 +198,17 @@ namespace SuperWenZiToolBox
                 }
                 if (uiComboBox4.Text == "简体中文")
                 {
-                    DownloadFile("https://paddleocr.bj.bcebos.com/PP-OCRv3/chinese/ch_PP-OCRv3_det_infer.tar", textBox2.Text + "\\" + "chtmp1.tar", progressBar1, label8);
-                    Process process1 = new Process();
-                    process1.StartInfo.FileName = "cmd.exe";
-                    process1.StartInfo.Arguments = "/c " + Application.StartupPath + "\\7z.exe x " + textBox2.Text + "\\" + "chtmp1.tar " + "-o" + textBox1.Text;
-                    process1.Start();
+
                 }
                 else
                 {
-                    DownloadFile("https://gitee.com/paddlepaddle/PaddleOCR/raw/dygraph/ppocr/utils/dict/" + lang + "_dict.txt", textBox1.Text + "\\" + lang + "_dict.txt", progressBar1, label8);
                     if (lang == "英文")
                     {
-                        DownloadFile("https://paddleocr.bj.bcebos.com/PP-OCRv3/english/en_PP-OCRv3_det_infer.tar", textBox2.Text + "\\" + "entmp1.tar", progressBar1, label8);
-                        Process process2 = new Process();
-                        process2.StartInfo.FileName = "cmd.exe";
-                        process2.StartInfo.Arguments = "/c " + Application.StartupPath + "\\7z.exe x " + textBox2.Text + "\\entmp1.tar " + "-o" + textBox1.Text;
-                        process2.Start();
+
                     }
                     else
                     {
+                        DownloadFile("https://gitee.com/paddlepaddle/PaddleOCR/raw/dygraph/ppocr/utils/dict/" + lang + "_dict.txt", textBox1.Text + "\\" + lang + "_dict.txt", progressBar1, label8);
                         if (Directory.Exists(textBox1.Text + "\\Multilingual_PP-OCRv3_det_infer") == false)
                         {
                             DownloadFile("https://paddleocr.bj.bcebos.com/PP-OCRv3/multilingual/Multilingual_PP-OCRv3_det_infer.tar", textBox2.Text + "\\" + "mltmp1.tar", progressBar1, label8);
@@ -219,18 +225,18 @@ namespace SuperWenZiToolBox
             else
             {
                 uiButton4.Text = "下载";
-                Directory.Delete(oldpath + "\\" + lang + ed, true);
+
                 if (uiComboBox4.Text == "简体中文")
                 {
-                    Directory.Delete(oldpath + "\\ch_PP-OCRv3_det_infer", true);
+                    Directory.Delete(oldpath + "\\ch_PP-OCRv4", true);
                 }
                 else if (uiComboBox4.Text == "英文")
                 {
-                    Directory.Delete(oldpath + "\\en_PP-OCRv3_det_infer");
-                    File.Delete(oldpath + "\\en_dict.txt");
+                    Directory.Delete(oldpath + "\\en_PP-OCRv4");
                 }
                 else
                 {
+                    Directory.Delete(oldpath + "\\" + lang + ed, true);
                     File.Delete(oldpath + "\\" + lang + "_dict.txt");
                 }
             }
@@ -280,6 +286,14 @@ namespace SuperWenZiToolBox
                 label7.Hide();
                 label8.Hide();
                 progressBar1.Hide();
+        }
+        public void DownloadFile(string URL,string filename)
+        {
+            using (WebClient client = new WebClient())
+            {
+                client.DownloadFile(URL, filename);
+            }
+            label8.Text = "正在下载";
         }
         private void uiComboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
