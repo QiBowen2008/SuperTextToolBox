@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net40</TargetFrameworks>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Version>1.1.0</Version>
+		<Title>SuperFreeApi.Cydictionary</Title>
+		<Authors>博文哥哥</Authors>
+		<Product>SuperFreeApi.Cydictionary</Product>
+		<PackageProjectUrl>https://github.com/QiBowen2008/SuperFreeApi</PackageProjectUrl>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<NeutralLanguage>zh-CN</NeutralLanguage>
+		<RepositoryUrl>https://github.com/QiBowen2008/SuperFreeApi</RepositoryUrl>
+		<PackageId>SuperFreeApi.Cydictionary</PackageId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="readme.md" Pack="true" PackagePath="" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="readme.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+</Project>

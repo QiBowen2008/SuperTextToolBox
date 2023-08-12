@@ -1,0 +1,30 @@
+
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net40</TargetFrameworks>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Version>1.1.0</Version>
+		<Title>SuperFreeApi.SensitiveWordection</Title>
+		<Authors>博文哥哥</Authors>
+		<Product>SuperFreeApi.SensitiveWordection</Product>
+		<PackageProjectUrl>https://github.com/QiBowen2008/SuperFreeApi</PackageProjectUrl>
+		<NeutralLanguage>zh-CN</NeutralLanguage>
+		<RepositoryUrl>https://github.com/QiBowen2008/SuperFreeApi</RepositoryUrl>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="readme.md" Pack="true" PackagePath=""/>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="readme.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+</Project>
