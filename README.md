@@ -38,7 +38,7 @@
 ![输入图片说明](https://github.com/QiBowen2008/SuperTextToolBox/blob/main/Pics/8.PNG?raw=true)
 ## 未来计划
 1.计划OCR增加截图识别
-2.翻译计划增加领域翻译
+2.翻译计划增加领域翻译（已经实现）
 3.自定义词云生成
 4.修复成语接龙Bug
 5.增加Word和PowerPoint插件功能
