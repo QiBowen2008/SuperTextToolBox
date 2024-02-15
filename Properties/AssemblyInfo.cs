@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("全能文字工具箱")]
-[assembly: AssemblyDescription("全能文字工具箱")]
+[assembly: AssemblyTitle("万能文字工具箱")]
+[assembly: AssemblyDescription("万能文字工具箱")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("全能文字工具箱")]
+[assembly: AssemblyProduct("万能文字工具箱")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -28,6 +28,6 @@ using System.Runtime.InteropServices;
 //可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.3.7.0")]
-[assembly: AssemblyFileVersion("1.3.7.0")]
+[assembly: AssemblyVersion("2.1.12.0")]
+[assembly: AssemblyFileVersion("2.1.12.0")]
 [assembly: NeutralResourcesLanguage("zh-CN")]

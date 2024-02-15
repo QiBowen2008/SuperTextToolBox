@@ -71,7 +71,6 @@
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            this.richTextBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.richTextBox1_KeyPress);
             // 
             // textBox1
             // 
@@ -136,7 +135,6 @@
             this.label4.Size = new System.Drawing.Size(52, 27);
             this.label4.TabIndex = 3;
             this.label4.Text = "语速";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -177,33 +175,33 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 626);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(679, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(654, 26);
             this.statusStrip1.TabIndex = 14;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(39, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(41, 20);
             this.toolStripStatusLabel1.Text = "就绪";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(54, 20);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(57, 20);
             this.toolStripStatusLabel2.Text = "字数：";
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(18, 20);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(17, 20);
             this.toolStripStatusLabel3.Text = "0";
             // 
             // toolStripStatusLabel4
             // 
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(51, 20);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(47, 20);
             this.toolStripStatusLabel4.Text = "/2000";
             // 
             // comboBox1
@@ -661,7 +659,6 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "查看语言字母列表";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
             // 
             // label7
             // 
@@ -692,6 +689,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(136, 35);
             this.comboBox3.TabIndex = 21;
+            this.comboBox3.Text = "普通";
             // 
             // linkLabel2
             // 
@@ -702,6 +700,7 @@
             this.linkLabel2.TabIndex = 22;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "查看数字对应列表";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // ucBtnExt1
             // 
@@ -842,7 +841,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(679, 652);
+            this.ClientSize = new System.Drawing.Size(654, 652);
             this.ControlBoxFillHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(97)))), ((int)(((byte)(198)))));
             this.Controls.Add(this.ucBtnExt5);
             this.Controls.Add(this.ucBtnExt4);
@@ -871,7 +870,6 @@
             this.Text = "翻译";
             this.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
             this.ZoomScaleRect = new System.Drawing.Rectangle(19, 19, 641, 596);
-            this.Load += new System.EventHandler(this.frmTranslate_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
@@ -880,6 +878,7 @@
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
         private System.Windows.Forms.RichTextBox richTextBox1;

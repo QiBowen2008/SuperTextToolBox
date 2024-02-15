@@ -33,6 +33,10 @@
             this.linkLabel3 = new System.Windows.Forms.LinkLabel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.linkLabel16 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel17 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel14 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel15 = new System.Windows.Forms.LinkLabel();
             this.linkLabel13 = new System.Windows.Forms.LinkLabel();
             this.linkLabel12 = new System.Windows.Forms.LinkLabel();
             this.linkLabel11 = new System.Windows.Forms.LinkLabel();
@@ -44,10 +48,6 @@
             this.linkLabel5 = new System.Windows.Forms.LinkLabel();
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.button1 = new Sunny.UI.UIButton();
-            this.linkLabel14 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel15 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel16 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel17 = new System.Windows.Forms.LinkLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(36, 50);
+            this.label1.Location = new System.Drawing.Point(4, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(310, 24);
@@ -66,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 74);
+            this.label2.Location = new System.Drawing.Point(21, 84);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 27);
@@ -76,7 +76,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(69, 111);
+            this.linkLabel1.Location = new System.Drawing.Point(21, 115);
             this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(154, 27);
@@ -87,12 +87,12 @@
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(21, 150);
+            this.label3.Location = new System.Drawing.Point(21, 152);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(454, 73);
+            this.label3.Size = new System.Drawing.Size(291, 73);
             this.label3.TabIndex = 4;
-            this.label3.Text = "有问题或想要捐赠项目请邮箱qiboweb7852008@qq.com";
+            this.label3.Text = "有问题或想要捐赠项目请邮箱\r\nqiboweb7852008@qq.com\r\n";
             // 
             // groupBox1
             // 
@@ -102,7 +102,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(320, 111);
+            this.groupBox1.Size = new System.Drawing.Size(259, 111);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "我的更多软件";
@@ -147,14 +147,62 @@
             this.groupBox2.Controls.Add(this.linkLabel6);
             this.groupBox2.Controls.Add(this.linkLabel5);
             this.groupBox2.Controls.Add(this.linkLabel4);
-            this.groupBox2.Location = new System.Drawing.Point(368, 50);
+            this.groupBox2.Location = new System.Drawing.Point(320, 50);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(365, 303);
+            this.groupBox2.Size = new System.Drawing.Size(364, 303);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "感谢以下开源项目";
+            // 
+            // linkLabel16
+            // 
+            this.linkLabel16.AutoSize = true;
+            this.linkLabel16.Location = new System.Drawing.Point(192, 263);
+            this.linkLabel16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel16.Name = "linkLabel16";
+            this.linkLabel16.Size = new System.Drawing.Size(152, 27);
+            this.linkLabel16.TabIndex = 13;
+            this.linkLabel16.TabStop = true;
+            this.linkLabel16.Text = "查看开源许可证";
+            this.linkLabel16.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel16_LinkClicked);
+            // 
+            // linkLabel17
+            // 
+            this.linkLabel17.AutoSize = true;
+            this.linkLabel17.Location = new System.Drawing.Point(20, 263);
+            this.linkLabel17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel17.Name = "linkLabel17";
+            this.linkLabel17.Size = new System.Drawing.Size(97, 27);
+            this.linkLabel17.TabIndex = 12;
+            this.linkLabel17.TabStop = true;
+            this.linkLabel17.Text = "Sunny.UI";
+            this.linkLabel17.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel17_LinkClicked);
+            // 
+            // linkLabel14
+            // 
+            this.linkLabel14.AutoSize = true;
+            this.linkLabel14.Location = new System.Drawing.Point(192, 222);
+            this.linkLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel14.Name = "linkLabel14";
+            this.linkLabel14.Size = new System.Drawing.Size(152, 27);
+            this.linkLabel14.TabIndex = 11;
+            this.linkLabel14.TabStop = true;
+            this.linkLabel14.Text = "查看开源许可证";
+            this.linkLabel14.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel14_LinkClicked);
+            // 
+            // linkLabel15
+            // 
+            this.linkLabel15.AutoSize = true;
+            this.linkLabel15.Location = new System.Drawing.Point(20, 222);
+            this.linkLabel15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.linkLabel15.Name = "linkLabel15";
+            this.linkLabel15.Size = new System.Drawing.Size(140, 27);
+            this.linkLabel15.TabIndex = 10;
+            this.linkLabel15.TabStop = true;
+            this.linkLabel15.Text = "HZH Controls";
+            this.linkLabel15.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel15_LinkClicked);
             // 
             // linkLabel13
             // 
@@ -279,7 +327,7 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(307, 376);
+            this.button1.Location = new System.Drawing.Point(294, 371);
             this.button1.MinimumSize = new System.Drawing.Size(1, 1);
             this.button1.Name = "button1";
             this.button1.Radius = 10;
@@ -289,58 +337,10 @@
             this.button1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // linkLabel14
-            // 
-            this.linkLabel14.AutoSize = true;
-            this.linkLabel14.Location = new System.Drawing.Point(192, 222);
-            this.linkLabel14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel14.Name = "linkLabel14";
-            this.linkLabel14.Size = new System.Drawing.Size(152, 27);
-            this.linkLabel14.TabIndex = 11;
-            this.linkLabel14.TabStop = true;
-            this.linkLabel14.Text = "查看开源许可证";
-            this.linkLabel14.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel14_LinkClicked);
-            // 
-            // linkLabel15
-            // 
-            this.linkLabel15.AutoSize = true;
-            this.linkLabel15.Location = new System.Drawing.Point(20, 222);
-            this.linkLabel15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel15.Name = "linkLabel15";
-            this.linkLabel15.Size = new System.Drawing.Size(140, 27);
-            this.linkLabel15.TabIndex = 10;
-            this.linkLabel15.TabStop = true;
-            this.linkLabel15.Text = "HZH Controls";
-            this.linkLabel15.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel15_LinkClicked);
-            // 
-            // linkLabel16
-            // 
-            this.linkLabel16.AutoSize = true;
-            this.linkLabel16.Location = new System.Drawing.Point(192, 263);
-            this.linkLabel16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel16.Name = "linkLabel16";
-            this.linkLabel16.Size = new System.Drawing.Size(152, 27);
-            this.linkLabel16.TabIndex = 13;
-            this.linkLabel16.TabStop = true;
-            this.linkLabel16.Text = "查看开源许可证";
-            this.linkLabel16.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel16_LinkClicked);
-            // 
-            // linkLabel17
-            // 
-            this.linkLabel17.AutoSize = true;
-            this.linkLabel17.Location = new System.Drawing.Point(20, 263);
-            this.linkLabel17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.linkLabel17.Name = "linkLabel17";
-            this.linkLabel17.Size = new System.Drawing.Size(97, 27);
-            this.linkLabel17.TabIndex = 12;
-            this.linkLabel17.TabStop = true;
-            this.linkLabel17.Text = "Sunny.UI";
-            this.linkLabel17.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel17_LinkClicked);
-            // 
             // frmAbout
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(769, 430);
+            this.ClientSize = new System.Drawing.Size(700, 430);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -359,6 +359,7 @@
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
         #endregion
         private System.Windows.Forms.Label label1;

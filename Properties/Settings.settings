@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="TranslateAppID" Type="System.String" Scope="User">
-      <Value Profile="(Default)">20230101001515968</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="TranslateApiKey" Type="System.String" Scope="User">
-      <Value Profile="(Default)">4xaPms6ok7erM5n6MuuE</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="AutoIcon" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

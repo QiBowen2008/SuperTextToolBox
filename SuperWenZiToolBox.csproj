@@ -60,10 +60,10 @@
     <StartupObject>SuperWenZiToolBox.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>48A7A09003EC8E9B246A22CAA78BC3A34E9376DB</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>476E897A3BC745CC0CC2BC51204022F49E7EC8B4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SuperWenZiToolBox_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>SuperWenZiToolBox_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -99,6 +99,12 @@
     <Reference Include="Chinese, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Chinese.0.5.0\lib\net40\Chinese.dll</HintPath>
     </Reference>
+    <Reference Include="HZH_Controls">
+      <HintPath>packages\HZH_Controls.1.0.14\lib\net40\HZH_Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="IKAnalyzerNet">
       <HintPath>packages\IKAnalyzerNet.dll</HintPath>
     </Reference>
@@ -106,13 +112,19 @@
       <HintPath>packages\Lucene.Net.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.13.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NStandard, Version=0.9.16.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\NStandard.0.9.16\lib\net40\NStandard.dll</HintPath>
     </Reference>
     <Reference Include="PowerCollections">
       <HintPath>packages\PowerCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI">
+      <HintPath>packages\SunnyUI.3.3.9\lib\net40\SunnyUI.dll</HintPath>
+    </Reference>
+    <Reference Include="SunnyUI.Common">
+      <HintPath>packages\SunnyUI.Common.3.3.9\lib\net40\SunnyUI.Common.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -141,6 +153,12 @@
     </Compile>
     <Compile Include="frmFenci.Designer.cs">
       <DependentUpon>frmFenci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLangrecognize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLangrecognize.Designer.cs">
+      <DependentUpon>frmLangrecognize.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -188,6 +206,9 @@
     <EmbeddedResource Include="frmFenci.resx">
       <DependentUpon>frmFenci.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLangrecognize.resx">
+      <DependentUpon>frmLangrecognize.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +248,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SuperWenZiToolBox_1_TemporaryKey.pfx" />
+    <None Include="SuperWenZiToolBox_2_TemporaryKey.pfx" />
     <None Include="SuperWenZiToolBox_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

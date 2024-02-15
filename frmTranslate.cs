@@ -18,9 +18,6 @@ namespace SuperWenZiToolBox
         {
             InitializeComponent();
         }
-        private void frmTranslate_Load(object sender, EventArgs e)
-        {
-        }
         public static string EncryptString(string str)
         {
             MD5 md5 = MD5.Create();
@@ -57,24 +54,79 @@ namespace SuperWenZiToolBox
                 string salt = rd.Next(100000).ToString();
                 // 改成您的密钥
                 string secretKey = Properties.Settings.Default.TranslateApiKey;
-                if (comboBox3.Text == "普通")
+                if (!string.IsNullOrEmpty(comboBox3.Text))
                 {
-                    toolStripStatusLabel1.Text = "翻译中";
-                    if ((from != "zh" && to != "繁体中文") || (from != "繁体中文" && to != "zh"))
+                    if (comboBox3.Text == "普通")
                     {
-                        string sign = EncryptString(appId + q + salt + secretKey);
-                        string url = "http://api.fanyi.baidu.com/api/trans/vip/translate?";
+                        toolStripStatusLabel1.Text = "翻译中";
+                        if ((from != "zh" && to != "繁体中文") || (from != "繁体中文" && to != "zh"))
+                        {
+                            string sign = EncryptString(appId + q + salt + secretKey);
+                            string url = "http://api.fanyi.baidu.com/api/trans/vip/translate?";
+                            url += "q=" + HttpUtility.UrlEncode(q);
+                            url += "&from=" + from;
+                            url += "&to=" + to;
+                            url += "&appid=" + appId;
+                            url += "&salt=" + salt;
+                            url += "&sign=" + sign;
+                            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+                            request.Method = "GET";
+                            request.ContentType = "text/html;charset=UTF-8";
+                            request.UserAgent = null;
+                            request.Timeout = 60000;
+                            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                            Stream myResponseStream = response.GetResponseStream();
+                            StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
+                            string retString = myStreamReader.ReadToEnd();
+                            myStreamReader.Close();
+                            myResponseStream.Close();
+                            Console.WriteLine(retString);
+                            Console.ReadLine();
+                            textBox1.Clear();
+                            PostResult res = JsonConvert.DeserializeObject<PostResult>(retString);
+                            if (res.Error_code == null)
+                            {
+                                textBox1.AppendText(res.Trans_result[0].Dst);
+                                toolStripStatusLabel1.Text = "翻译成功";
+                            }
+                            else
+                            {
+                                textBox1.AppendText(res.Error_msg);
+                                toolStripStatusLabel1.Text = "出现错误";
+                            }
+                        }
+
+                        else if (from == "zh" && to == "繁体中文")
+                        {
+                            textBox1.Text = ChineseConverter.ToTraditional(richTextBox1.Text);
+                            toolStripStatusLabel1.Text = "翻译成功";
+                        }
+                        else if (from == "繁体中文" && to == "zh")
+                        {
+                            textBox1.Text = ChineseConverter.ToSimplified(richTextBox1.Text);
+                            toolStripStatusLabel1.Text = "翻译成功";
+
+                        }
+                    }
+                    else
+                    {
+                        //domain
+                        string domain = comboBox3.Text;
+                        // 改成您的密钥
+                        string url = "http://api.fanyi.baidu.com/api/trans/vip/fieldtranslate?";
+                        string sign = EncryptString(appId + q + salt + domain + secretKey);
                         url += "q=" + HttpUtility.UrlEncode(q);
                         url += "&from=" + from;
                         url += "&to=" + to;
                         url += "&appid=" + appId;
                         url += "&salt=" + salt;
+                        url += "&domain=" + domain;
                         url += "&sign=" + sign;
                         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                         request.Method = "GET";
                         request.ContentType = "text/html;charset=UTF-8";
                         request.UserAgent = null;
-                        request.Timeout = 60000;
+                        request.Timeout = 6000;
                         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
                         Stream myResponseStream = response.GetResponseStream();
                         StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
@@ -96,59 +148,14 @@ namespace SuperWenZiToolBox
                             toolStripStatusLabel1.Text = "出现错误";
                         }
                     }
-                    else if (from == "zh" && to == "繁体中文")
-                    {
-                        textBox1.Text = ChineseConverter.ToTraditional(richTextBox1.Text);
-                        toolStripStatusLabel1.Text = "翻译成功";
-                    }
-                    else if (from == "繁体中文" && to == "zh")
-                    {
-                        textBox1.Text = ChineseConverter.ToSimplified(richTextBox1.Text);
-                        toolStripStatusLabel1.Text = "翻译成功";
-                    }
                 }
                 else
                 {
-                    //domain
-                    string domain = comboBox3.Text;
-                    // 改成您的密钥
-                    string url = "http://api.fanyi.baidu.com/api/trans/vip/fieldtranslate?";
-                    string sign = EncryptString(appId + q + salt + domain + secretKey);
-                    url += "q=" + HttpUtility.UrlEncode(q);
-                    url += "&from=" + from;
-                    url += "&to=" + to;
-                    url += "&appid=" + appId;
-                    url += "&salt=" + salt;
-                    url += "&domain=" + domain;
-                    url += "&sign=" + sign;
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
-                    request.Method = "GET";
-                    request.ContentType = "text/html;charset=UTF-8";
-                    request.UserAgent = null;
-                    request.Timeout = 6000;
-                    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-                    Stream myResponseStream = response.GetResponseStream();
-                    StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
-                    string retString = myStreamReader.ReadToEnd();
-                    myStreamReader.Close();
-                    myResponseStream.Close();
-                    Console.WriteLine(retString);
-                    Console.ReadLine();
-                    textBox1.Clear();
-                    PostResult res = JsonConvert.DeserializeObject<PostResult>(retString);
-                    if (res.Error_code == null)
-                    {
-                        textBox1.AppendText(res.Trans_result[0].Dst);
-                        toolStripStatusLabel1.Text = "翻译成功";
-                    }
-                    else
-                    {
-                        textBox1.AppendText(res.Error_msg);
-                        toolStripStatusLabel1.Text = "出现错误";
-                    }
+                    MessageBox.Show("领域不能为空");
                 }
+
             }
-            Focus();
+                Focus();
         }
         public class PostResult
         {
@@ -166,9 +173,6 @@ namespace SuperWenZiToolBox
         private void button2_Click(object sender, EventArgs e)
         {
         }
-        private void button1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
         private void button4_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -177,9 +181,6 @@ namespace SuperWenZiToolBox
                 richTextBox1.Text = sr.ReadToEnd();
                 sr.Close();
             }
-        }
-        private void button2_KeyPress(object sender, KeyPressEventArgs e)
-        {
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -227,9 +228,6 @@ namespace SuperWenZiToolBox
         private void button5_Click(object sender, EventArgs e)
         {
         }
-        private void button6_Click(object sender, EventArgs e)
-        {
-        }
         private void button7_Click(object sender, EventArgs e)
         {
             toolStripStatusLabel1.Text = "朗读中";
@@ -240,9 +238,6 @@ namespace SuperWenZiToolBox
             };   //创建语音实例
             voice.SpeakAsync(textBox1.Text);
             //播放指定的字符串,这是异步朗读
-        }
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
         }
         private void button8_Click(object sender, EventArgs e)
         {
@@ -265,16 +260,6 @@ namespace SuperWenZiToolBox
                 toolStripStatusLabel1.Text = "保存成功";
             }
         }
-        private void richTextBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-        }
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-        }
-        private void linkLabel1_Click(object sender, EventArgs e) => Process.Start("Help.Rtf");
-        private void label4_Click(object sender, EventArgs e)
-        {
-        }
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
             int txtlength = richTextBox1.Text.Length;
@@ -291,5 +276,7 @@ namespace SuperWenZiToolBox
                 toolStripStatusLabel1.Text = "超过2000字，可能影响翻译质量";
             }
         }
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("翻译领域.rtf");
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("翻译语言.rtf");
     }
 }
