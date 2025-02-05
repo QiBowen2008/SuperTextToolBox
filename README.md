@@ -8,6 +8,7 @@
 
 本款软件基于Github上各种开源库制作而成（几乎没有什么代码研究价值），免费实现各种文字处理功能。包括OCR识别、文字转语音、词云生成、文字转拼音、翻译、分词等功能（除了翻译功能均可以离线使用）欢迎下载体验。
 ![已更新全新UI](https://github.com/QiBowen2008/SuperTextToolBox/blob/NewBranch/screenshots/1.PNG?raw=true)
+
 系统要求：推荐Windows7以上，OCR需要64位系统，XP系统不支持OCR和词云，Vista我没测试。推荐安装.Net Framework 4.5.2或更高版本以使用全部功能，XP请安装4.0
 # 二、功能介绍
 
