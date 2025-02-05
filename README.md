@@ -1,16 +1,6 @@
 # 万能文字工具箱——免费的文字处理助手
 高速下载：https://www.123684.com/s/f3HzVv-rO17d
-## **目录**
-一、软件介绍
-二、功能介绍
-	1.OCR识别
-	2.文字转语音
-	3.词云生成
-	4.文字转拼音
-	5.翻译（在线）
-	6.分词
-	7.批量工具
-三、软件开发历程
+
 
 **提示：Word插件上新了**
 
@@ -18,6 +8,7 @@
 
 本款软件基于Github上各种开源库制作而成（几乎没有什么代码研究价值），免费实现各种文字处理功能。包括OCR识别、文字转语音、词云生成、文字转拼音、翻译、分词等功能（除了翻译功能均可以离线使用）欢迎下载体验。
 ![已更新全新UI](https://github.com/QiBowen2008/SuperTextToolBox/blob/NewBranch/screenshots/1.PNG?raw=true)
+系统要求：推荐Windows7以上，OCR需要64位系统，XP系统不支持OCR和词云，Vista我没测试。推荐安装.Net Framework 4.5.2或更高版本以使用全部功能，XP请安装4.0
 # 二、功能介绍
 
 ## 1、OCR识别（64bit）（批量！）
@@ -33,7 +24,7 @@
 ## 3、词云生成
 
 基于[WordCloudSharp](https://github.com/AmmRage/WordCloudSharp)实现，可以选择模版（目前暂时不能完全自定义）
-![输入图片说明](https://github.com/QiBowen2008/SuperTextToolBox/blob/OldBranch/Pics/7.PNG?raw=true)
+![输入图片说明](https://github.com/QiBowen2008/SuperTextToolBox/blob/NewBranch/screenshots/7.gif?raw=true)
 ## 4、文字转拼音
 
 基于[Chinese](https://github.com/zmjack/Chinese)库实现，无限制文字转拼音（解除了某办公软件非会员30个字的限制）
