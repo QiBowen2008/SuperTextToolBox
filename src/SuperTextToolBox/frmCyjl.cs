@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 namespace SuperTextToolBox
 {
-    public partial class frmCyjl : Sunny.UI.UIForm
+    public partial class frmCyjl : AntdUI.BaseForm
     {
         public int settime;
         public string oldt;

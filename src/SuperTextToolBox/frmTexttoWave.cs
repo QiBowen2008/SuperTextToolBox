@@ -5,7 +5,7 @@ using System.Speech.Synthesis;
 using System.Windows.Forms;
 namespace SuperTextToolBox
 {
-    public partial class frmTexttoWave : Sunny.UI.UIForm
+    public partial class frmTexttoWave : AntdUI.BaseForm
     {
         private int yinliangvalue = 100;
         public double yusu = 0;

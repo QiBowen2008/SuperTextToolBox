@@ -29,21 +29,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new Sunny.UI.UITextBox();
+            this.textBox1 = new AntdUI.Input();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.uiIntegerUpDown1 = new Sunny.UI.UIIntegerUpDown();
-            this.uiIntegerUpDown2 = new Sunny.UI.UIIntegerUpDown();
+            this.uiIntegerUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.uiIntegerUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.uiComboBox1 = new Sunny.UI.UIComboBox();
+            this.uiComboBox1 = new AntdUI.Dropdown();
             this.label5 = new System.Windows.Forms.Label();
-            this.uiIntegerUpDown3 = new Sunny.UI.UIIntegerUpDown();
+            this.uiIntegerUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.uiIntegerUpDown4 = new Sunny.UI.UIIntegerUpDown();
-            this.uiButton1 = new Sunny.UI.UIButton();
-            this.uiButton2 = new Sunny.UI.UIButton();
+            this.uiIntegerUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.uiButton1 = new AntdUI.Button();
+            this.uiButton2 = new AntdUI.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -63,10 +67,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 76);
+            this.label1.Location = new System.Drawing.Point(13, 60);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 20);
+            this.label1.Size = new System.Drawing.Size(112, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "等待处理的文本";
             // 
@@ -76,7 +80,7 @@
             this.label4.Location = new System.Drawing.Point(167, 396);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(169, 20);
+            this.label4.Size = new System.Drawing.Size(135, 15);
             this.label4.TabIndex = 9;
             this.label4.Text = "                ";
             // 
@@ -85,30 +89,41 @@
             this.uiIntegerUpDown1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiIntegerUpDown1.Location = new System.Drawing.Point(595, 133);
             this.uiIntegerUpDown1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiIntegerUpDown1.Minimum = 1;
+            this.uiIntegerUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.uiIntegerUpDown1.MinimumSize = new System.Drawing.Size(133, 0);
             this.uiIntegerUpDown1.Name = "uiIntegerUpDown1";
-            this.uiIntegerUpDown1.ShowText = false;
-            this.uiIntegerUpDown1.Size = new System.Drawing.Size(133, 36);
+            this.uiIntegerUpDown1.Size = new System.Drawing.Size(133, 30);
             this.uiIntegerUpDown1.TabIndex = 10;
-            this.uiIntegerUpDown1.Text = "uiIntegerUpDown1";
-            this.uiIntegerUpDown1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiIntegerUpDown1.Value = 16;
+            this.uiIntegerUpDown1.Value = new decimal(new int[] {
+            16,
+            0,
+            0,
+            0});
+            this.uiIntegerUpDown1.ValueChanged += new System.EventHandler(this.uiIntegerUpDown1_ValueChanged);
             // 
             // uiIntegerUpDown2
             // 
             this.uiIntegerUpDown2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiIntegerUpDown2.Location = new System.Drawing.Point(738, 133);
             this.uiIntegerUpDown2.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiIntegerUpDown2.Minimum = 1;
+            this.uiIntegerUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.uiIntegerUpDown2.MinimumSize = new System.Drawing.Size(133, 0);
             this.uiIntegerUpDown2.Name = "uiIntegerUpDown2";
-            this.uiIntegerUpDown2.ShowText = false;
-            this.uiIntegerUpDown2.Size = new System.Drawing.Size(133, 36);
+            this.uiIntegerUpDown2.Size = new System.Drawing.Size(133, 30);
             this.uiIntegerUpDown2.TabIndex = 11;
-            this.uiIntegerUpDown2.Text = "uiIntegerUpDown2";
-            this.uiIntegerUpDown2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiIntegerUpDown2.Value = 9;
+            this.uiIntegerUpDown2.Value = new decimal(new int[] {
+            9,
+            0,
+            0,
+            0});
             // 
             // label2
             // 
@@ -116,7 +131,7 @@
             this.label2.Location = new System.Drawing.Point(504, 141);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 20);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 12;
             this.label2.Text = "图片比例";
             // 
@@ -126,28 +141,23 @@
             this.label3.Location = new System.Drawing.Point(504, 197);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 13;
             this.label3.Text = "字体大小";
             // 
             // uiComboBox1
             // 
-            this.uiComboBox1.DataSource = null;
-            this.uiComboBox1.FillColor = System.Drawing.Color.White;
+            this.uiComboBox1.DefaultBack = System.Drawing.Color.White;
             this.uiComboBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiComboBox1.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
-            this.uiComboBox1.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.uiComboBox1.Location = new System.Drawing.Point(595, 230);
             this.uiComboBox1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiComboBox1.MinimumSize = new System.Drawing.Size(84, 0);
             this.uiComboBox1.Name = "uiComboBox1";
             this.uiComboBox1.Padding = new System.Windows.Forms.Padding(0, 0, 40, 2);
+            this.uiComboBox1.ShowArrow = true;
             this.uiComboBox1.Size = new System.Drawing.Size(277, 39);
-            this.uiComboBox1.SymbolSize = 24;
             this.uiComboBox1.TabIndex = 15;
             this.uiComboBox1.Text = "Arial";
-            this.uiComboBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.uiComboBox1.Watermark = "";
             // 
             // label5
             // 
@@ -155,24 +165,30 @@
             this.label5.Location = new System.Drawing.Point(504, 240);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 20);
+            this.label5.Size = new System.Drawing.Size(37, 15);
             this.label5.TabIndex = 16;
             this.label5.Text = "字体";
             // 
             // uiIntegerUpDown3
             // 
             this.uiIntegerUpDown3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiIntegerUpDown3.Location = new System.Drawing.Point(595, 281);
+            this.uiIntegerUpDown3.Location = new System.Drawing.Point(595, 291);
             this.uiIntegerUpDown3.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.uiIntegerUpDown3.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.uiIntegerUpDown3.MinimumSize = new System.Drawing.Size(133, 0);
             this.uiIntegerUpDown3.Name = "uiIntegerUpDown3";
-            this.uiIntegerUpDown3.ShowText = false;
-            this.uiIntegerUpDown3.Size = new System.Drawing.Size(133, 36);
+            this.uiIntegerUpDown3.Size = new System.Drawing.Size(133, 30);
             this.uiIntegerUpDown3.TabIndex = 11;
-            this.uiIntegerUpDown3.Text = "uiIntegerUpDown3";
-            this.uiIntegerUpDown3.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiIntegerUpDown3.Value = 500;
-            this.uiIntegerUpDown3.ValueChanged += new Sunny.UI.UIIntegerUpDown.OnValueChanged(this.uiIntegerUpDown3_ValueChanged);
+            this.uiIntegerUpDown3.Value = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.uiIntegerUpDown3.ValueChanged += new System.EventHandler(this.uiIntegerUpDown3_ValueChanged);
             // 
             // label6
             // 
@@ -180,7 +196,7 @@
             this.label6.Location = new System.Drawing.Point(504, 297);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.Size = new System.Drawing.Size(67, 15);
             this.label6.TabIndex = 17;
             this.label6.Text = "每张字数";
             // 
@@ -189,15 +205,20 @@
             this.uiIntegerUpDown4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiIntegerUpDown4.Location = new System.Drawing.Point(595, 181);
             this.uiIntegerUpDown4.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.uiIntegerUpDown4.Minimum = 1;
+            this.uiIntegerUpDown4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.uiIntegerUpDown4.MinimumSize = new System.Drawing.Size(133, 0);
             this.uiIntegerUpDown4.Name = "uiIntegerUpDown4";
-            this.uiIntegerUpDown4.ShowText = false;
-            this.uiIntegerUpDown4.Size = new System.Drawing.Size(133, 36);
+            this.uiIntegerUpDown4.Size = new System.Drawing.Size(133, 30);
             this.uiIntegerUpDown4.TabIndex = 12;
-            this.uiIntegerUpDown4.Text = "uiIntegerUpDown4";
-            this.uiIntegerUpDown4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
-            this.uiIntegerUpDown4.Value = 12;
+            this.uiIntegerUpDown4.Value = new decimal(new int[] {
+            12,
+            0,
+            0,
+            0});
             // 
             // uiButton1
             // 
@@ -209,7 +230,6 @@
             this.uiButton1.Size = new System.Drawing.Size(127, 35);
             this.uiButton1.TabIndex = 18;
             this.uiButton1.Text = "选择txt文件";
-            this.uiButton1.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton1.Click += new System.EventHandler(this.ChooseNovel);
             // 
             // uiButton2
@@ -222,7 +242,6 @@
             this.uiButton2.Size = new System.Drawing.Size(127, 35);
             this.uiButton2.TabIndex = 19;
             this.uiButton2.Text = "转换图片";
-            this.uiButton2.TipsFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton2.Click += new System.EventHandler(this.ConvertTextToImages);
             // 
             // frmTextToPic
@@ -247,28 +266,31 @@
             this.MaximizeBox = false;
             this.Name = "frmTextToPic";
             this.Text = "文字转图片";
-            this.ZoomScaleRect = new System.Drawing.Rectangle(19, 19, 925, 422);
             this.Load += new System.EventHandler(this.frmMain_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Sunny.UI.UITextBox textBox1;
+        private AntdUI.Input textBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown1;
-        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown2;
+        private System .Windows .Forms .NumericUpDown uiIntegerUpDown1;
+        private System .Windows .Forms .NumericUpDown uiIntegerUpDown2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Sunny.UI.UIComboBox uiComboBox1;
+        private AntdUI.Dropdown uiComboBox1;
         private System.Windows.Forms.Label label5;
-        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown3;
+        private System .Windows .Forms .NumericUpDown uiIntegerUpDown3;
         private System.Windows.Forms.Label label6;
-        private Sunny.UI.UIIntegerUpDown uiIntegerUpDown4;
-        private Sunny.UI.UIButton uiButton1;
-        private Sunny.UI.UIButton uiButton2;
+        private System .Windows .Forms .NumericUpDown uiIntegerUpDown4;
+        private AntdUI.Button uiButton1;
+        private AntdUI.Button uiButton2;
     }
 }

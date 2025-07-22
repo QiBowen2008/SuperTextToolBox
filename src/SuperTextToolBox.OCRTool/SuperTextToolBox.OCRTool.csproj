@@ -8,11 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SuperTextToolBox.OCRTool</RootNamespace>
     <AssemblyName>SuperTextToolBox.OCRTool</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <LangVersion>9.0</LangVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AMD64' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -23,15 +25,17 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AMD64' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\publish\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>2</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>SuperTextToolBox.OCRTool.Program</StartupObject>
@@ -40,6 +44,10 @@
     <PlatformTarget>x64</PlatformTarget>
     <WarningLevel>5</WarningLevel>
     <OutputPath>..\publish\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EPPlus, Version=7.5.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
@@ -54,14 +62,8 @@
     <Reference Include="HtmlAgilityPack, Version=1.11.72.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.11.72\lib\Net40\HtmlAgilityPack.dll</HintPath>
     </Reference>
-    <Reference Include="HZH_Controls">
-      <HintPath>..\packages\HZH_Controls.1.5.240416\lib\net40\HZH_Controls.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="PaddleOCRSharp, Version=4.4.0.2, Culture=neutral, processorArchitecture=AMD64">
-      <HintPath>..\packages\PaddleOCRSharp.4.4.0.2\lib\net40\PaddleOCRSharp.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -88,12 +90,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmTip.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTip.Designer.cs">
-      <DependentUpon>frmTip.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmOCRMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +115,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -132,8 +129,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="PaddleOCRSharp">
-      <Version>4.4.0.2</Version>
+    <PackageReference Include="AntdUI">
+      <Version>2.0.11</Version>
+    </PackageReference>
+    <PackageReference Include="OpenCvSharp4.runtime.win">
+      <Version>4.11.0.20250507</Version>
+    </PackageReference>
+    <PackageReference Include="Sdcb.PaddleInference">
+      <Version>3.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Sdcb.PaddleInference.runtime.win64.mkl">
+      <Version>3.1.0.54</Version>
+    </PackageReference>
+    <PackageReference Include="Sdcb.PaddleOCR">
+      <Version>3.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Sdcb.PaddleOCR.Models.Local">
+      <Version>3.0.1</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
