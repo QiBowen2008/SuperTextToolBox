@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 namespace SuperTextToolBox
 {
-    public partial class frmFenci : Sunny.UI.UIForm
+    public partial class frmFenci : AntdUI.BaseForm
     {
         JiebaSegmenter _segmenter = new JiebaSegmenter();
         public frmFenci()

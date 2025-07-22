@@ -9,7 +9,7 @@ using System.Drawing.Text;
 
 namespace SuperTextToolBox
 {
-    public partial class frmTextToPic : Sunny.UI.UIForm
+    public partial class frmTextToPic : AntdUI.BaseForm
     {
         public frmTextToPic()
         {
@@ -22,11 +22,11 @@ namespace SuperTextToolBox
         public static string noveltext;
         void Calc()
         {
-            int textcountperpage = uiIntegerUpDown3.Value;
-            double size = uiIntegerUpDown4.Value;
+            int textcountperpage = (Convert.ToInt32(uiIntegerUpDown3.Value));
+            double size = (Convert.ToInt32(uiIntegerUpDown4.Value));
             double allpx = Math.Pow((size + 1) / 72 * 96, 2) * textcountperpage;
-            int width = Convert.ToInt32(uiIntegerUpDown1.Value * Math.Sqrt(allpx / uiIntegerUpDown1.Value / uiIntegerUpDown2.Value));
-            int height = Convert.ToInt32(uiIntegerUpDown2.Value * Math.Sqrt(allpx / uiIntegerUpDown1.Value / uiIntegerUpDown2.Value));
+            int width = Convert.ToInt32((Convert.ToInt32(uiIntegerUpDown1.Value)) * Math.Sqrt(allpx / (Convert.ToInt32(uiIntegerUpDown1.Value) * (Convert.ToInt32(uiIntegerUpDown2.Value)))));
+            int height = Convert.ToInt32((Convert.ToInt32(uiIntegerUpDown2.Value)) * Math.Sqrt(allpx / (Convert.ToInt32(uiIntegerUpDown1.Value) * (Convert.ToInt32(uiIntegerUpDown2.Value)))));
             PicInfo.weight = width;
             PicInfo.height = height;
             PicInfo.size = size;
@@ -57,7 +57,7 @@ namespace SuperTextToolBox
                 Calc();
                 // 读取文本文件
                 string filePath = @novel; // 指定你的文本文件路径
-                int charsPerImage = uiIntegerUpDown3.Value; // 每张图片上的字符数
+                int charsPerImage = (Convert.ToInt32(uiIntegerUpDown3.Value)); // 每张图片上的字符数
 
                 string outputDirectory = @"输出目录"; // 输出目录
                 Size imageSize = new Size(PicInfo.weight + 100, PicInfo.height + 500);
@@ -71,7 +71,7 @@ namespace SuperTextToolBox
 
 
                 // 设置字体样式
-                Font font = new Font(uiComboBox1.Text, uiIntegerUpDown4.Value); // 宋体，字号可以调整
+                Font font = new Font(uiComboBox1.Text, (Convert.ToInt32(uiIntegerUpDown4.Value))); // 宋体，字号可以调整
                 SolidBrush brush = new SolidBrush(Color.Black);
                 // 设置图片大小
 
@@ -123,7 +123,7 @@ namespace SuperTextToolBox
                 novel = openFileDialog1.FileName;
                 noveltext = File.ReadAllText(@novel, Encoding.GetEncoding(0));
                 textBox1.Text = noveltext;
-                count = textBox1.Text.Length / uiIntegerUpDown3.Value + 1;
+                count = textBox1.Text.Length / (Convert.ToInt32(uiIntegerUpDown3.Value)) + 1;
                 if (count != 1)
                 {
                     label4.Text = "需要" + (count - 1).ToString() + "-" + count.ToString() + "张图片";
@@ -139,7 +139,7 @@ namespace SuperTextToolBox
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
-            count = textBox1.Text.Length / uiIntegerUpDown3.Value + 1;
+            count = textBox1.Text.Length / (Convert.ToInt32(uiIntegerUpDown3.Value)) + 1;
             if (count != 1)
             {
                 label4.Text = "需要" + (count - 1).ToString() + "-" + count.ToString() + "张图片";
@@ -163,32 +163,13 @@ namespace SuperTextToolBox
                 string laststring = newString.Remove(newString.Length - 1, 1);
                 uiComboBox1.Items.Add(laststring);
             }
-            // 获取当前DPI比例
-            float dpiX, dpiY;
-            using (Graphics g = CreateGraphics())
-            {
-                dpiX = g.DpiX;
-                dpiY = g.DpiY;
-            }
-            // 根据DPI比例调整控件尺寸
-            float scaleFactor = dpiX / 96f; // 96 DPI 是标准DPI
-            foreach (Control control in Controls)
-            {
-                control.Width = (int)(control.Width * scaleFactor);
-                control.Height = (int)(control.Height * scaleFactor);
-                control.Left = (int)(control.Left * scaleFactor);
-                control.Top = (int)(control.Top * scaleFactor);
-            }
-            Height = (int)(437 * scaleFactor);
-            Width = (int)(925 * scaleFactor);
-            titleHeight = Convert.ToInt32(titleHeight * scaleFactor);
              
         }
 
-        private void uiIntegerUpDown3_ValueChanged(object sender, int value)
-        {
 
-            count = textBox1.Text.Length / uiIntegerUpDown3.Value + 1;
+        private void uiIntegerUpDown3_ValueChanged(object sender, EventArgs e)
+        {
+            count = textBox1.Text.Length /( Convert .ToInt32 ( uiIntegerUpDown3.Value)) + 1;
             if (count != 1)
             {
                 label4.Text = "需要" + (count - 1).ToString() + "-" + count.ToString() + "张图片";
@@ -197,6 +178,11 @@ namespace SuperTextToolBox
             {
                 label4.Text = "需要" + count.ToString() + "张笔记";
             }
+        }
+
+        private void uiIntegerUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
     public static class PicInfo

@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 namespace SuperTextToolBox
 {
-    public partial class frmAbout : Sunny.UI.UIForm
+    public partial class frmAbout : AntdUI .BaseForm
     {
         public frmAbout() => InitializeComponent();
         private void button1_Click(object sender, EventArgs e) => Close();
@@ -29,25 +29,6 @@ namespace SuperTextToolBox
 
         private void frmAbout_Load(object sender, EventArgs e)
         {
-            // 获取当前DPI比例
-            float dpiX, dpiY;
-            using (Graphics g = CreateGraphics())
-            {
-                dpiX = g.DpiX;
-                dpiY = g.DpiY;
-            }
-            // 根据DPI比例调整控件尺寸
-            float scaleFactor = dpiX / 96f; // 96 DPI 是标准DPI
-            foreach (Control control in Controls)
-            {
-                control.Width = (int)(control.Width * scaleFactor);
-                control.Height = (int)(control.Height * scaleFactor);
-                control.Left = (int)(control.Left * scaleFactor);
-                control.Top = (int)(control.Top * scaleFactor);
-            }
-            Height = (int)(479 * scaleFactor);
-            Width = (int)(700 * scaleFactor);
-            titleHeight = Convert.ToInt32(titleHeight * scaleFactor);
         }
 
         private void linkLabel14_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)

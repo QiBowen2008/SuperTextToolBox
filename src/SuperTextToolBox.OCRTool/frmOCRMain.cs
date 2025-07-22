@@ -1,33 +1,40 @@
-﻿using System;
-using System.IO;
-using System.Drawing;
+﻿using OfficeOpenXml;
+using OpenCvSharp;
+using Sdcb.PaddleInference;
+using Sdcb.PaddleOCR;
+using Sdcb.PaddleOCR.Models;
+using Sdcb.PaddleOCR.Models.Local;
 using Sunny.UI;
-using System.Windows.Forms;
-using PaddleOCRSharp;
-using System.Diagnostics;
-using OfficeOpenXml;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace SuperTextToolBox.OCRTool
 {
-    public partial class OCRFull : UIForm
+    public partial class OCRFull : AntdUI .BaseForm 
     {
-        private Dictionary<string, string> langmodel;
+        private Dictionary<string, FullOcrModel> langmodel;
         public OCRFull()
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             InitializeComponent();
-            langmodel = new Dictionary<string, string>
+            langmodel = new Dictionary<string, FullOcrModel>
             {
-                {"日文","japan" },
-                {"韩文","korean" },
-                {"泰卢固文","te" },
-                {"卡纳达文","ka" },
-                {"泰米尔文","ta"},
-                {"拉丁文","latin" },
-                {"阿拉伯文","arabic" },
-                {"斯拉夫文","cyrillic" },
-                {"梵文","devanagari" }
+                {"简体中文",LocalFullModels.ChineseV5 },
+                {"繁体中文",LocalFullModels.TraditionalChineseV3 },
+                {"英文",LocalFullModels.EnglishV4 },
+                {"日文",LocalFullModels.JapanV4 },
+                {"韩文",LocalFullModels.KoreanV4 },
+                {"泰卢固文",LocalFullModels.TeluguV4 },
+                {"卡纳达文",LocalFullModels.KannadaV4 },
+                {"泰米尔文",LocalFullModels.TamilV4},
+                {"拉丁文",LocalFullModels.LatinV3 },
+                {"阿拉伯文",LocalFullModels.ArabicV4 },
+                {"斯拉夫文",LocalFullModels.CyrillicV3 },
+                {"梵文",LocalFullModels.DevanagariV4 }
             };
             if (Environment.GetCommandLineArgs().Length > 1)
             {
@@ -47,131 +54,65 @@ namespace SuperTextToolBox.OCRTool
             }
             // 根据DPI比例调整控件尺寸
             float scaleFactor = dpiX / 96f; // 96 DPI 是标准DPI
-            foreach (Control control in Controls)
-            {
-                control.Width = (int)(control.Width * scaleFactor);
-                control.Height = (int)(control.Height * scaleFactor);
-                control.Left = (int)(control.Left * scaleFactor);
-                control.Top = (int)(control.Top * scaleFactor);
-                if (control is UIDataGridView uidatagridview)
-                {
-                    uidatagridview.RowTemplate.Height = (int)(uidatagridview.RowTemplate.Height * scaleFactor);
-                    foreach (DataGridViewColumn dataGridViewColumn in uidatagridview.Columns)
-                    {
-                        dataGridViewColumn.Width = (int)(dataGridViewColumn.Width * scaleFactor);
-                    }
-                }
-                if(control is UIComboBox comboBox)
-                {
-                    comboBox.ItemHeight = (int)(comboBox.ItemHeight * scaleFactor);
-                }
-            }
-            Height = (int)(Height * scaleFactor);
-            Width = (int)(Width * scaleFactor);
-            titleHeight = Convert.ToInt32(titleHeight * scaleFactor);  
-            uiComboBox1.Text = "中英文精简（自带）";
+
         }
 
-        private string OCR(string imagepath, string type, string path)
+        private string OCR(string path)
         {
-            try
+            string resulttext;
+            if (langmodel.TryGetValue(uiComboBox1.Text, out FullOcrModel selectedModel))
             {
-                string modelPathroot = Application.StartupPath + "\\OCRModel";
-                OCRModelConfig config = new OCRModelConfig();
-                StructureModelConfig xlsxconfig = new StructureModelConfig();
-                toolStripStatusLabel1.Text = "识别中";
-
-                //使用默认中英文V3模型
-
-                xlsxconfig.table_char_dict_path = modelPathroot + @"\table_structure_dict_ch.txt";
-                if (uiComboBox1.Text == "中英文精简（自带）")
+                // 使用选中的模型
+                FullOcrModel model= selectedModel;
+                // 这里可以使用 selectedModel 进行OCR处理
+                if (uiComboBox2.Text == "图片转文字")
                 {
-
-                    config.det_infer = modelPathroot + @"\ch_PP-OCRv4_det_infer";
-                    config.cls_infer = modelPathroot + @"\ch_ppocr_mobile_v2.0_cls_infer";
-                    config.rec_infer = modelPathroot + @"\REC\ch_PP-OCRv4_rec_infer";
-                    config.keys = modelPathroot + @"\ppocr_keys.txt";
-                    xlsxconfig.det_infer = modelPathroot + @"\ch_PP-OCRv4_det_infer";
-                    xlsxconfig.cls_infer = modelPathroot + @"\ch_ppocr_mobile_v2.0_cls_infer";
-                    xlsxconfig.rec_infer = modelPathroot + @"\REC\ch_PP-OCRv4_rec_infer";
-                    xlsxconfig.keys = modelPathroot + @"\ppocr_keys.txt";
-                    xlsxconfig.table_model_dir = modelPathroot + @"\ch_ppstructure_mobile_v2.0_SLANet_infer";
-                }
-                else if (uiComboBox1.Text == "中英文高级")
-                {
-                    config.det_infer = modelPathroot + @"\ch_PP-OCRv4_det_server_infer";
-                    config.cls_infer = modelPathroot + @"\ch_ppocr_mobile_v2.0_cls_infer";
-                    config.rec_infer = modelPathroot + @"\REC\ch_PP-OCRv4_rec_server_infer";
-                    config.keys = modelPathroot + @"\ppocr_keys.txt";
-                    xlsxconfig.det_infer = modelPathroot + @"\ch_PP-OCRv4_det_server_infer";
-                    xlsxconfig.cls_infer = modelPathroot + @"\ch_ppocr_mobile_v2.0_cls_infer";
-                    xlsxconfig.rec_infer = modelPathroot + @"\REC\ch_PP-OCRv4_rec_server_infer";
-                    xlsxconfig.keys = modelPathroot + @"\ppocr_keys.txt";
-                    xlsxconfig.table_model_dir = modelPathroot + @"\ch_ppstructure_mobile_v2.0_SLANet_infer";
-
-                }
-                else
-                {
-                    string selectedlang = uiComboBox1.SelectedItem as string;
-                    if (langmodel.TryGetValue(selectedlang, out string outputlang))
+                    using (PaddleOcrAll all = new PaddleOcrAll(model, PaddleDevice.Gpu())
                     {
-                        config.det_infer = modelPathroot + @"\Multilingual_PP-OCRv3_det_slim_infer";
-                        config.cls_infer = modelPathroot + @"\ch_ppocr_mobile_v2.0_cls_infer";
-                        config.rec_infer = modelPathroot + @"\REC\" + outputlang + "_PP-OCRv3_rec_infer";
-                        config.keys = modelPathroot + @"\LangDict\" + outputlang + "_dict.txt";
-                        xlsxconfig.det_infer = modelPathroot + @"\Multilingual_PP-OCRv3_det_slim_infer";
-                        xlsxconfig.cls_infer = modelPathroot + @"\ch_ppocr_mobile_v2.0_cls_infer";
-                        xlsxconfig.rec_infer = modelPathroot + @"\REC\" + outputlang + "_PP-OCRv3_rec_infer";
-                        xlsxconfig.keys = modelPathroot + @"\LangDict\" + outputlang + "_dict.txt";
-                        xlsxconfig.table_model_dir = modelPathroot + @"\ch_ppstructure_mobile_v2.0_SLANet_infer";
-
-                    }
-                }
-                if (type == "图片转文字")
-                {
-                    OCRParameter oCRParameter = new OCRParameter();
-                    //识别结果对象
-                    OCRResult ocrResult = new OCRResult();
-                    //建议程序全局初始化一次即可，不必每次识别都初始化，容易报错。     
-                    PaddleOCREngine engine = new PaddleOCREngine(config, oCRParameter);
-                    ocrResult = engine.DetectText(path);
-                    string result;
-                    if (ocrResult != null)
+                        AllowRotateDetection = true, /* 允许识别有角度的文字 */
+                        Enable180Classification = false, /* 允许识别旋转角度大于90度的文字 */
+                    })
                     {
-                        result = ocrResult.Text;
+                        // Load local file by following code:
+                        using (Mat src = Cv2.ImRead(path))
+                        //using (Mat src = Cv2.ImDecode(sampleImageData, ImreadModes.Color))
+                        {
+                            PaddleOcrResult result = all.Run(src);
+                            Console.WriteLine("Detected all texts: \n" + result.Text);
+                            resulttext = result.Text;
+                            foreach (PaddleOcrResultRegion region in result.Regions)
+                            {
+                                Console.WriteLine($"Text: {region.Text}, Score: {region.Score}, RectCenter: {region.Rect.Center}, RectSize:    {region.Rect.Size}, Angle: {region.Rect.Angle}");
+                            }
+                        }
                     }
-                    else
-                    {
-                        result = "图片中无可识别文本";
-                    }
-                    engine.Dispose();
-                    return result;
-                }
-                else
+                }else
                 {
-                    StructureParameter structureParameter = new StructureParameter();
-                    //初始化表格识别引擎
-                    PaddleStructureEngine engine = new PaddleOCRSharp.PaddleStructureEngine(xlsxconfig, structureParameter);
-                    //表格识别，返回结果是html格式的表格形式
-                    string result = engine.StructureDetectFile(imagepath);
+                    using PaddleOcrTableRecognizer tableRec = new(LocalTableRecognitionModel.ChineseMobileV2_SLANET);
+                    using Mat src = Cv2.ImRead(Path.Combine(path));
+                    // Table detection
+                    TableDetectionResult tableResult = tableRec.Run(src);
 
-                    //添加边框线，方便查看效果
-                    string css = "<style>table{ border-spacing: 0pt;} td { border: 1px solid black;}</style>";
-                    result = result.Replace("<html>", "<html>" + css);
+                    // Normal OCR
+                    using PaddleOcrAll all = new(selectedModel);
+                    all.Detector.UnclipRatio = 1.2f;
+                    PaddleOcrResult ocrResult = all.Run(src);
 
-                    //保存到本地
-                    string name = Path.GetFileNameWithoutExtension(imagepath);
+                    // Rebuild table
+                    string html = tableResult.RebuildTable(ocrResult);
+                    resulttext = "转换表格成功";
+                    string name = Path.GetFileNameWithoutExtension(path);
                     if (!Directory.Exists(Environment.CurrentDirectory + "\\out"))
                     { Directory.CreateDirectory(Environment.CurrentDirectory + "\\out"); }
                     string savefile = $"{Environment.CurrentDirectory}\\out\\{name}.html";
-                    File.WriteAllText(savefile, result);
+                    File.WriteAllText(savefile, html);
                     try
                     {
                         using (var package = new ExcelPackage())
                         {
                             var worksheet = package.Workbook.Worksheets.Add("Sheet1");
                             var htmlTable = new HtmlAgilityPack.HtmlDocument();
-                            htmlTable.LoadHtml(result);
+                            htmlTable.LoadHtml(html);
                             var table = htmlTable.DocumentNode.SelectSingleNode("//table");
                             int row = 1, col = 1;
                             foreach (var tr in table.SelectNodes(".//tr"))
@@ -189,7 +130,6 @@ namespace SuperTextToolBox.OCRTool
                                 package.SaveAs(saveFileDialog2.FileName);
                             }
                         }
-                        return "Successfully Saved";
                     }
                     catch
                     {
@@ -199,13 +139,12 @@ namespace SuperTextToolBox.OCRTool
                     }
                 }
             }
-            catch (Exception ex)
+            
+            else
             {
-                MessageBox.Show("出现错误，请检查是否下载了指定的模型，错误信息" + ex.Message);
-                toolStripStatusLabel1.Text = "错误";
-                return "ERROR!";
+                resulttext = "error";
             }
-
+            return resulttext;
         }
 
         private void uiButton1_Click(object sender, EventArgs e)
@@ -218,19 +157,7 @@ namespace SuperTextToolBox.OCRTool
             foreach (string filename in ofd.FileNames)
             {
                 uiDataGridView1.Rows.Add(filename, "待转换");
-            }
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            try
-            {
-                Process.Start("https://gitee.com/Qibowen2008/SuperTextToolBox/blob/main/models_list.md");
-            }
-            catch
-            {
-                formtip formtips = new formtip();
-                formtips.Show();
+               
             }
         }
 
@@ -293,9 +220,10 @@ namespace SuperTextToolBox.OCRTool
             for (int i = 0; i < uiDataGridView1.Rows.Count - 1; i++)
             {
                 DataGridViewRow row = uiDataGridView1.Rows[i];
+                if(row.Cells["Status"].Value.ToString() != "转换成功"){
                 if (uiCheckBox1.Checked == true)
                 {
-                    string eachresult = OCR(canshu.path, uiComboBox2.Text, (string)row.Cells["FileName"].Value);
+                    string eachresult = OCR((string)row.Cells["FileName"].Value);
                     DateTime now = DateTime.Now;
                     // 将时间转换为毫秒级的时间戳
                     long milliseconds = now.Ticks / TimeSpan.TicksPerMillisecond;
@@ -307,10 +235,26 @@ namespace SuperTextToolBox.OCRTool
                 }
                 else
                 {
-                    textBox1.Text = textBox1.Text + OCR(canshu.path, uiComboBox2.Text, (string)row.Cells["FileName"].Value);
+                    textBox1.Text = textBox1.Text + OCR((string)row.Cells["FileName"].Value);
                 }
-                row.Cells["Status"].Value = "转换成功";
+                row.Cells["Status"].Value = "转换成功"; }
             }
+            uiButton3.Enabled = true;
+        }
+
+
+        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void OCRFull_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

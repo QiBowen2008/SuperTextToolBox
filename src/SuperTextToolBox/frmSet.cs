@@ -6,18 +6,15 @@ using System.Windows.Forms;
 
 namespace SuperTextToolBox
 {
-    public partial class frmSet : Sunny.UI.UIForm
+    public partial class frmSet : AntdUI.BaseForm
     {
         public frmSet()
         {
             InitializeComponent();
         }
         string IniPath = Set.INIpath;
-        public static string selectlang;
-        public readonly static string qt = "multilingual/";
         public static string lang = "ch";
         public static string oldpath;
-        public readonly static string ed = "_PP-OCRv3_rec_infer";
         private void button2_Click(object sender, EventArgs e) => Close();
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {

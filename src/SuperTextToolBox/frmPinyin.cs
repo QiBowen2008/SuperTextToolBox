@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 namespace SuperTextToolBox
 {
-    public partial class frmPinyin : Sunny.UI.UIForm
+    public partial class frmPinyin : AntdUI.BaseForm
     {
         public frmPinyin()
         {
