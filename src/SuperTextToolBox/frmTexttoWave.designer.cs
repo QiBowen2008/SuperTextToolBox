@@ -43,8 +43,8 @@
             this.button2 = new AntdUI.Button();
             this.uiButton3 = new AntdUI.Button();
             this.uiButton2 = new AntdUI.Button();
-            this.trackBar1 = new AntdUI.TrackBar();
-            this.trackBar2 = new AntdUI.TrackBar();
+            this.trackBar1 = new System.Windows .Forms.TrackBar();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.groupBox1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -256,8 +256,6 @@
             this.MaximizeBox = false;
             this.Name = "frmTexttoWave";
             this.Text = "文字转语音";
-            this.TitleColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(190)))), ((int)(((byte)(40)))));
-            this.ZoomScaleRect = new System.Drawing.Rectangle(19, 19, 589, 306);
             this.Load += new System.EventHandler(this.frmTexttoWave_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -286,7 +284,7 @@
         private AntdUI.Button button2;
         private AntdUI.Button uiButton3;
         private AntdUI.Button uiButton2;
-        private AntdUI.TrackBar trackBar1;
-        private AntdUI.TrackBar trackBar2;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackBar2;
     }
 }
