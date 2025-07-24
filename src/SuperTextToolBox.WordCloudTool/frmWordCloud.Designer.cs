@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new Sunny.UI.UITextBox();
+            this.textBox1 = new AntdUI.Input();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.uiButton1 = new Sunny.UI.UIButton();
-            this.uiButton2 = new Sunny.UI.UIButton();
-            this.uiButton3 = new Sunny.UI.UIButton();
+            this.uiButton1 = new AntdUI.Button();
+            this.uiButton2 = new AntdUI.Button();
+            this.uiButton3 = new AntdUI.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new AntdUI.Radio();
+            this.radioButton2 = new AntdUI.Radio();
+            this.radioButton1 = new AntdUI.Radio();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,18 +56,16 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.textBox1.ShowText = false;
             this.textBox1.Size = new System.Drawing.Size(269, 265);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
-            this.textBox1.Watermark = "";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 70);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(32, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.Size = new System.Drawing.Size(82, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "输入内容";
             // 
@@ -109,6 +107,7 @@
             // uiButton1
             // 
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton1.Location = new System.Drawing.Point(116, 63);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
@@ -116,12 +115,12 @@
             this.uiButton1.Size = new System.Drawing.Size(179, 37);
             this.uiButton1.TabIndex = 8;
             this.uiButton1.Text = "打开文本文档";
-            this.uiButton1.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton1.Click += new System.EventHandler(this.button2_Click);
             // 
             // uiButton2
             // 
             this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton2.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton2.Location = new System.Drawing.Point(27, 380);
             this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
@@ -129,64 +128,62 @@
             this.uiButton2.Size = new System.Drawing.Size(87, 37);
             this.uiButton2.TabIndex = 9;
             this.uiButton2.Text = "生成";
-            this.uiButton2.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton2.Click += new System.EventHandler(this.button1_Click);
             // 
             // uiButton3
             // 
             this.uiButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton3.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.uiButton3.Enabled = false;
             this.uiButton3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton3.Location = new System.Drawing.Point(190, 380);
+            this.uiButton3.Location = new System.Drawing.Point(186, 380);
             this.uiButton3.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton3.Name = "uiButton3";
             this.uiButton3.Size = new System.Drawing.Size(109, 37);
             this.uiButton3.TabIndex = 10;
             this.uiButton3.Text = "保存图片";
-            this.uiButton3.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiButton3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(320, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 20);
+            this.label2.Size = new System.Drawing.Size(82, 24);
             this.label2.TabIndex = 11;
             this.label2.Text = "图片预览";
             // 
             // radioButton3
             // 
-            this.radioButton3.AutoSize = true;
+            this.radioButton3.AutoSizeMode = AntdUI.TAutoSize.Auto;
+            this.radioButton3.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.radioButton3.Location = new System.Drawing.Point(602, 459);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(90, 24);
+            this.radioButton3.Size = new System.Drawing.Size(103, 49);
             this.radioButton3.TabIndex = 14;
             this.radioButton3.Text = "五边形";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
-            this.radioButton2.AutoSize = true;
+            this.radioButton2.AutoSizeMode = AntdUI.TAutoSize.Auto;
+            this.radioButton2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.radioButton2.Location = new System.Drawing.Point(324, 459);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 24);
+            this.radioButton2.Size = new System.Drawing.Size(85, 49);
             this.radioButton2.TabIndex = 13;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "人脸";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
             // 
-            this.radioButton1.AutoSize = true;
+            this.radioButton1.AutoSizeMode = AntdUI.TAutoSize.Auto;
             this.radioButton1.Checked = true;
+            this.radioButton1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.radioButton1.Location = new System.Drawing.Point(45, 459);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(50, 24);
+            this.radioButton1.Size = new System.Drawing.Size(67, 49);
             this.radioButton1.TabIndex = 12;
-            this.radioButton1.TabStop = true;
             this.radioButton1.Text = "无";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // frmWordCloud
             // 
@@ -207,7 +204,6 @@
             this.MaximizeBox = false;
             this.Name = "frmWordCloud";
             this.Text = "词云生成";
-            this.ZoomScaleRect = new System.Drawing.Rectangle(19, 19, 747, 447);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -218,20 +214,20 @@
         }
 
         #endregion
-        private Sunny.UI.UITextBox textBox1;
+        private AntdUI.Input textBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private Sunny.UI.UIButton uiButton1;
-        private Sunny.UI.UIButton uiButton2;
-        private Sunny.UI.UIButton uiButton3;
+        private AntdUI.Button  uiButton1; 
+        private AntdUI.Button  uiButton2;
+        private AntdUI.Button  uiButton3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private AntdUI.Radio radioButton3;
+        private AntdUI.Radio radioButton2;
+        private AntdUI.Radio radioButton1;
     }
 }
 

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
-using Sunny.UI;
 using System.Windows.Forms;
-using System.Drawing;
+
 namespace SuperTextToolBox
 {
     public partial class frmMain : AntdUI .BaseForm 
