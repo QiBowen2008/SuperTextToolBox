@@ -335,6 +335,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(616, 528);
             this.Controls.Add(this.uiButton4);
             this.Controls.Add(this.uiButton5);

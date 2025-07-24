@@ -20,11 +20,11 @@ namespace SuperTextToolBox
         {
             if (uiCheckBox2.Checked == true)
             {
-                uiButton3.Enabled = true;
+                button1.Enabled = true;
             }
             else
             {
-                uiButton3.Enabled = false;
+                button1.Enabled = false;
             }
         }
         public static object CopyFolder(string sourceFolder, string destFolder)
@@ -180,13 +180,18 @@ namespace SuperTextToolBox
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("https://developer.aliyun.com/article/1174048");
         public static bool moveable;
-        private void uiButton3_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
-                textBox2.Text = folderBrowserDialog1.SelectedPath;
+                input1.Text = folderBrowserDialog1.SelectedPath;
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void switch2_CheckedChanged(object sender, AntdUI.BoolEventArgs e)
         {
 
         }

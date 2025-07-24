@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using WordCloudSharp;
 namespace SuperTextToolBox.WordCloudTool
 {
-    public partial class frmWordCloud : Sunny.UI.UIForm
+    public partial class frmWordCloud : AntdUI .BaseForm 
     {
         public string maskpic = "";
         public frmWordCloud()
@@ -126,27 +126,6 @@ namespace SuperTextToolBox.WordCloudTool
                 File.Delete("result.jpg");
             }
             radioButton1.Checked = true;
-            // 获取当前DPI比例
-            float dpiX, dpiY;
-            using (Graphics g = CreateGraphics())
-            {
-                dpiX = g.DpiX;
-                dpiY = g.DpiY;
-            }
-            // 根据DPI比例调整控件尺寸
-            float scaleFactor = dpiX / 96f; // 96 DPI 是标准DPI
-            foreach (Control control in Controls)
-            {
-                control.Width = (int)(control.Width * scaleFactor);
-                control.Height = (int)(control.Height * scaleFactor);
-                control.Left = (int)(control.Left * scaleFactor);
-                control.Top = (int)(control.Top * scaleFactor);
-                 
-            }
-            Height = (int)(552 * scaleFactor);
-            Width = (int)(742 * scaleFactor);
-            titleHeight = Convert.ToInt32(titleHeight * scaleFactor);
-             
         }
         private void button3_Click(object sender, EventArgs e)
         {

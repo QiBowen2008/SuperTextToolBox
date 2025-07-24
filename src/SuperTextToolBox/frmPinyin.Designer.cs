@@ -113,10 +113,10 @@
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiButton1.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
             this.uiButton1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(342, 89);
+            this.uiButton1.Location = new System.Drawing.Point(342, 85);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(146, 38);
+            this.uiButton1.Size = new System.Drawing.Size(146, 42);
             this.uiButton1.TabIndex = 14;
             this.uiButton1.Text = "转换";
             this.uiButton1.Click += new System.EventHandler(this.button1_Click);

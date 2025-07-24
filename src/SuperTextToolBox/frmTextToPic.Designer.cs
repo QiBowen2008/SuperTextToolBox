@@ -67,10 +67,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 60);
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(28, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 15);
+            this.label1.Size = new System.Drawing.Size(136, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "等待处理的文本";
             // 
@@ -80,14 +81,14 @@
             this.label4.Location = new System.Drawing.Point(167, 396);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 15);
+            this.label4.Size = new System.Drawing.Size(90, 24);
             this.label4.TabIndex = 9;
             this.label4.Text = "                ";
             // 
             // uiIntegerUpDown1
             // 
             this.uiIntegerUpDown1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiIntegerUpDown1.Location = new System.Drawing.Point(595, 133);
+            this.uiIntegerUpDown1.Location = new System.Drawing.Point(595, 135);
             this.uiIntegerUpDown1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiIntegerUpDown1.Minimum = new decimal(new int[] {
             1,
@@ -128,20 +129,22 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(504, 141);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.Size = new System.Drawing.Size(82, 24);
             this.label2.TabIndex = 12;
             this.label2.Text = "图片比例";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(504, 197);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.Size = new System.Drawing.Size(82, 24);
             this.label3.TabIndex = 13;
             this.label3.Text = "字体大小";
             // 
@@ -162,10 +165,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(504, 240);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
+            this.label5.Size = new System.Drawing.Size(46, 24);
             this.label5.TabIndex = 16;
             this.label5.Text = "字体";
             // 
@@ -193,17 +197,18 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.Location = new System.Drawing.Point(504, 297);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 15);
+            this.label6.Size = new System.Drawing.Size(82, 24);
             this.label6.TabIndex = 17;
             this.label6.Text = "每张字数";
             // 
             // uiIntegerUpDown4
             // 
             this.uiIntegerUpDown4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiIntegerUpDown4.Location = new System.Drawing.Point(595, 181);
+            this.uiIntegerUpDown4.Location = new System.Drawing.Point(595, 188);
             this.uiIntegerUpDown4.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiIntegerUpDown4.Minimum = new decimal(new int[] {
             1,
@@ -223,11 +228,12 @@
             // uiButton1
             // 
             this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.uiButton1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton1.Location = new System.Drawing.Point(171, 50);
+            this.uiButton1.Location = new System.Drawing.Point(171, 42);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(127, 35);
+            this.uiButton1.Size = new System.Drawing.Size(127, 43);
             this.uiButton1.TabIndex = 18;
             this.uiButton1.Text = "选择txt文件";
             this.uiButton1.Click += new System.EventHandler(this.ChooseNovel);
@@ -235,11 +241,12 @@
             // uiButton2
             // 
             this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton2.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(169)))), ((int)(((byte)(244)))));
             this.uiButton2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.Location = new System.Drawing.Point(330, 50);
+            this.uiButton2.Location = new System.Drawing.Point(330, 42);
             this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(127, 35);
+            this.uiButton2.Size = new System.Drawing.Size(127, 43);
             this.uiButton2.TabIndex = 19;
             this.uiButton2.Text = "转换图片";
             this.uiButton2.Click += new System.EventHandler(this.ConvertTextToImages);
@@ -247,7 +254,7 @@
             // frmTextToPic
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(925, 437);
+            this.ClientSize = new System.Drawing.Size(905, 437);
             this.Controls.Add(this.uiButton2);
             this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.uiIntegerUpDown4);
@@ -262,6 +269,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmTextToPic";
