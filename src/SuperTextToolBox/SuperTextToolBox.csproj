@@ -100,6 +100,7 @@
   <PropertyGroup />
   <ItemGroup>
     <Reference Include="AntdUI, Version=2.0.11.0, Culture=neutral, PublicKeyToken=0e24e5118ea3d6af, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\AntdUI.2.0.11\lib\net40\AntdUI.dll</HintPath>
     </Reference>
     <Reference Include="Chinese">

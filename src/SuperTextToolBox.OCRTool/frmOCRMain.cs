@@ -8,11 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SuperTextToolBox.OCRTool
 {
-    public partial class OCRFull : AntdUI .BaseForm 
+    public partial class OCRFull : AntdUI.BaseForm
     {
         private Dictionary<string, FullOcrModel> langmodel;
         public OCRFull()
@@ -54,14 +55,13 @@ namespace SuperTextToolBox.OCRTool
             float scaleFactor = dpiX / 96f; // 96 DPI 是标准DPI
 
         }
-
         private string OCR(string path)
         {
             string resulttext;
             if (langmodel.TryGetValue(uiComboBox1.Text, out FullOcrModel selectedModel))
             {
                 // 使用选中的模型
-                FullOcrModel model= selectedModel;
+                FullOcrModel model = selectedModel;
                 // 这里可以使用 selectedModel 进行OCR处理
                 if (uiComboBox2.Text == "图片转文字")
                 {
@@ -76,7 +76,6 @@ namespace SuperTextToolBox.OCRTool
                         //using (Mat src = Cv2.ImDecode(sampleImageData, ImreadModes.Color))
                         {
                             PaddleOcrResult result = all.Run(src);
-                            Console.WriteLine("Detected all texts: \n" + result.Text);
                             resulttext = result.Text;
                             foreach (PaddleOcrResultRegion region in result.Regions)
                             {
@@ -84,7 +83,8 @@ namespace SuperTextToolBox.OCRTool
                             }
                         }
                     }
-                }else
+                }
+                else
                 {
                     using PaddleOcrTableRecognizer tableRec = new(LocalTableRecognitionModel.ChineseMobileV2_SLANET);
                     using Mat src = Cv2.ImRead(Path.Combine(path));
@@ -129,15 +129,14 @@ namespace SuperTextToolBox.OCRTool
                             }
                         }
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("保存为xlsx失败，已经为您保存好html格式，修复可以试试在控制面板找到程序和功能-打开或关闭Windows功能，打开NetFramwork3.5");
-                        toolStripStatusLabel1.Text = "未完全成功";
+                        MessageBox.Show(ex.Message);
                         return "ERROR!";
                     }
                 }
             }
-            
+
             else
             {
                 resulttext = "error";
@@ -155,7 +154,7 @@ namespace SuperTextToolBox.OCRTool
             foreach (string filename in ofd.FileNames)
             {
                 uiDataGridView1.Rows.Add(filename, "待转换");
-               
+
             }
         }
 
@@ -202,12 +201,6 @@ namespace SuperTextToolBox.OCRTool
                 }
             }
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void uiButton3_Click(object sender, EventArgs e)
         {
             uiButton3.Enabled = false;
@@ -218,41 +211,43 @@ namespace SuperTextToolBox.OCRTool
             for (int i = 0; i < uiDataGridView1.Rows.Count - 1; i++)
             {
                 DataGridViewRow row = uiDataGridView1.Rows[i];
-                if(row.Cells["Status"].Value.ToString() != "转换成功"){
-                if (uiCheckBox1.Checked == true)
+                if (row.Cells["Status"].Value.ToString() != "转换成功")
                 {
-                    string eachresult = OCR((string)row.Cells["FileName"].Value);
-                    DateTime now = DateTime.Now;
-                    // 将时间转换为毫秒级的时间戳
-                    long milliseconds = now.Ticks / TimeSpan.TicksPerMillisecond;
-                    string outputFilePath = Path.Combine(folderBrowserDialog1.SelectedPath, milliseconds.ToString() + ".txt");
-                    StreamWriter sw = new StreamWriter(outputFilePath);
-                    sw.Write(eachresult);
-                    sw.Flush();
-                    sw.Dispose();
+                    if (uiCheckBox1.Checked == true)
+                    {
+                        string eachresult = OCR((string)row.Cells["FileName"].Value);
+                        DateTime now = DateTime.Now;
+                        // 将时间转换为毫秒级的时间戳
+                        long milliseconds = now.Ticks / TimeSpan.TicksPerMillisecond;
+                        string outputFilePath = Path.Combine(folderBrowserDialog1.SelectedPath, milliseconds.ToString() + ".txt");
+                        StreamWriter sw = new StreamWriter(outputFilePath);
+                        sw.Write(eachresult);
+                        sw.Flush();
+                        sw.Dispose();
+                    }
+                    else
+                    {
+                        textBox1.Text = textBox1.Text + OCR((string)row.Cells["FileName"].Value);
+                    }
+                    row.Cells["Status"].Value = "转换成功";
                 }
-                else
-                {
-                    textBox1.Text = textBox1.Text + OCR((string)row.Cells["FileName"].Value);
-                }
-                row.Cells["Status"].Value = "转换成功"; }
             }
             uiButton3.Enabled = true;
         }
 
-
-        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void uiComboBox2_SelectedValueChanged(object sender, AntdUI.ObjectNEventArgs e)
         {
-
-        }
-
-        private void OCRFull_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
+            if (uiComboBox2.Text == "图片转表格")
+            {
+                uiCheckBox1.Checked = true;
+                uiCheckBox1.Enabled = false;
+                label5.Text = "xlsx目前仅支持单个输出";
+            }
+            else
+            {
+                uiCheckBox1.Enabled = true;
+                label5.Text = "直接为每个图片创建一个txt";
+            }
         }
     }
 }
