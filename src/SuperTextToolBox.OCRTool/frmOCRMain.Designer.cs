@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OCRFull));
             this.label3 = new System.Windows.Forms.Label();
             this.uiComboBox1 = new AntdUI.Dropdown();
             this.uiButton2 = new AntdUI.Button();
@@ -146,7 +147,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 15;
-            this.label2.Text = "图片预览";
+            this.label2.Text = "图片列表";
             // 
             // label1
             // 
@@ -170,7 +171,6 @@
             this.textBox1.Padding = new System.Windows.Forms.Padding(5);
             this.textBox1.Size = new System.Drawing.Size(386, 326);
             this.textBox1.TabIndex = 13;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // saveFileDialog1
             // 
@@ -183,20 +183,22 @@
             this.uiComboBox2.Items.AddRange(new object[] {
             "图片转文字",
             "图片转表格"});
-            this.uiComboBox2.Location = new System.Drawing.Point(405, 38);
+            this.uiComboBox2.Location = new System.Drawing.Point(383, 38);
             this.uiComboBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.uiComboBox2.MinimumSize = new System.Drawing.Size(63, 0);
             this.uiComboBox2.Name = "uiComboBox2";
             this.uiComboBox2.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
-            this.uiComboBox2.Size = new System.Drawing.Size(153, 47);
+            this.uiComboBox2.ShowArrow = true;
+            this.uiComboBox2.Size = new System.Drawing.Size(171, 47);
             this.uiComboBox2.TabIndex = 22;
             this.uiComboBox2.Text = "图片转文字";
+            this.uiComboBox2.SelectedValueChanged += new AntdUI.ObjectNEventHandler(this.uiComboBox2_SelectedValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(412, 9);
+            this.label4.Location = new System.Drawing.Point(389, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 24);
             this.label4.TabIndex = 23;
@@ -268,7 +270,6 @@
             this.uiDataGridView1.RowTemplate.Height = 27;
             this.uiDataGridView1.Size = new System.Drawing.Size(453, 328);
             this.uiDataGridView1.TabIndex = 25;
-            this.uiDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiDataGridView1_CellContentClick);
             // 
             // FileName
             // 
@@ -289,10 +290,10 @@
             this.uiCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiCheckBox1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiCheckBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiCheckBox1.Location = new System.Drawing.Point(792, 38);
+            this.uiCheckBox1.Location = new System.Drawing.Point(808, 48);
             this.uiCheckBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiCheckBox1.Name = "uiCheckBox1";
-            this.uiCheckBox1.Size = new System.Drawing.Size(61, 34);
+            this.uiCheckBox1.Size = new System.Drawing.Size(77, 37);
             this.uiCheckBox1.TabIndex = 26;
             this.uiCheckBox1.Text = "直接为每个图片创建一个txt";
             // 
@@ -300,7 +301,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(538, 45);
+            this.label5.Location = new System.Drawing.Point(543, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(259, 20);
             this.label5.TabIndex = 27;
@@ -325,12 +326,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "OCRFull";
-            this.ShowIcon = false;
             this.Text = "OCR识别";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Click += new System.EventHandler(this.OCRFull_Click);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).EndInit();

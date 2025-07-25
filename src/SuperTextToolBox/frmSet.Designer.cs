@@ -32,6 +32,7 @@
             this.uiButton2 = new AntdUI.Button();
             this.tabs1 = new AntdUI.Tabs();
             this.tabPage5 = new AntdUI.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.switch1 = new AntdUI.Switch();
             this.switch2 = new AntdUI.Switch();
@@ -44,7 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.uiComboBox2 = new AntdUI.Dropdown();
             this.uiComboBox1 = new AntdUI.Dropdown();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabs1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
@@ -61,6 +61,7 @@
             this.uiButton1.Size = new System.Drawing.Size(122, 51);
             this.uiButton1.TabIndex = 7;
             this.uiButton1.Text = "保存";
+            this.uiButton1.Click += new System.EventHandler(this.SaveSet);
             // 
             // uiButton2
             // 
@@ -85,6 +86,7 @@
             this.tabs1.Name = "tabs1";
             this.tabs1.Pages.Add(this.tabPage5);
             this.tabs1.Pages.Add(this.tabPage6);
+            this.tabs1.SelectedIndex = 1;
             this.tabs1.Size = new System.Drawing.Size(607, 317);
             this.tabs1.Style = styleLine1;
             this.tabs1.TabIndex = 9;
@@ -100,11 +102,22 @@
             this.tabPage5.Controls.Add(this.label6);
             this.tabPage5.Controls.Add(this.input1);
             this.tabPage5.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPage5.Location = new System.Drawing.Point(3, 37);
+            this.tabPage5.Location = new System.Drawing.Point(-601, -277);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(601, 277);
             this.tabPage5.TabIndex = 0;
             this.tabPage5.Text = "常规";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(22, 222);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(244, 24);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "关闭时最小化到任务栏右下角";
             // 
             // label5
             // 
@@ -155,6 +168,7 @@
             this.button1.Size = new System.Drawing.Size(59, 34);
             this.button1.TabIndex = 25;
             this.button1.Text = "...";
+            this.button1.Click += new System.EventHandler(this.ShowDialohg);
             // 
             // label6
             // 
@@ -187,9 +201,9 @@
             this.tabPage6.Controls.Add(this.uiComboBox2);
             this.tabPage6.Controls.Add(this.uiComboBox1);
             this.tabPage6.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPage6.Location = new System.Drawing.Point(-601, -314);
+            this.tabPage6.Location = new System.Drawing.Point(3, 37);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(601, 314);
+            this.tabPage6.Size = new System.Drawing.Size(601, 277);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "翻译API";
             // 
@@ -202,6 +216,7 @@
             this.linkLabel1.TabIndex = 11;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "查看获取教程（每月有免费限额）";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ShowApiHelp);
             // 
             // label3
             // 
@@ -251,17 +266,6 @@
             this.uiComboBox1.Size = new System.Drawing.Size(432, 52);
             this.uiComboBox1.TabIndex = 9;
             this.uiComboBox1.Text = global::SuperTextToolBox.Properties.Settings.Default.TranslateAppID;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(22, 222);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(244, 24);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "关闭时最小化到任务栏右下角";
             // 
             // frmSet
             // 

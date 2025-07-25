@@ -25,6 +25,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFenci));
             this.label1 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -33,6 +34,7 @@
             this.uiButton3 = new AntdUI.Button();
             this.richTextBox1 = new AntdUI.Input();
             this.richTextBox3 = new AntdUI.Input();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -102,7 +104,7 @@
             this.richTextBox1.Multiline = true;
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Padding = new System.Windows.Forms.Padding(5);
-            this.richTextBox1.Size = new System.Drawing.Size(470, 93);
+            this.richTextBox1.Size = new System.Drawing.Size(470, 86);
             this.richTextBox1.TabIndex = 10;
             // 
             // richTextBox3
@@ -118,17 +120,29 @@
             this.richTextBox3.Size = new System.Drawing.Size(469, 156);
             this.richTextBox3.TabIndex = 11;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F);
+            this.label2.Location = new System.Drawing.Point(67, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 27);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "结果：";
+            // 
             // frmFenci
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.ClientSize = new System.Drawing.Size(594, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.uiButton3);
             this.Controls.Add(this.uiButton2);
             this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmFenci";
             this.Text = "中文分词";
@@ -146,5 +160,6 @@
         private AntdUI.Button uiButton3;
         private AntdUI.Input richTextBox1;
         private AntdUI.Input richTextBox3;
+        private System.Windows.Forms.Label label2;
     }
 }
