@@ -254,6 +254,7 @@
             // frmTextToPic
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(905, 437);
             this.Controls.Add(this.uiButton2);
             this.Controls.Add(this.uiButton1);

@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OCRFull));
             this.label3 = new System.Windows.Forms.Label();
             this.uiComboBox1 = new AntdUI.Dropdown();
@@ -48,14 +43,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.saveFileDialog2 = new System.Windows.Forms.SaveFileDialog();
             this.uiButton3 = new AntdUI.Button();
-            this.uiDataGridView1 = new System.Windows.Forms.DataGridView();
-            this.FileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.uiCheckBox1 = new AntdUI.Switch();
             this.label5 = new System.Windows.Forms.Label();
+            this.button1 = new AntdUI.Button();
+            this.table1 = new AntdUI.Table();
+            this.button2 = new AntdUI.Button();
             this.statusStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -223,68 +217,6 @@
             this.uiButton3.Text = "识别";
             this.uiButton3.Click += new System.EventHandler(this.uiButton3_Click);
             // 
-            // uiDataGridView1
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.uiDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.uiDataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.uiDataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.uiDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.uiDataGridView1.ColumnHeadersHeight = 32;
-            this.uiDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.uiDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.FileName,
-            this.Status});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.uiDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.uiDataGridView1.EnableHeadersVisualStyles = false;
-            this.uiDataGridView1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiDataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.uiDataGridView1.Location = new System.Drawing.Point(416, 113);
-            this.uiDataGridView1.Name = "uiDataGridView1";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.uiDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.uiDataGridView1.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiDataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.uiDataGridView1.RowTemplate.Height = 27;
-            this.uiDataGridView1.Size = new System.Drawing.Size(453, 328);
-            this.uiDataGridView1.TabIndex = 25;
-            // 
-            // FileName
-            // 
-            this.FileName.HeaderText = "文件名";
-            this.FileName.MinimumWidth = 6;
-            this.FileName.Name = "FileName";
-            this.FileName.Width = 275;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "状态";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.Width = 125;
-            // 
             // uiCheckBox1
             // 
             this.uiCheckBox1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -307,14 +239,49 @@
             this.label5.TabIndex = 27;
             this.label5.Text = "直接为每个图片创建一个txt";
             // 
+            // button1
+            // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(146)))), ((int)(((byte)(241)))));
+            this.button1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button1.Location = new System.Drawing.Point(208, 86);
+            this.button1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(58, 49);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "停止";
+            this.button1.Click += new System.EventHandler(this.OCRPause);
+            // 
+            // table1
+            // 
+            this.table1.EmptyText = "请添加图片";
+            this.table1.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.table1.HandDragFolder = false;
+            this.table1.Location = new System.Drawing.Point(416, 187);
+            this.table1.Name = "table1";
+            this.table1.Size = new System.Drawing.Size(457, 254);
+            this.table1.TabIndex = 29;
+            this.table1.Text = "table1";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(430, 138);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 36);
+            this.button2.TabIndex = 30;
+            this.button2.Text = "button2";
+            // 
             // OCRFull
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(897, 478);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.table1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.uiCheckBox1);
-            this.Controls.Add(this.uiDataGridView1);
             this.Controls.Add(this.uiButton3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.uiComboBox2);
@@ -333,7 +300,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.uiDataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -355,13 +321,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.SaveFileDialog saveFileDialog2;
         private AntdUI.Button uiButton3;
-        
-        private System .Windows .Forms .DataGridView  uiDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FileName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private AntdUI.Switch uiCheckBox1;
         private System.Windows.Forms.Label label5;
+        private AntdUI.Button button1;
+        private AntdUI.Table table1;
+        private AntdUI.Button button2;
     }
 }
 
