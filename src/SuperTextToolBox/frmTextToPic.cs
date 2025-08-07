@@ -184,6 +184,11 @@ namespace SuperTextToolBox
         {
 
         }
+
+        private void uiComboBox1_SelectedValueChanged(object sender, AntdUI.ObjectNEventArgs e)
+        {
+            uiComboBox1.Text = uiComboBox1.SelectedValue.ToString();
+        }
     }
     public static class PicInfo
     {

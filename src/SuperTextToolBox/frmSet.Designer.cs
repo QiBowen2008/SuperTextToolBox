@@ -58,7 +58,7 @@
             this.uiButton1.Location = new System.Drawing.Point(38, 374);
             this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton1.Name = "uiButton1";
-            this.uiButton1.Size = new System.Drawing.Size(122, 51);
+            this.uiButton1.Size = new System.Drawing.Size(125, 51);
             this.uiButton1.TabIndex = 7;
             this.uiButton1.Text = "保存";
             this.uiButton1.Click += new System.EventHandler(this.SaveSet);
@@ -68,10 +68,10 @@
             this.uiButton2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.uiButton2.DefaultBack = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
             this.uiButton2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiButton2.Location = new System.Drawing.Point(458, 374);
+            this.uiButton2.Location = new System.Drawing.Point(460, 374);
             this.uiButton2.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiButton2.Name = "uiButton2";
-            this.uiButton2.Size = new System.Drawing.Size(143, 51);
+            this.uiButton2.Size = new System.Drawing.Size(141, 51);
             this.uiButton2.TabIndex = 8;
             this.uiButton2.Text = "取消";
             this.uiButton2.Click += new System.EventHandler(this.button2_Click);
@@ -86,7 +86,6 @@
             this.tabs1.Name = "tabs1";
             this.tabs1.Pages.Add(this.tabPage5);
             this.tabs1.Pages.Add(this.tabPage6);
-            this.tabs1.SelectedIndex = 1;
             this.tabs1.Size = new System.Drawing.Size(607, 317);
             this.tabs1.Style = styleLine1;
             this.tabs1.TabIndex = 9;
@@ -102,7 +101,7 @@
             this.tabPage5.Controls.Add(this.label6);
             this.tabPage5.Controls.Add(this.input1);
             this.tabPage5.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPage5.Location = new System.Drawing.Point(-601, -277);
+            this.tabPage5.Location = new System.Drawing.Point(3, 37);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Size = new System.Drawing.Size(601, 277);
             this.tabPage5.TabIndex = 0;
@@ -137,10 +136,10 @@
             this.switch1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::SuperTextToolBox.Properties.Settings.Default, "AutoIcon", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.switch1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.switch1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.switch1.Location = new System.Drawing.Point(273, 222);
+            this.switch1.Location = new System.Drawing.Point(273, 218);
             this.switch1.MinimumSize = new System.Drawing.Size(1, 1);
             this.switch1.Name = "switch1";
-            this.switch1.Size = new System.Drawing.Size(68, 29);
+            this.switch1.Size = new System.Drawing.Size(68, 33);
             this.switch1.TabIndex = 22;
             this.switch1.Text = "关闭时最小化到任务栏右下角";
             // 
@@ -201,7 +200,7 @@
             this.tabPage6.Controls.Add(this.uiComboBox2);
             this.tabPage6.Controls.Add(this.uiComboBox1);
             this.tabPage6.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tabPage6.Location = new System.Drawing.Point(3, 37);
+            this.tabPage6.Location = new System.Drawing.Point(-601, -277);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(601, 277);
             this.tabPage6.TabIndex = 1;
@@ -221,7 +220,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 158);
+            this.label3.Location = new System.Drawing.Point(38, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 24);
             this.label3.TabIndex = 8;
@@ -230,7 +229,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 86);
+            this.label2.Location = new System.Drawing.Point(38, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 24);
             this.label2.TabIndex = 7;

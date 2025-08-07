@@ -25,9 +25,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCyjl));
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblscore = new System.Windows.Forms.Label();
@@ -152,6 +151,7 @@
             this.comboBox1.Size = new System.Drawing.Size(155, 41);
             this.comboBox1.TabIndex = 14;
             this.comboBox1.Text = "10";
+            this.comboBox1.SelectedValueChanged += new AntdUI.ObjectNEventHandler(this.comboBox1_SelectedValueChanged);
             // 
             // listBox1
             // 

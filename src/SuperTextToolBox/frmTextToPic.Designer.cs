@@ -33,21 +33,17 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.uiIntegerUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.uiIntegerUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.uiIntegerUpDown1 = new AntdUI.InputNumber();
+            this.uiIntegerUpDown2 = new AntdUI.InputNumber();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.uiComboBox1 = new AntdUI.Dropdown();
             this.label5 = new System.Windows.Forms.Label();
-            this.uiIntegerUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.uiIntegerUpDown3 = new AntdUI.InputNumber();
             this.label6 = new System.Windows.Forms.Label();
-            this.uiIntegerUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.uiIntegerUpDown4 = new AntdUI.InputNumber();
             this.uiButton1 = new AntdUI.Button();
             this.uiButton2 = new AntdUI.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -88,7 +84,7 @@
             // uiIntegerUpDown1
             // 
             this.uiIntegerUpDown1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiIntegerUpDown1.Location = new System.Drawing.Point(595, 135);
+            this.uiIntegerUpDown1.Location = new System.Drawing.Point(595, 133);
             this.uiIntegerUpDown1.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.uiIntegerUpDown1.Minimum = new decimal(new int[] {
             1,
@@ -97,14 +93,15 @@
             0});
             this.uiIntegerUpDown1.MinimumSize = new System.Drawing.Size(133, 0);
             this.uiIntegerUpDown1.Name = "uiIntegerUpDown1";
-            this.uiIntegerUpDown1.Size = new System.Drawing.Size(133, 30);
+            this.uiIntegerUpDown1.SelectionStart = 2;
+            this.uiIntegerUpDown1.Size = new System.Drawing.Size(133, 43);
             this.uiIntegerUpDown1.TabIndex = 10;
+            this.uiIntegerUpDown1.Text = "16";
             this.uiIntegerUpDown1.Value = new decimal(new int[] {
             16,
             0,
             0,
             0});
-            this.uiIntegerUpDown1.ValueChanged += new System.EventHandler(this.uiIntegerUpDown1_ValueChanged);
             // 
             // uiIntegerUpDown2
             // 
@@ -118,8 +115,10 @@
             0});
             this.uiIntegerUpDown2.MinimumSize = new System.Drawing.Size(133, 0);
             this.uiIntegerUpDown2.Name = "uiIntegerUpDown2";
-            this.uiIntegerUpDown2.Size = new System.Drawing.Size(133, 30);
+            this.uiIntegerUpDown2.SelectionStart = 1;
+            this.uiIntegerUpDown2.Size = new System.Drawing.Size(133, 43);
             this.uiIntegerUpDown2.TabIndex = 11;
+            this.uiIntegerUpDown2.Text = "9";
             this.uiIntegerUpDown2.Value = new decimal(new int[] {
             9,
             0,
@@ -161,6 +160,7 @@
             this.uiComboBox1.Size = new System.Drawing.Size(277, 39);
             this.uiComboBox1.TabIndex = 15;
             this.uiComboBox1.Text = "Arial";
+            this.uiComboBox1.SelectedValueChanged += new AntdUI.ObjectNEventHandler(this.uiComboBox1_SelectedValueChanged);
             // 
             // label5
             // 
@@ -185,14 +185,15 @@
             0});
             this.uiIntegerUpDown3.MinimumSize = new System.Drawing.Size(133, 0);
             this.uiIntegerUpDown3.Name = "uiIntegerUpDown3";
-            this.uiIntegerUpDown3.Size = new System.Drawing.Size(133, 30);
+            this.uiIntegerUpDown3.SelectionStart = 3;
+            this.uiIntegerUpDown3.Size = new System.Drawing.Size(133, 43);
             this.uiIntegerUpDown3.TabIndex = 11;
+            this.uiIntegerUpDown3.Text = "500";
             this.uiIntegerUpDown3.Value = new decimal(new int[] {
             500,
             0,
             0,
             0});
-            this.uiIntegerUpDown3.ValueChanged += new System.EventHandler(this.uiIntegerUpDown3_ValueChanged);
             // 
             // label6
             // 
@@ -217,8 +218,10 @@
             0});
             this.uiIntegerUpDown4.MinimumSize = new System.Drawing.Size(133, 0);
             this.uiIntegerUpDown4.Name = "uiIntegerUpDown4";
-            this.uiIntegerUpDown4.Size = new System.Drawing.Size(133, 30);
+            this.uiIntegerUpDown4.SelectionStart = 2;
+            this.uiIntegerUpDown4.Size = new System.Drawing.Size(133, 44);
             this.uiIntegerUpDown4.TabIndex = 12;
+            this.uiIntegerUpDown4.Text = "12";
             this.uiIntegerUpDown4.Value = new decimal(new int[] {
             12,
             0,
@@ -276,10 +279,6 @@
             this.Name = "frmTextToPic";
             this.Text = "文字转图片";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uiIntegerUpDown4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,15 +289,15 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System .Windows .Forms .NumericUpDown uiIntegerUpDown1;
-        private System .Windows .Forms .NumericUpDown uiIntegerUpDown2;
+        private AntdUI.InputNumber uiIntegerUpDown1;
+        private AntdUI.InputNumber uiIntegerUpDown2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private AntdUI.Dropdown uiComboBox1;
         private System.Windows.Forms.Label label5;
-        private System .Windows .Forms .NumericUpDown uiIntegerUpDown3;
+        private AntdUI.InputNumber uiIntegerUpDown3;
         private System.Windows.Forms.Label label6;
-        private System .Windows .Forms .NumericUpDown uiIntegerUpDown4;
+        private AntdUI.InputNumber uiIntegerUpDown4;
         private AntdUI.Button uiButton1;
         private AntdUI.Button uiButton2;
     }

@@ -1,5 +1,4 @@
-﻿
-using OfficeOpenXml;
+﻿using OfficeOpenXml;
 using OpenCvSharp;
 using Sdcb.PaddleInference;
 using Sdcb.PaddleOCR;
@@ -7,7 +6,7 @@ using Sdcb.PaddleOCR.Models;
 using Sdcb.PaddleOCR.Models.Local;
 using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
@@ -18,20 +17,15 @@ namespace SuperTextToolBox.OCRTool
 {
     public partial class OCRFull : AntdUI.BaseForm
     {
-        // 暂停状态标志
-        private bool isPaused = false;
-        // 线程同步事件（用于控制暂停/继续）
-        private ManualResetEventSlim pauseEvent = new ManualResetEventSlim(true); // 初始为未暂停状态
         public static string TableSavePath;
         private Dictionary<string, FullOcrModel> langmodel;
         // 用于标识是否正在处理，防止重复执行
         private bool isProcessing = false;
-        private DataTable imageDataTable;
+
         public OCRFull()
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             InitializeComponent();
-            InitializeDataTable();
             langmodel = new Dictionary<string, FullOcrModel>
             {
                 {"简体中文",LocalFullModels.ChineseV5 },
@@ -50,30 +44,20 @@ namespace SuperTextToolBox.OCRTool
             if (Environment.GetCommandLineArgs().Length > 1)
             {
                 string imagePath = Environment.GetCommandLineArgs()[1];
-                imageDataTable.Rows.Add(imagePath, "待转换");
+                uiDataGridView1.Rows.Add(imagePath, "待转换");
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-        private void InitializeDataTable()
-        {
-            imageDataTable = new DataTable();
-            // 添加列，与原DataGridView列对应
-            imageDataTable.Columns.Add("文件名", typeof(string));
-            imageDataTable.Columns.Add("状态", typeof(string));
-            imageDataTable.RowChanged += ImageDataTable_RowChanged;
-            // 设置DataGridView的数据源
-            table1.DataSource = imageDataTable;
-            table1.Refresh();
-            // 可以移除设计器中自动生成的列，避免重复
-        }
-
-        private void ImageDataTable_RowChanged(object sender, DataRowChangeEventArgs e)
-        {
-            table1.Refresh();
+            // 获取当前DPI比例并调整控件尺寸
+            float dpiX, dpiY;
+            using (Graphics g = CreateGraphics())
+            {
+                dpiX = g.DpiX;
+                dpiY = g.DpiY;
+            }
+            float scaleFactor = dpiX / 96f; // 96 DPI 是标准DPI
         }
 
         private ExcelPackage TableOCR(string path)
@@ -155,14 +139,6 @@ namespace SuperTextToolBox.OCRTool
                     {
                         PaddleOcrResult result = all.Run(src);
                         resulttext = result.Text;
-                        foreach (PaddleOcrResultRegion region in result.Regions)
-                        {
-                            // 跨线程显示MessageBox需要Invoke
-                            Invoke(new Action(() =>
-                            {
-                                MessageBox.Show($"Text: {region.Text}, Score: {region.Score}, RectCenter: {region.Rect.Center}, RectSize: {region.Rect.Size}, Angle: {region.Rect.Angle}");
-                            }));
-                        }
                     }
                 }
             }
@@ -178,7 +154,7 @@ namespace SuperTextToolBox.OCRTool
             uiButton3.Enabled = true;
             foreach (string filename in ofd.FileNames)
             {
-                imageDataTable.Rows.Add(filename, "待转换");
+                uiDataGridView1.Rows.Add(filename, "待转换");
             }
         }
 
@@ -244,9 +220,9 @@ namespace SuperTextToolBox.OCRTool
                 }
                 SaveFileDialog ofd = new SaveFileDialog();
                 string outputPath = Path.Combine(sourceDirectory, $"Combined_{DateTime.Now:yyyyMMddHHmmss}.xlsx");
-                if (ofd .ShowDialog() == DialogResult.OK)
+                if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                     outputPath = ofd.FileName;
+                    outputPath = ofd.FileName;
                 }
                 ofd.Dispose();
                 using (var mergedPackage = new ExcelPackage(new FileInfo(outputPath)))
@@ -381,15 +357,16 @@ namespace SuperTextToolBox.OCRTool
 
         private void ProcessTextOCR()
         {
+            // 先在UI线程获取需要处理的行数据
             List<Tuple<int, string>> rowsToProcess = new List<Tuple<int, string>>();
             Invoke(new Action(() =>
             {
-                for (int i = 0; i < imageDataTable.Rows.Count - 1; i++)
+                for (int i = 0; i < uiDataGridView1.Rows.Count - 1; i++)
                 {
-                    DataRow row = imageDataTable.Rows[i];
-                    if (row["Status"].ToString() != "转换成功")
+                    DataGridViewRow row = uiDataGridView1.Rows[i];
+                    if (row.Cells["Status"].Value?.ToString() != "转换成功")
                     {
-                        rowsToProcess.Add(Tuple.Create(i, row["FileName"].ToString() ?? ""));
+                        rowsToProcess.Add(Tuple.Create(i, row.Cells["FileName"].Value?.ToString() ?? ""));
                     }
                 }
             }));
@@ -397,12 +374,6 @@ namespace SuperTextToolBox.OCRTool
             // 处理每一行
             foreach (var item in rowsToProcess)
             {
-                // 暂停检查：如果处于暂停状态，此处会阻塞等待
-                pauseEvent.Wait();
-
-                // 检查是否已取消处理（如用户终止）
-                if (!isProcessing) break;
-
                 int rowIndex = item.Item1;
                 string path = item.Item2;
                 if (string.IsNullOrEmpty(path)) continue;
@@ -433,37 +404,32 @@ namespace SuperTextToolBox.OCRTool
                 // 更新行状态（跨线程）
                 Invoke(new Action(() =>
                 {
-                    if (rowIndex < imageDataTable.Rows.Count)
+                    if (rowIndex < uiDataGridView1.Rows.Count)
                     {
-                        imageDataTable.Rows[rowIndex]["Status"] = "转换成功";
+                        uiDataGridView1.Rows[rowIndex].Cells["Status"].Value = "转换成功";
                     }
                 }));
             }
         }
+
         private void ProcessTableOCR()
         {
             bool saveSuccess = false;
             List<Tuple<int, string>> rowsToProcess = new List<Tuple<int, string>>();
             Invoke(new Action(() =>
             {
-                for (int i = 0; i < imageDataTable.Rows.Count; i++)
+                for (int i = 0; i < uiDataGridView1.Rows.Count - 1; i++)
                 {
-                    DataRow row = imageDataTable.Rows[i];
-                    if (row["Status"].ToString() != "转换成功")
+                    DataGridViewRow row = uiDataGridView1.Rows[i];
+                    if (row.Cells["Status"].Value?.ToString() != "转换成功")
                     {
-                        rowsToProcess.Add(Tuple.Create(i, row["FileName"].ToString() ?? ""));
+                        rowsToProcess.Add(Tuple.Create(i, row.Cells["FileName"].Value?.ToString() ?? ""));
                     }
                 }
             }));
 
             foreach (var item in rowsToProcess)
             {
-                // 暂停检查：如果处于暂停状态，此处会阻塞等待
-                pauseEvent.Wait();
-
-                // 检查是否已取消处理（如用户终止）
-                if (!isProcessing) break;
-
                 int rowIndex = item.Item1;
                 string path = item.Item2;
                 if (string.IsNullOrEmpty(path)) continue;
@@ -483,6 +449,7 @@ namespace SuperTextToolBox.OCRTool
                 }
                 else
                 {
+
                     Invoke(new Action(() =>
                     {
                         if (saveFileDialog1.ShowDialog() == DialogResult.OK)
@@ -496,14 +463,15 @@ namespace SuperTextToolBox.OCRTool
                             }
                         }
                     }));
-                }
 
+
+                }
                 // 更新行状态
                 Invoke(new Action(() =>
                 {
-                    if (rowIndex < imageDataTable.Rows.Count)
+                    if (rowIndex < uiDataGridView1.Rows.Count)
                     {
-                        imageDataTable.Rows[rowIndex]["Status"] = saveSuccess ? "转换完成" : "用户放弃保存";
+                        uiDataGridView1.Rows[rowIndex].Cells["Status"].Value = saveSuccess ? "转换完成" : "用户放弃保存";
                     }
                 }));
             }
@@ -512,10 +480,12 @@ namespace SuperTextToolBox.OCRTool
                 CombineXlsx();
             }
         }
+
         private void uiComboBox2_SelectedValueChanged(object sender, AntdUI.ObjectNEventArgs e)
         {
             Invoke(new Action(() =>
             {
+                uiComboBox2 .Text =uiComboBox2 .SelectedValue .ToString ();
                 if (uiComboBox2.Text == "图片转表格")
                 {
                     label5.Text = "合并输出表格";
@@ -528,47 +498,14 @@ namespace SuperTextToolBox.OCRTool
             }));
         }
 
-        private void OCRPause(object sender, EventArgs e)
+        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // 如果没有正在处理，不执行操作
-            if (!isProcessing)
-            {
-                MessageBox.Show("当前没有正在执行的OCR任务", "提示");
-                return;
-            }
 
-            // 切换暂停状态
-            isPaused = !isPaused;
-
-            if (isPaused)
-            {
-                // 进入暂停状态：阻塞处理线程
-                pauseEvent.Reset(); // 重置事件，让等待的线程阻塞
-                Invoke(new Action(() =>
-                {
-                    // 更新暂停按钮文本
-                    if (sender is Button btn) btn.Text = "继续";
-                    // 更新状态提示
-                    MessageBox.Show("OCR处理已暂停，点击「继续」恢复", "提示");
-                }));
-            }
-            else
-            {
-                // 恢复处理：解除线程阻塞
-                pauseEvent.Set(); // 激活事件，让阻塞的线程继续执行
-                Invoke(new Action(() =>
-                {
-                    // 更新暂停按钮文本
-                    if (sender is Button btn) btn.Text = "暂停";
-                    // 更新状态提示
-                    MessageBox.Show("OCR处理已恢复", "提示");
-                }));
-            }
         }
-        protected override void OnFormClosing(FormClosingEventArgs e)
+
+        private void uiComboBox1_SelectedValueChanged(object sender, AntdUI.ObjectNEventArgs e)
         {
-            base.OnFormClosing(e);
-            pauseEvent.Dispose(); // 释放ManualResetEventSlim资源
+            uiComboBox1 .Text =uiComboBox1 .SelectedValue .ToString ();
         }
     }
 }
