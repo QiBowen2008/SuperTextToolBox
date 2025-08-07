@@ -31,9 +31,18 @@ namespace SuperTextToolBox
         {
         }
 
-        private void linkLabel14_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("https://github.com/QiBowen2008/TurtleDriver");
-        }
+        private void linkLabel14_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("https://github.com/QiBowen2008/TurtleDriver");
+
+        private void linkLabel19_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("https://www.gnu.org/licenses/lgpl-3.0.html");
+
+        private void linkLabel21_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("https://www.apache.org/licenses/LICENSE-2.0");
+
+        private void linkLabel6_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("https://www.nuget.org/packages/NStandard/0.9.16/license");
+
+        private void linkLabel18_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("https://epplussoftware.com/");
+
+        private void linkLabel20_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("https://gitee.com/paddlepaddle/PaddleOCR");
+
+        private void linkLabel23_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e) => Process.Start("https://www.nuget.org/packages/HtmlAgilityPack/1.12.2?_src=template");
     }
 }

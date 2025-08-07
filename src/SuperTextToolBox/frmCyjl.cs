@@ -104,5 +104,10 @@ namespace SuperTextToolBox
             lbltime.Text = settime.ToString();//复位时间
             lblscore.Text = "0";//分数归零
         }
+
+        private void comboBox1_SelectedValueChanged(object sender, AntdUI.ObjectNEventArgs e)
+        {
+            comboBox1 .Text =comboBox1 .SelectedValue .ToString ();
+        }
     }
 }

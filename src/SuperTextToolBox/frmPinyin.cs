@@ -76,9 +76,5 @@ namespace SuperTextToolBox
                 toolStripStatusLabel1.Text = "转换成功";
             }
         }
-
-        private void frmPinyin_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

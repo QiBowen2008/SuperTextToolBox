@@ -151,6 +151,7 @@
             this.linkLabel22.TabIndex = 37;
             this.linkLabel22.TabStop = true;
             this.linkLabel22.Text = "查看开源许可证";
+            this.linkLabel22.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel22_LinkClicked);
             // 
             // linkLabel23
             // 
@@ -162,6 +163,7 @@
             this.linkLabel23.TabIndex = 36;
             this.linkLabel23.TabStop = true;
             this.linkLabel23.Text = "HtmlAgilityPack";
+            this.linkLabel23.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel23_LinkClicked_1);
             // 
             // linkLabel21
             // 
@@ -174,6 +176,7 @@
             this.linkLabel21.TabIndex = 35;
             this.linkLabel21.TabStop = true;
             this.linkLabel21.Text = "查看开源许可证";
+            this.linkLabel21.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel21_LinkClicked);
             // 
             // linkLabel20
             // 
@@ -185,6 +188,7 @@
             this.linkLabel20.TabIndex = 34;
             this.linkLabel20.TabStop = true;
             this.linkLabel20.Text = "PaddleOCR";
+            this.linkLabel20.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel20_LinkClicked);
             // 
             // linkLabel19
             // 
@@ -197,6 +201,7 @@
             this.linkLabel19.TabIndex = 33;
             this.linkLabel19.TabStop = true;
             this.linkLabel19.Text = "查看开源许可证";
+            this.linkLabel19.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel19_LinkClicked);
             // 
             // linkLabel18
             // 
@@ -208,6 +213,7 @@
             this.linkLabel18.TabIndex = 32;
             this.linkLabel18.TabStop = true;
             this.linkLabel18.Text = "EPPlus";
+            this.linkLabel18.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel18_LinkClicked);
             // 
             // linkLabel16
             // 
@@ -220,6 +226,7 @@
             this.linkLabel16.TabIndex = 31;
             this.linkLabel16.TabStop = true;
             this.linkLabel16.Text = "查看开源许可证";
+            this.linkLabel16.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel16_LinkClicked);
             // 
             // linkLabel17
             // 
@@ -232,6 +239,7 @@
             this.linkLabel17.TabIndex = 30;
             this.linkLabel17.TabStop = true;
             this.linkLabel17.Text = "Antd.UI";
+            this.linkLabel17.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel17_LinkClicked);
             // 
             // linkLabel13
             // 
@@ -244,6 +252,7 @@
             this.linkLabel13.TabIndex = 29;
             this.linkLabel13.TabStop = true;
             this.linkLabel13.Text = "查看开源许可证";
+            this.linkLabel13.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel13_LinkClicked);
             // 
             // linkLabel12
             // 
@@ -256,6 +265,7 @@
             this.linkLabel12.TabIndex = 28;
             this.linkLabel12.TabStop = true;
             this.linkLabel12.Text = "WordCloudSharp";
+            this.linkLabel12.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel12_LinkClicked);
             // 
             // linkLabel11
             // 
@@ -268,6 +278,7 @@
             this.linkLabel11.TabIndex = 27;
             this.linkLabel11.TabStop = true;
             this.linkLabel11.Text = "查看开源许可证";
+            this.linkLabel11.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel11_LinkClicked);
             // 
             // linkLabel10
             // 
@@ -280,6 +291,7 @@
             this.linkLabel10.TabIndex = 26;
             this.linkLabel10.TabStop = true;
             this.linkLabel10.Text = "jieba.NET ";
+            this.linkLabel10.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel10_LinkClicked);
             // 
             // linkLabel9
             // 
@@ -292,6 +304,7 @@
             this.linkLabel9.TabIndex = 25;
             this.linkLabel9.TabStop = true;
             this.linkLabel9.Text = "查看开源许可证";
+            this.linkLabel9.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel9_LinkClicked);
             // 
             // linkLabel8
             // 
@@ -304,6 +317,7 @@
             this.linkLabel8.TabIndex = 24;
             this.linkLabel8.TabStop = true;
             this.linkLabel8.Text = "查看开源许可证";
+            this.linkLabel8.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel8_LinkClicked);
             // 
             // linkLabel7
             // 
@@ -316,6 +330,7 @@
             this.linkLabel7.TabIndex = 23;
             this.linkLabel7.TabStop = true;
             this.linkLabel7.Text = "查看开源许可证";
+            this.linkLabel7.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel7_LinkClicked);
             // 
             // linkLabel6
             // 
@@ -328,6 +343,7 @@
             this.linkLabel6.TabIndex = 22;
             this.linkLabel6.TabStop = true;
             this.linkLabel6.Text = "NStandard";
+            this.linkLabel6.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel6_LinkClicked);
             // 
             // linkLabel5
             // 
@@ -340,6 +356,7 @@
             this.linkLabel5.TabIndex = 21;
             this.linkLabel5.TabStop = true;
             this.linkLabel5.Text = "Newtonsoft.Json";
+            this.linkLabel5.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel5_LinkClicked);
             // 
             // linkLabel4
             // 
@@ -352,6 +369,7 @@
             this.linkLabel4.TabIndex = 20;
             this.linkLabel4.TabStop = true;
             this.linkLabel4.Text = "Chinese";
+            this.linkLabel4.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel4_LinkClicked);
             // 
             // label4
             // 
