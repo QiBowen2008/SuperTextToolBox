@@ -1,4 +1,5 @@
-﻿using OfficeOpenXml;
+﻿using HtmlAgilityPack;
+using OfficeOpenXml;
 using OpenCvSharp;
 using Sdcb.PaddleInference;
 using Sdcb.PaddleOCR;
@@ -6,6 +7,7 @@ using Sdcb.PaddleOCR.Models;
 using Sdcb.PaddleOCR.Models.Local;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -17,15 +19,19 @@ namespace SuperTextToolBox.OCRTool
 {
     public partial class OCRFull : AntdUI.BaseForm
     {
+
         public static string TableSavePath;
         private Dictionary<string, FullOcrModel> langmodel;
         // 用于标识是否正在处理，防止重复执行
         private bool isProcessing = false;
-
+        private DataTable imageDataTable;
         public OCRFull()
         {
+            
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             InitializeComponent();
+            InitializeDataTable();
+            imageDataTable.RowChanged += ImageDataTable_RowChanged;
             langmodel = new Dictionary<string, FullOcrModel>
             {
                 {"简体中文",LocalFullModels.ChineseV5 },
@@ -44,8 +50,25 @@ namespace SuperTextToolBox.OCRTool
             if (Environment.GetCommandLineArgs().Length > 1)
             {
                 string imagePath = Environment.GetCommandLineArgs()[1];
-                uiDataGridView1.Rows.Add(imagePath, "待转换");
+                imageDataTable.Rows.Add(imagePath, "待转换");
             }
+        }
+
+        private void ImageDataTable_RowChanged(object sender, DataRowChangeEventArgs e)
+        {
+            table1.Refresh();
+        }
+
+        private void InitializeDataTable()
+        {
+            imageDataTable = new DataTable();
+            // 添加列，与原DataGridView列对应
+            imageDataTable.Columns.Add("文件名", typeof(string));
+            imageDataTable.Columns.Add("状态", typeof(string));
+
+            // 设置DataGridView的数据源
+            table1.DataSource = imageDataTable;
+            // 可以移除设计器中自动生成的列，避免重复
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -139,6 +162,14 @@ namespace SuperTextToolBox.OCRTool
                     {
                         PaddleOcrResult result = all.Run(src);
                         resulttext = result.Text;
+                        foreach (PaddleOcrResultRegion region in result.Regions)
+                        {
+                            // 跨线程显示MessageBox需要Invoke
+                            Invoke(new Action(() =>
+                            {
+                                MessageBox.Show($"Text: {region.Text}, Score: {region.Score}, RectCenter: {region.Rect.Center}, RectSize: {region.Rect.Size}, Angle: {region.Rect.Angle}");
+                            }));
+                        }
                     }
                 }
             }
@@ -154,7 +185,7 @@ namespace SuperTextToolBox.OCRTool
             uiButton3.Enabled = true;
             foreach (string filename in ofd.FileNames)
             {
-                uiDataGridView1.Rows.Add(filename, "待转换");
+                imageDataTable.Rows.Add(filename, "待转换");
             }
         }
 
@@ -361,12 +392,12 @@ namespace SuperTextToolBox.OCRTool
             List<Tuple<int, string>> rowsToProcess = new List<Tuple<int, string>>();
             Invoke(new Action(() =>
             {
-                for (int i = 0; i < uiDataGridView1.Rows.Count - 1; i++)
+                for (int i = 0; i < imageDataTable.Rows.Count - 1; i++)
                 {
-                    DataGridViewRow row = uiDataGridView1.Rows[i];
-                    if (row.Cells["Status"].Value?.ToString() != "转换成功")
+                    DataRow row = imageDataTable.Rows[i];
+                    if (row["Status"].ToString() != "转换成功")
                     {
-                        rowsToProcess.Add(Tuple.Create(i, row.Cells["FileName"].Value?.ToString() ?? ""));
+                        rowsToProcess.Add(Tuple.Create(i, row["FileName"].ToString() ?? ""));
                     }
                 }
             }));
@@ -404,9 +435,9 @@ namespace SuperTextToolBox.OCRTool
                 // 更新行状态（跨线程）
                 Invoke(new Action(() =>
                 {
-                    if (rowIndex < uiDataGridView1.Rows.Count)
+                    if (rowIndex < imageDataTable.Rows.Count)
                     {
-                        uiDataGridView1.Rows[rowIndex].Cells["Status"].Value = "转换成功";
+                        imageDataTable.Rows[rowIndex]["Status"] = "转换成功";
                     }
                 }));
             }
@@ -418,12 +449,12 @@ namespace SuperTextToolBox.OCRTool
             List<Tuple<int, string>> rowsToProcess = new List<Tuple<int, string>>();
             Invoke(new Action(() =>
             {
-                for (int i = 0; i < uiDataGridView1.Rows.Count - 1; i++)
+                for (int i = 0; i < imageDataTable.Rows.Count - 1; i++)
                 {
-                    DataGridViewRow row = uiDataGridView1.Rows[i];
-                    if (row.Cells["Status"].Value?.ToString() != "转换成功")
+                    DataRow row = imageDataTable.Rows[i];
+                    if (row["Status"].ToString() != "转换成功")
                     {
-                        rowsToProcess.Add(Tuple.Create(i, row.Cells["FileName"].Value?.ToString() ?? ""));
+                        rowsToProcess.Add(Tuple.Create(i, row["FileName"].ToString() ?? ""));
                     }
                 }
             }));
@@ -469,9 +500,9 @@ namespace SuperTextToolBox.OCRTool
                 // 更新行状态
                 Invoke(new Action(() =>
                 {
-                    if (rowIndex < uiDataGridView1.Rows.Count)
+                    if (rowIndex < imageDataTable.Rows.Count)
                     {
-                        uiDataGridView1.Rows[rowIndex].Cells["Status"].Value = saveSuccess ? "转换完成" : "用户放弃保存";
+                        imageDataTable.Rows[rowIndex]["Status"] = saveSuccess ? "转换完成" : "用户放弃保存";
                     }
                 }));
             }
@@ -485,7 +516,6 @@ namespace SuperTextToolBox.OCRTool
         {
             Invoke(new Action(() =>
             {
-                uiComboBox2 .Text =uiComboBox2 .SelectedValue .ToString ();
                 if (uiComboBox2.Text == "图片转表格")
                 {
                     label5.Text = "合并输出表格";
@@ -496,16 +526,6 @@ namespace SuperTextToolBox.OCRTool
                     label5.Text = "直接为每个图片创建一个txt";
                 }
             }));
-        }
-
-        private void uiDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void uiComboBox1_SelectedValueChanged(object sender, AntdUI.ObjectNEventArgs e)
-        {
-            uiComboBox1 .Text =uiComboBox1 .SelectedValue .ToString ();
         }
     }
 }
