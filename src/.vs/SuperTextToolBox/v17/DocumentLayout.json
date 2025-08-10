@@ -3,51 +3,59 @@
   "WorkspaceRootPath": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox\\frmset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox\\frmfenci.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmfenci.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox\\frmcyjl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmcyjl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox\\frmabout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmabout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox\\frmtranslate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmtranslate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox\\frmtexttowave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmtexttowave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{71960F62-048A-473F-B6D1-F90DAFC0516F}|SuperTextToolBox.WordCloudTool\\SuperTextToolBox.WordCloudTool.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox.wordcloudtool\\frmwordcloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{71960F62-048A-473F-B6D1-F90DAFC0516F}|SuperTextToolBox.WordCloudTool\\SuperTextToolBox.WordCloudTool.csproj|solutionrelative:supertexttoolbox.wordcloudtool\\frmwordcloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4F6097AA-B3C5-472F-A40E-A9ED9F6D116C}|SuperTextToolBox.OCRTool\\SuperTextToolBox.OCRTool.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox.ocrtool\\frmocrmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{4F6097AA-B3C5-472F-A40E-A9ED9F6D116C}|SuperTextToolBox.OCRTool\\SuperTextToolBox.OCRTool.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox.ocrtool\\frmocrmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4F6097AA-B3C5-472F-A40E-A9ED9F6D116C}|SuperTextToolBox.OCRTool\\SuperTextToolBox.OCRTool.csproj|solutionrelative:supertexttoolbox.ocrtool\\frmocrmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{71960F62-048A-473F-B6D1-F90DAFC0516F}|SuperTextToolBox.WordCloudTool\\SuperTextToolBox.WordCloudTool.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox.wordcloudtool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4F6097AA-B3C5-472F-A40E-A9ED9F6D116C}|SuperTextToolBox.OCRTool\\SuperTextToolBox.OCRTool.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox.ocrtool\\frmocrmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6097AA-B3C5-472F-A40E-A9ED9F6D116C}|SuperTextToolBox.OCRTool\\SuperTextToolBox.OCRTool.csproj|solutionrelative:supertexttoolbox.ocrtool\\frmocrmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4F6097AA-B3C5-472F-A40E-A9ED9F6D116C}|SuperTextToolBox.OCRTool\\SuperTextToolBox.OCRTool.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox.ocrtool\\frmocrmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4F6097AA-B3C5-472F-A40E-A9ED9F6D116C}|SuperTextToolBox.OCRTool\\SuperTextToolBox.OCRTool.csproj|solutionrelative:supertexttoolbox.ocrtool\\frmocrmain.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox\\frmcyjl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmcyjl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox\\frmset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox\\frmfenci.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmfenci.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox\\frmabout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmabout.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox\\frmtranslate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmtranslate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox\\frmtexttowave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmtexttowave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71960F62-048A-473F-B6D1-F90DAFC0516F}|SuperTextToolBox.WordCloudTool\\SuperTextToolBox.WordCloudTool.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox.wordcloudtool\\frmwordcloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{71960F62-048A-473F-B6D1-F90DAFC0516F}|SuperTextToolBox.WordCloudTool\\SuperTextToolBox.WordCloudTool.csproj|solutionrelative:supertexttoolbox.wordcloudtool\\frmwordcloud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{71960F62-048A-473F-B6D1-F90DAFC0516F}|SuperTextToolBox.WordCloudTool\\SuperTextToolBox.WordCloudTool.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox.wordcloudtool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{71960F62-048A-473F-B6D1-F90DAFC0516F}|SuperTextToolBox.WordCloudTool\\SuperTextToolBox.WordCloudTool.csproj|solutionrelative:supertexttoolbox.wordcloudtool\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox\\frmpinyin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox\\frmpinyin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmpinyin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|d:\\personalfile\\desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\supertexttoolbox\\src\\supertexttoolbox\\frmpinyin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\supertexttoolbox\\frmpinyin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A59F9ACA-8CE0-454E-9625-BB99A8C86963}|SuperTextToolBox\\SuperTextToolBox.csproj|solutionrelative:supertexttoolbox\\frmpinyin.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -58,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -82,15 +90,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmSet.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmSet.cs",
-              "RelativeDocumentMoniker": "SuperTextToolBox\\frmSet.cs",
-              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmSet.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "SuperTextToolBox\\frmSet.cs [\u8BBE\u8BA1]",
+              "DocumentIndex": 2,
+              "Title": "frmOCRMain.Designer.cs",
+              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox.OCRTool\\frmOCRMain.Designer.cs",
+              "RelativeDocumentMoniker": "SuperTextToolBox.OCRTool\\frmOCRMain.Designer.cs",
+              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox.OCRTool\\frmOCRMain.Designer.cs",
+              "RelativeToolTip": "SuperTextToolBox.OCRTool\\frmOCRMain.Designer.cs",
+              "ViewState": "AgIAANkAAAAAAAAAAAAcwNkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:31:04.905Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
+              "WhenOpened": "2025-08-07T03:16:11.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "frmOCRMain.cs",
+              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox.OCRTool\\frmOCRMain.cs",
+              "RelativeDocumentMoniker": "SuperTextToolBox.OCRTool\\frmOCRMain.cs",
+              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox.OCRTool\\frmOCRMain.cs",
+              "RelativeToolTip": "SuperTextToolBox.OCRTool\\frmOCRMain.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAuwEIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T03:14:01.924Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -106,67 +128,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmFenci.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmFenci.cs",
-              "RelativeDocumentMoniker": "SuperTextToolBox\\frmFenci.cs",
-              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmFenci.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "SuperTextToolBox\\frmFenci.cs [\u8BBE\u8BA1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:30:30.36Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "frmMain.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmMain.cs",
               "RelativeDocumentMoniker": "SuperTextToolBox\\frmMain.cs",
               "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmMain.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "SuperTextToolBox\\frmMain.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:30:32.629Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
+              "WhenOpened": "2025-08-07T02:30:32.629Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmAbout.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmAbout.cs",
-              "RelativeDocumentMoniker": "SuperTextToolBox\\frmAbout.cs",
-              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmAbout.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "SuperTextToolBox\\frmAbout.cs [\u8BBE\u8BA1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:29:47.774Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmTranslate.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmTranslate.cs",
-              "RelativeDocumentMoniker": "SuperTextToolBox\\frmTranslate.cs",
-              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmTranslate.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "SuperTextToolBox\\frmTranslate.cs [\u8BBE\u8BA1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:25:14.952Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmTexttoWave.cs [\u8BBE\u8BA1]",
-              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmTexttoWave.cs",
-              "RelativeDocumentMoniker": "SuperTextToolBox\\frmTexttoWave.cs",
-              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmTexttoWave.cs [\u8BBE\u8BA1]",
-              "RelativeToolTip": "SuperTextToolBox\\frmTexttoWave.cs [\u8BBE\u8BA1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:24:25.579Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "frmOCRMain.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox.OCRTool\\frmOCRMain.cs",
               "RelativeDocumentMoniker": "SuperTextToolBox.OCRTool\\frmOCRMain.cs",
@@ -178,7 +151,62 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmFenci.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmFenci.cs",
+              "RelativeDocumentMoniker": "SuperTextToolBox\\frmFenci.cs",
+              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmFenci.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "SuperTextToolBox\\frmFenci.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:30:30.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmSet.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmSet.cs",
+              "RelativeDocumentMoniker": "SuperTextToolBox\\frmSet.cs",
+              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmSet.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "SuperTextToolBox\\frmSet.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:31:04.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmAbout.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmAbout.cs",
+              "RelativeDocumentMoniker": "SuperTextToolBox\\frmAbout.cs",
+              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmAbout.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "SuperTextToolBox\\frmAbout.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:29:47.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmTranslate.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmTranslate.cs",
+              "RelativeDocumentMoniker": "SuperTextToolBox\\frmTranslate.cs",
+              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmTranslate.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "SuperTextToolBox\\frmTranslate.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:25:14.952Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "frmTexttoWave.cs [\u8BBE\u8BA1]",
+              "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmTexttoWave.cs",
+              "RelativeDocumentMoniker": "SuperTextToolBox\\frmTexttoWave.cs",
+              "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmTexttoWave.cs [\u8BBE\u8BA1]",
+              "RelativeToolTip": "SuperTextToolBox\\frmTexttoWave.cs [\u8BBE\u8BA1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-07T02:24:25.579Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox.WordCloudTool\\Program.cs",
               "RelativeDocumentMoniker": "SuperTextToolBox.WordCloudTool\\Program.cs",
@@ -186,24 +214,22 @@
               "RelativeToolTip": "SuperTextToolBox.WordCloudTool\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:25:48.798Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-07T02:25:48.798Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "frmWordCloud.cs [\u8BBE\u8BA1]",
               "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox.WordCloudTool\\frmWordCloud.cs",
               "RelativeDocumentMoniker": "SuperTextToolBox.WordCloudTool\\frmWordCloud.cs",
               "ToolTip": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox.WordCloudTool\\frmWordCloud.cs [\u8BBE\u8BA1]",
               "RelativeToolTip": "SuperTextToolBox.WordCloudTool\\frmWordCloud.cs [\u8BBE\u8BA1]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:25:18.084Z",
-              "EditorCaption": " [\u8BBE\u8BA1]"
+              "WhenOpened": "2025-08-07T02:25:18.084Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "frmPinyin.Designer.cs",
               "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmPinyin.Designer.cs",
               "RelativeDocumentMoniker": "SuperTextToolBox\\frmPinyin.Designer.cs",
@@ -211,12 +237,11 @@
               "RelativeToolTip": "SuperTextToolBox\\frmPinyin.Designer.cs",
               "ViewState": "AgIAAJwAAAAAAAAAAAAcwKkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:23:40.557Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-07T02:23:40.557Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "frmPinyin.cs",
               "DocumentMoniker": "D:\\PersonalFile\\Desktop\\\u9F50\u535A\u6587\\\u8F6F\u4EF6\u5F00\u53D1\\\u4ED3\u5E93\\SuperTextToolBox\\src\\SuperTextToolBox\\frmPinyin.cs",
               "RelativeDocumentMoniker": "SuperTextToolBox\\frmPinyin.cs",
@@ -224,8 +249,7 @@
               "RelativeToolTip": "SuperTextToolBox\\frmPinyin.cs",
               "ViewState": "AgIAAEEAAAAAAAAAAIA+wE0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T02:23:28.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-07T02:23:28.67Z"
             }
           ]
         },
