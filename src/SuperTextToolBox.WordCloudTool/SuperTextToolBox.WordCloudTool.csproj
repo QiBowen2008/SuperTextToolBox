@@ -42,8 +42,8 @@
     <StartupObject>SuperTextToolBox.WordCloudTool.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AntdUI, Version=2.0.16.0, Culture=neutral, PublicKeyToken=0e24e5118ea3d6af, processorArchitecture=MSIL">
-      <HintPath>..\packages\AntdUI.2.0.16\lib\net40\AntdUI.dll</HintPath>
+    <Reference Include="AntdUI, Version=2.0.17.0, Culture=neutral, PublicKeyToken=0e24e5118ea3d6af, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntdUI.2.0.17\lib\net40\AntdUI.dll</HintPath>
     </Reference>
     <Reference Include="JiebaNet.Analyser, Version=0.42.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\jieba.NET.0.42.2\lib\net45\JiebaNet.Analyser.dll</HintPath>
