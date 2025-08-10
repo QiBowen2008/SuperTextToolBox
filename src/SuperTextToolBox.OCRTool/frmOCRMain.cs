@@ -1,5 +1,4 @@
-﻿using HtmlAgilityPack;
-using OfficeOpenXml;
+﻿using OfficeOpenXml;
 using OpenCvSharp;
 using Sdcb.PaddleInference;
 using Sdcb.PaddleOCR;
@@ -7,31 +6,22 @@ using Sdcb.PaddleOCR.Models;
 using Sdcb.PaddleOCR.Models.Local;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SuperTextToolBox.OCRTool
 {
     public partial class OCRFull : AntdUI.BaseForm
     {
-
         public static string TableSavePath;
         private Dictionary<string, FullOcrModel> langmodel;
-        // 用于标识是否正在处理，防止重复执行
-        private bool isProcessing = false;
-        private DataTable imageDataTable;
         public OCRFull()
         {
-            
-            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            ExcelPackage.License.SetNonCommercialPersonal ("Buger");
             InitializeComponent();
-            InitializeDataTable();
-            imageDataTable.RowChanged += ImageDataTable_RowChanged;
             langmodel = new Dictionary<string, FullOcrModel>
             {
                 {"简体中文",LocalFullModels.ChineseV5 },
@@ -50,65 +40,56 @@ namespace SuperTextToolBox.OCRTool
             if (Environment.GetCommandLineArgs().Length > 1)
             {
                 string imagePath = Environment.GetCommandLineArgs()[1];
-                imageDataTable.Rows.Add(imagePath, "待转换");
+                uiDataGridView1.Rows.Add(imagePath, "待转换");
             }
-        }
-
-        private void ImageDataTable_RowChanged(object sender, DataRowChangeEventArgs e)
-        {
-            table1.Refresh();
-        }
-
-        private void InitializeDataTable()
-        {
-            imageDataTable = new DataTable();
-            // 添加列，与原DataGridView列对应
-            imageDataTable.Columns.Add("文件名", typeof(string));
-            imageDataTable.Columns.Add("状态", typeof(string));
-
-            // 设置DataGridView的数据源
-            table1.DataSource = imageDataTable;
-            // 可以移除设计器中自动生成的列，避免重复
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // 获取当前DPI比例并调整控件尺寸
+            // 获取当前DPI比例
             float dpiX, dpiY;
             using (Graphics g = CreateGraphics())
             {
                 dpiX = g.DpiX;
                 dpiY = g.DpiY;
             }
+            // 根据DPI比例调整控件尺寸
             float scaleFactor = dpiX / 96f; // 96 DPI 是标准DPI
-        }
 
+        }
         private ExcelPackage TableOCR(string path)
         {
             string resulttext;
             if (langmodel.TryGetValue(uiComboBox1.Text, out FullOcrModel selectedModel))
             {
+                // 使用选中的模型
+                FullOcrModel model = selectedModel;
+                // 这里可以使用 selectedModel 进行OCR处理
+
                 using PaddleOcrTableRecognizer tableRec = new(LocalTableRecognitionModel.ChineseMobileV2_SLANET);
                 using Mat src = Cv2.ImRead(Path.Combine(path));
+                // Table detection
                 TableDetectionResult tableResult = tableRec.Run(src);
 
+                // Normal OCR
                 using PaddleOcrAll all = new(selectedModel);
                 all.Detector.UnclipRatio = 1.2f;
                 PaddleOcrResult ocrResult = all.Run(src);
 
+                // Rebuild table
                 string html = tableResult.RebuildTable(ocrResult);
                 resulttext = "转换表格成功";
                 string name = Path.GetFileNameWithoutExtension(path);
-                string outDir = Path.Combine(Environment.CurrentDirectory, "out");
-                if (!Directory.Exists(outDir))
+                if (!Directory.Exists(Environment.CurrentDirectory + "\\out"))
                 {
-                    Directory.CreateDirectory(outDir);
+                    Directory.CreateDirectory(Environment.CurrentDirectory + "\\out");
                 }
-                string savefile = Path.Combine(outDir, $"{name}.html");
+                string savefile = $"{Environment.CurrentDirectory}\\out\\{name}.html";
                 File.WriteAllText(savefile, html);
 
                 try
                 {
+                    // 移除using语句，避免自动释放
                     var package = new ExcelPackage();
                     var worksheet = package.Workbook.Worksheets.Add("Sheet1");
                     var htmlTable = new HtmlAgilityPack.HtmlDocument();
@@ -132,7 +113,7 @@ namespace SuperTextToolBox.OCRTool
                         }
                         row++;
                     }
-                    return package;
+                    return package; // 此时package未被释放
                 }
                 catch (Exception ex)
                 {
@@ -146,32 +127,32 @@ namespace SuperTextToolBox.OCRTool
                 return null;
             }
         }
-
         private string TextOCR(string path)
         {
-            string resulttext = "error";
+            string resulttext;
             if (langmodel.TryGetValue(uiComboBox1.Text, out FullOcrModel selectedModel))
             {
-                using (PaddleOcrAll all = new PaddleOcrAll(selectedModel, PaddleDevice.Gpu())
+                // 使用选中的模型
+                FullOcrModel model = selectedModel;
+                using (PaddleOcrAll all = new PaddleOcrAll(model, PaddleDevice.Gpu())
                 {
-                    AllowRotateDetection = true,
-                    Enable180Classification = false,
+                    AllowRotateDetection = true, /* 允许识别有角度的文字 */
+                    Enable180Classification = false, /* 允许识别旋转角度大于90度的文字 */
                 })
                 {
+                    // Load local file by following code:
                     using (Mat src = Cv2.ImRead(path))
+                    //using (Mat src = Cv2.ImDecode(sampleImageData, ImreadModes.Color))
                     {
                         PaddleOcrResult result = all.Run(src);
                         resulttext = result.Text;
-                        foreach (PaddleOcrResultRegion region in result.Regions)
-                        {
-                            // 跨线程显示MessageBox需要Invoke
-                            Invoke(new Action(() =>
-                            {
-                                MessageBox.Show($"Text: {region.Text}, Score: {region.Score}, RectCenter: {region.Rect.Center}, RectSize: {region.Rect.Size}, Angle: {region.Rect.Angle}");
-                            }));
-                        }
                     }
                 }
+            }
+
+            else
+            {
+                resulttext = "error";
             }
             return resulttext;
         }
@@ -185,7 +166,8 @@ namespace SuperTextToolBox.OCRTool
             uiButton3.Enabled = true;
             foreach (string filename in ofd.FileNames)
             {
-                imageDataTable.Rows.Add(filename, "待转换");
+                uiDataGridView1.Rows.Add(filename, "待转换");
+
             }
         }
 
@@ -204,14 +186,19 @@ namespace SuperTextToolBox.OCRTool
                     string filesavepath = IniManager.getString("Set", "FileSavePath", "", Set.INIpath);
                     if (filesavepath != "")
                     {
-                        string outputPath = Path.Combine(filesavepath, $"{Guid.NewGuid()}.txt");
-                        File.WriteAllText(outputPath, textBox1.Text);
+                        StreamWriter sw = new StreamWriter(filesavepath + "\\" + Guid.NewGuid().ToString() + ".txt");
+                        sw.Write(textBox1.Text);
+                        sw.Flush();
+                        sw.Close();
                     }
                     else
                     {
                         if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                         {
-                            File.WriteAllText(saveFileDialog1.FileName, textBox1.Text);
+                            StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
+                            sw.Write(textBox1.Text);
+                            sw.Flush();
+                            sw.Close();
                         }
                     }
                 }
@@ -219,17 +206,21 @@ namespace SuperTextToolBox.OCRTool
                 {
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
-                        File.WriteAllText(saveFileDialog1.FileName, textBox1.Text);
+                        StreamWriter sw = new StreamWriter(saveFileDialog1.FileName);
+                        sw.Write(textBox1.Text);
+                        sw.Flush();
+                        sw.Close();
                     }
                 }
             }
         }
-
         private void CombineXlsx()
         {
             Console.WriteLine("请输入包含Excel文件的目录路径：");
 
-            string sourceDirectory = Path.Combine(Environment.CurrentDirectory, "out");
+            string sourceDirectory;
+            sourceDirectory = Environment.CurrentDirectory + "\\out";
+
 
             try
             {
@@ -239,6 +230,7 @@ namespace SuperTextToolBox.OCRTool
                     return;
                 }
 
+                // 获取目录中所有Excel文件（支持.xlsx和.xls）
                 var excelFiles = Directory.GetFiles(sourceDirectory, "*.*", SearchOption.TopDirectoryOnly)
                     .Where(f => f.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase) ||
                                 f.EndsWith(".xls", StringComparison.OrdinalIgnoreCase))
@@ -249,13 +241,16 @@ namespace SuperTextToolBox.OCRTool
                     Console.WriteLine("目录中没有找到Excel文件！");
                     return;
                 }
-                SaveFileDialog ofd = new SaveFileDialog();
+                
+                // 创建合并后的文件路径（在源目录中）
                 string outputPath = Path.Combine(sourceDirectory, $"Combined_{DateTime.Now:yyyyMMddHHmmss}.xlsx");
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    outputPath = ofd.FileName;
+                if (saveFileDialog1.ShowDialog() == DialogResult.OK) { 
+                outputPath = saveFileDialog1.FileName;
                 }
-                ofd.Dispose();
+                else
+                {
+                    MessageBox.Show("输出目录是：" + outputPath);
+                }
                 using (var mergedPackage = new ExcelPackage(new FileInfo(outputPath)))
                 {
                     foreach (string filePath in excelFiles)
@@ -264,15 +259,23 @@ namespace SuperTextToolBox.OCRTool
                         {
                             using (var sourcePackage = new ExcelPackage(new FileInfo(filePath)))
                             {
+
+
+                                // 检查文件是否包含工作表
                                 if (sourcePackage.Workbook.Worksheets.Count == 0)
                                 {
                                     Console.WriteLine($"跳过空文件: {Path.GetFileName(filePath)}");
                                     continue;
                                 }
 
+                                // 获取第一个工作表
                                 ExcelWorksheet sourceSheet = sourcePackage.Workbook.Worksheets[0];
+
+                                // 生成唯一的工作表名称
                                 string baseName = Path.GetFileNameWithoutExtension(filePath);
                                 string newSheetName = GetUniqueSheetName(mergedPackage.Workbook, baseName);
+
+                                // 复制工作表到目标工作簿
                                 ExcelWorksheet newSheet = mergedPackage.Workbook.Worksheets.Add(newSheetName, sourceSheet);
                                 Console.WriteLine($"已添加: {newSheetName}");
                             }
@@ -283,13 +286,13 @@ namespace SuperTextToolBox.OCRTool
                         }
                     }
 
+                    // 保存合并后的文件
                     if (mergedPackage.Workbook.Worksheets.Count > 0)
                     {
                         mergedPackage.Save();
-                        Invoke(new Action(() =>
-                        {
-                            MessageBox.Show($"\n合并完成！文件已保存至: {outputPath}");
-                        }));
+                        MessageBox.Show($"\n合并完成！文件已保存至: {outputPath}");
+
+                        // 删除源文件
                         DeleteSourceFiles(excelFiles);
                     }
                     else
@@ -304,8 +307,10 @@ namespace SuperTextToolBox.OCRTool
             }
         }
 
+        // 生成唯一的工作表名称
         private static string GetUniqueSheetName(ExcelWorkbook workbook, string baseName)
         {
+            // 清理非法字符并截断（Excel工作表名称最大31字符）
             string cleanName = CleanSheetName(baseName);
             string newName = cleanName;
             int counter = 1;
@@ -313,6 +318,7 @@ namespace SuperTextToolBox.OCRTool
             while (workbook.Worksheets.Any(ws => ws.Name.Equals(newName, StringComparison.OrdinalIgnoreCase)))
             {
                 newName = $"{cleanName}_{counter}";
+                // 确保名称长度不超过31字符
                 if (newName.Length > 31)
                 {
                     newName = newName.Substring(0, 31 - counter.ToString().Length - 1) + "_" + counter;
@@ -322,14 +328,21 @@ namespace SuperTextToolBox.OCRTool
             return newName;
         }
 
+        // 清理非法字符
         private static string CleanSheetName(string name)
         {
+            // 替换非法字符
             char[] invalidChars = { ':', '\\', '/', '?', '*', '[', ']' };
-            string cleanName = new string(name.Where(c => !invalidChars.Contains(c)).ToArray());
+            string cleanName = new string(name
+                .Where(c => !invalidChars.Contains(c))
+                .ToArray());
+
+            // 截断到31字符
             return cleanName.Length > 31 ? cleanName.Substring(0, 31) : cleanName;
         }
 
-        private static void DeleteSourceFiles(IEnumerable<string> files)
+        // 删除源文件
+        private static void DeleteSourceFiles(System.Collections.Generic.IEnumerable<string> files)
         {
             Console.WriteLine("\n是否要删除源文件？(Y/N)");
             if (Console.ReadKey().Key != ConsoleKey.Y)
@@ -353,179 +366,102 @@ namespace SuperTextToolBox.OCRTool
             }
         }
 
+
+
         private void uiButton3_Click(object sender, EventArgs e)
         {
-            // 防止重复点击
-            if (isProcessing) return;
-            isProcessing = true;
             uiButton3.Enabled = false;
-
-            // 启动后台线程处理OCR
-            Task.Run(() =>
+            if (uiComboBox2.Text == "图片转文字")
             {
-                try
+                for (int i = 0; i < uiDataGridView1.Rows.Count - 1; i++)
                 {
-                    if (uiComboBox2.Text == "图片转文字")
+                    DataGridViewRow row = uiDataGridView1.Rows[i];
+                    if (row.Cells["Status"].Value.ToString() != "转换成功")
                     {
-                        ProcessTextOCR();
-                    }
-                    else
-                    {
-                        ProcessTableOCR();
-                    }
-                }
-                finally
-                {
-                    // 处理完成后恢复按钮状态
-                    Invoke(new Action(() =>
-                    {
-                        uiButton3.Enabled = true;
-                        isProcessing = false;
-                    }));
-                }
-            });
-        }
-
-        private void ProcessTextOCR()
-        {
-            // 先在UI线程获取需要处理的行数据
-            List<Tuple<int, string>> rowsToProcess = new List<Tuple<int, string>>();
-            Invoke(new Action(() =>
-            {
-                for (int i = 0; i < imageDataTable.Rows.Count - 1; i++)
-                {
-                    DataRow row = imageDataTable.Rows[i];
-                    if (row["Status"].ToString() != "转换成功")
-                    {
-                        rowsToProcess.Add(Tuple.Create(i, row["FileName"].ToString() ?? ""));
-                    }
-                }
-            }));
-
-            // 处理每一行
-            foreach (var item in rowsToProcess)
-            {
-                int rowIndex = item.Item1;
-                string path = item.Item2;
-                if (string.IsNullOrEmpty(path)) continue;
-
-                string ocrResult = TextOCR(path);
-                if (uiCheckBox1.Checked)
-                {
-                    Invoke(new Action(() =>
-                    {
-                        if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+                        if (uiCheckBox1.Checked == true)
                         {
-                            long milliseconds = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-                            string outputFilePath = Path.Combine(folderBrowserDialog1.SelectedPath, $"{milliseconds}.txt");
-                            File.WriteAllText(outputFilePath, ocrResult);
-                            textBox1.Text = "任务已完成";
-                        }
-                    }));
-                }
-                else
-                {
-                    // 更新文本框内容（跨线程）
-                    Invoke(new Action(() =>
-                    {
-                        textBox1.Text += ocrResult;
-                    }));
-                }
-
-                // 更新行状态（跨线程）
-                Invoke(new Action(() =>
-                {
-                    if (rowIndex < imageDataTable.Rows.Count)
-                    {
-                        imageDataTable.Rows[rowIndex]["Status"] = "转换成功";
-                    }
-                }));
-            }
-        }
-
-        private void ProcessTableOCR()
-        {
-            bool saveSuccess = false;
-            List<Tuple<int, string>> rowsToProcess = new List<Tuple<int, string>>();
-            Invoke(new Action(() =>
-            {
-                for (int i = 0; i < imageDataTable.Rows.Count - 1; i++)
-                {
-                    DataRow row = imageDataTable.Rows[i];
-                    if (row["Status"].ToString() != "转换成功")
-                    {
-                        rowsToProcess.Add(Tuple.Create(i, row["FileName"].ToString() ?? ""));
-                    }
-                }
-            }));
-
-            foreach (var item in rowsToProcess)
-            {
-                int rowIndex = item.Item1;
-                string path = item.Item2;
-                if (string.IsNullOrEmpty(path)) continue;
-
-                if (uiCheckBox1.Checked)
-                {
-                    ExcelPackage excelPackage = TableOCR(path);
-                    if (excelPackage != null)
-                    {
-                        string outDir = Path.Combine(Environment.CurrentDirectory, "out");
-                        Directory.CreateDirectory(outDir);
-                        string savePath = Path.Combine(outDir, $"{rowIndex}.xlsx");
-                        excelPackage.SaveAs(new FileInfo(savePath));
-                        excelPackage.Dispose();
-                        saveSuccess = true;
-                    }
-                }
-                else
-                {
-
-                    Invoke(new Action(() =>
-                    {
-                        if (saveFileDialog1.ShowDialog() == DialogResult.OK)
-                        {
-                            ExcelPackage excelPackage = TableOCR(path);
-                            if (excelPackage != null)
+                            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                             {
-                                excelPackage.SaveAs(new FileInfo(saveFileDialog1.FileName));
-                                excelPackage.Dispose();
-                                saveSuccess = true;
+                                string eachresult = TextOCR((string)row.Cells["FileName"].Value);
+                                DateTime now = DateTime.Now;
+                                // 将时间转换为毫秒级的时间戳
+                                long milliseconds = now.Ticks / TimeSpan.TicksPerMillisecond;
+                                string outputFilePath = Path.Combine(folderBrowserDialog1.SelectedPath, milliseconds.ToString() + ".txt");
+                                StreamWriter sw = new StreamWriter(outputFilePath);
+                                sw.Write(eachresult);
+                                sw.Flush();
+                                sw.Dispose();
+                                textBox1.Text = "任务已完成";
                             }
                         }
-                    }));
-
-
-                }
-                // 更新行状态
-                Invoke(new Action(() =>
-                {
-                    if (rowIndex < imageDataTable.Rows.Count)
-                    {
-                        imageDataTable.Rows[rowIndex]["Status"] = saveSuccess ? "转换完成" : "用户放弃保存";
+                        else
+                        {
+                            textBox1.Text = textBox1.Text + TextOCR((string)row.Cells["FileName"].Value);
+                        }
+                        row.Cells["Status"].Value = "转换成功";
                     }
-                }));
+                }
             }
-            if (uiCheckBox1.Checked)
+            else
             {
-                CombineXlsx();
+                for (int i = 0; i < uiDataGridView1.Rows.Count - 1; i++)
+                {
+                    DataGridViewRow row = uiDataGridView1.Rows[i];
+                    if (row.Cells["Status"].Value.ToString() != "转换成功")
+                    {
+                        if (uiCheckBox1.Checked == true)
+                        {
+                            ExcelPackage excelPackage;
+                            excelPackage = TableOCR((string)row.Cells["FileName"].Value);
+                            excelPackage.SaveAs(Environment.CurrentDirectory + "\\out\\" + i.ToString() + ".xlsx");
+                            excelPackage.Dispose();
+                        }
+                        else
+                        {
+                            if (saveFileDialog2.ShowDialog() == DialogResult.OK)
+                            {
+                                TableOCR((string)row.Cells["FileName"].Value).SaveAs(saveFileDialog2.FileName);
+                                row.Cells["Status"].Value = "转换成功";
+                            }
+                            else
+                            {
+                                row.Cells["Status"].Value = "用户放弃保存";
+                            }
+                        }
+
+
+                    }
+                }
+                if (uiCheckBox1.Checked == true)
+                {
+                    CombineXlsx();
+                }
+
+
             }
+
+            uiButton3.Enabled = true;
         }
 
         private void uiComboBox2_SelectedValueChanged(object sender, AntdUI.ObjectNEventArgs e)
         {
-            Invoke(new Action(() =>
+            uiComboBox2.Text = uiComboBox2.SelectedValue.ToString();
+            if (uiComboBox2.Text == "图片转表格")
             {
-                if (uiComboBox2.Text == "图片转表格")
-                {
-                    label5.Text = "合并输出表格";
-                }
-                else
-                {
-                    uiCheckBox1.Enabled = true;
-                    label5.Text = "直接为每个图片创建一个txt";
-                }
-            }));
+                label5.Text = "合并输出xlsx";
+            }
+            else
+            {
+                uiCheckBox1.Enabled = true;
+                label5.Text = "直接为每个图片创建一个txt";
+            }
+            
+        }
+
+        private void uiComboBox1_SelectedValueChanged(object sender, AntdUI.ObjectNEventArgs e)
+        {
+            uiComboBox1.Text = uiComboBox1.SelectedValue.ToString();
+
         }
     }
 }

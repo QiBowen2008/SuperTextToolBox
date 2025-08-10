@@ -1,5 +1,5 @@
-﻿using System.Resources;
-using System.Reflection;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // 有关程序集的一般信息由以下
@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("万能文字工具箱OCR模块")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("万能文字工具箱")]
+[assembly: AssemblyProduct("SuperTextToolBox.OCRTool")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("6be01b0c-33f6-406f-9e30-95a1308c97a5")]
+[assembly: Guid("3903e3c9-2d3d-4b1b-826f-7588023410a1")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
@@ -29,9 +29,5 @@ using System.Runtime.InteropServices;
 //      生成号
 //      修订号
 //
-//可以指定所有这些值，也可以使用“生成号”和“修订号”的默认值
-//通过使用 "*"，如下所示:
-// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("2.5.18.0")]
 [assembly: AssemblyFileVersion("2.5.18.0")]
-[assembly: NeutralResourcesLanguage("zh-CN")]

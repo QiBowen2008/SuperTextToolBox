@@ -99,8 +99,8 @@
   <PropertyGroup />
   <PropertyGroup />
   <ItemGroup>
-    <Reference Include="AntdUI, Version=2.0.16.0, Culture=neutral, PublicKeyToken=0e24e5118ea3d6af, processorArchitecture=MSIL">
-      <HintPath>..\packages\AntdUI.2.0.16\lib\net40\AntdUI.dll</HintPath>
+    <Reference Include="AntdUI, Version=2.0.17.0, Culture=neutral, PublicKeyToken=0e24e5118ea3d6af, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntdUI.2.0.17\lib\net40\AntdUI.dll</HintPath>
     </Reference>
     <Reference Include="Chinese">
       <HintPath>..\packages\Chinese.0.5.0\lib\net40\Chinese.dll</HintPath>

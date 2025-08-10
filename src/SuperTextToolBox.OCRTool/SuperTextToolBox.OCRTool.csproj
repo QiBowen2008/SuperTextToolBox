@@ -1,84 +1,145 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Sdcb.PaddleInference.runtime.win64.mkl.3.1.0.54\build\net45\Sdcb.PaddleInference.runtime.win64.mkl.props" Condition="Exists('..\packages\Sdcb.PaddleInference.runtime.win64.mkl.3.1.0.54\build\net45\Sdcb.PaddleInference.runtime.win64.mkl.props')" />
+  <Import Project="..\packages\OpenCvSharp4.runtime.win.4.11.0.20250507\build\netstandard\OpenCvSharp4.runtime.win.props" Condition="Exists('..\packages\OpenCvSharp4.runtime.win.4.11.0.20250507\build\netstandard\OpenCvSharp4.runtime.win.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AMD64</Platform>
-    <ProjectGuid>{4F6097AA-B3C5-472F-A40E-A9ED9F6D116C}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3903E3C9-2D3D-4B1B-826F-7588023410A1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>SuperTextToolBox.OCRTool</RootNamespace>
     <AssemblyName>SuperTextToolBox.OCRTool</AssemblyName>
-    <LangVersion>9.0</LangVersion>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <LangVersion>9.0</LangVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AMD64' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\publish\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AMD64' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\publish\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>2</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>SuperTextToolBox.OCRTool.Program</StartupObject>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
     <PlatformTarget>x64</PlatformTarget>
-    <WarningLevel>5</WarningLevel>
-    <OutputPath>..\publish\</OutputPath>
-    <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>9.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <Prefer32Bit>false</Prefer32Bit>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>9.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EPPlus, Version=7.5.3.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.7.5.3\lib\net35\EPPlus.dll</HintPath>
+    <Reference Include="AntdUI, Version=2.0.17.0, Culture=neutral, PublicKeyToken=0e24e5118ea3d6af, processorArchitecture=MSIL">
+      <HintPath>..\packages\AntdUI.2.0.17\lib\net46\AntdUI.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus.Interfaces, Version=7.5.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.Interfaces.7.5.0\lib\net35\EPPlus.Interfaces.dll</HintPath>
+    <Reference Include="EPPlus, Version=8.0.8.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.8.0.8\lib\net462\EPPlus.dll</HintPath>
     </Reference>
-    <Reference Include="EPPlus.System.Drawing, Version=7.5.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
-      <HintPath>..\packages\EPPlus.System.Drawing.7.5.0\lib\net35\EPPlus.System.Drawing.dll</HintPath>
+    <Reference Include="EPPlus.Interfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.8.0.0\lib\net462\EPPlus.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="HtmlAgilityPack, Version=1.12.2.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.12.2\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.3.0.1\lib\netstandard2.0\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenCvSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6adad1e807fea099, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenCvSharp4.4.11.0.20250507\lib\netstandard2.0\OpenCvSharp.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
+    <Reference Include="Sdcb.PaddleInference, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sdcb.PaddleInference.3.0.1\lib\net45\Sdcb.PaddleInference.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdcb.PaddleOCR, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sdcb.PaddleOCR.3.0.1\lib\netstandard2.0\Sdcb.PaddleOCR.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdcb.PaddleOCR.Models.Local, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sdcb.PaddleOCR.Models.Local.3.0.1\lib\netstandard2.0\Sdcb.PaddleOCR.Models.Local.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdcb.PaddleOCR.Models.LocalV3, Version=2.7.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sdcb.PaddleOCR.Models.LocalV3.2.7.0.1\lib\netstandard2.0\Sdcb.PaddleOCR.Models.LocalV3.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdcb.PaddleOCR.Models.LocalV4, Version=2.7.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sdcb.PaddleOCR.Models.LocalV4.2.7.0.1\lib\netstandard2.0\Sdcb.PaddleOCR.Models.LocalV4.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdcb.PaddleOCR.Models.LocalV5, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sdcb.PaddleOCR.Models.LocalV5.3.0.0\lib\netstandard2.0\Sdcb.PaddleOCR.Models.LocalV5.dll</HintPath>
+    </Reference>
+    <Reference Include="Sdcb.PaddleOCR.Models.Shared, Version=2.7.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sdcb.PaddleOCR.Models.Shared.2.7.0.1\lib\netstandard2.0\Sdcb.PaddleOCR.Models.Shared.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Security" />
-    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Security.Cryptography.Xml, Version=8.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.8.0.2\lib\net462\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WindowsBase" />
+    <Reference Include="YamlDotNet, Version=16.0.0.0, Culture=neutral, PublicKeyToken=ec19458f3c15af5e, processorArchitecture=MSIL">
+      <HintPath>..\packages\YamlDotNet.16.3.0\lib\netstandard2.0\YamlDotNet.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmOCRMain.cs">
@@ -88,6 +149,7 @@
       <DependentUpon>frmOCRMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmOCRMain.resx">
       <DependentUpon>frmOCRMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,12 +163,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -115,36 +171,18 @@
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
-      <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="AntdUI">
-      <Version>2.0.16</Version>
-    </PackageReference>
-    <PackageReference Include="HtmlAgilityPack">
-      <Version>1.12.2</Version>
-    </PackageReference>
-    <PackageReference Include="OpenCvSharp4.runtime.win">
-      <Version>4.11.0.20250507</Version>
-    </PackageReference>
-    <PackageReference Include="Sdcb.PaddleInference">
-      <Version>3.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Sdcb.PaddleInference.runtime.win64.mkl">
-      <Version>3.1.0.54</Version>
-    </PackageReference>
-    <PackageReference Include="Sdcb.PaddleOCR">
-      <Version>3.0.1</Version>
-    </PackageReference>
-    <PackageReference Include="Sdcb.PaddleOCR.Models.Local">
-      <Version>3.0.1</Version>
-    </PackageReference>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\Paddle.Runtime.win_x64.2.6.1.1\build\Paddle.Runtime.win_x64.targets" Condition="Exists('..\packages\Paddle.Runtime.win_x64.2.6.1.1\build\Paddle.Runtime.win_x64.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\OpenCvSharp4.runtime.win.4.11.0.20250507\build\netstandard\OpenCvSharp4.runtime.win.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\OpenCvSharp4.runtime.win.4.11.0.20250507\build\netstandard\OpenCvSharp4.runtime.win.props'))" />
+    <Error Condition="!Exists('..\packages\Sdcb.PaddleInference.runtime.win64.mkl.3.1.0.54\build\net45\Sdcb.PaddleInference.runtime.win64.mkl.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Sdcb.PaddleInference.runtime.win64.mkl.3.1.0.54\build\net45\Sdcb.PaddleInference.runtime.win64.mkl.props'))" />
   </Target>
-  <Import Project="..\packages\PaddleOCRSharp.4.4.0.2\build\PaddleOCRSharp.targets" Condition="Exists('..\packages\PaddleOCRSharp.4.4.0.2\build\PaddleOCRSharp.targets')" />
 </Project>
