@@ -24,18 +24,16 @@ namespace SuperTextToolBox.OCRTool
             InitializeComponent();
             langmodel = new Dictionary<string, FullOcrModel>
             {
-                {"简体中文",LocalFullModels.ChineseV5 },
-                {"繁体中文",LocalFullModels.TraditionalChineseV3 },
-                {"英文",LocalFullModels.EnglishV4 },
-                {"日文",LocalFullModels.JapanV4 },
-                {"韩文",LocalFullModels.KoreanV4 },
-                {"泰卢固文",LocalFullModels.TeluguV4 },
-                {"卡纳达文",LocalFullModels.KannadaV4 },
-                {"泰米尔文",LocalFullModels.TamilV4},
-                {"拉丁文",LocalFullModels.LatinV3 },
-                {"阿拉伯文",LocalFullModels.ArabicV4 },
-                {"斯拉夫文",LocalFullModels.CyrillicV3 },
-                {"梵文",LocalFullModels.DevanagariV4 }
+                {"中文",LocalFullModels.ChineseV5 },
+                {"英文",LocalFullModels.EnglishV5 },
+                {"日文",LocalFullModels.ChineseV5 },
+                {"韩文",LocalFullModels.KoreanV5 },
+                {"泰卢固文",LocalFullModels.TeluguV5},
+                {"泰米尔文",LocalFullModels.TamilV5 },
+                {"拉丁文",LocalFullModels.LatinV5},
+                {"阿拉伯文",LocalFullModels.ArabicV5},
+                {"斯拉夫文",LocalFullModels.CyrillicV5},
+                {"梵文",LocalFullModels.DevanagariV5}
             };
             if (Environment.GetCommandLineArgs().Length > 1)
             {

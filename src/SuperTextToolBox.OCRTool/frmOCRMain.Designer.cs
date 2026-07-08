@@ -64,7 +64,7 @@
             this.label3.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label3.Location = new System.Drawing.Point(269, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 24);
+            this.label3.Size = new System.Drawing.Size(101, 30);
             this.label3.TabIndex = 20;
             this.label3.Text = "选择语言";
             // 
@@ -73,13 +73,10 @@
             this.uiComboBox1.DefaultBack = System.Drawing.Color.White;
             this.uiComboBox1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiComboBox1.Items.AddRange(new object[] {
-            "简体中文",
-            "繁体中文",
+            "中文",
             "英文",
-            "日文",
             "韩文",
             "泰卢固文",
-            "卡纳达文",
             "泰米尔文",
             "拉丁文",
             "阿拉伯文",
@@ -128,16 +125,16 @@
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 452);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 447);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(897, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(897, 31);
             this.statusStrip1.TabIndex = 16;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(41, 20);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(46, 24);
             this.toolStripStatusLabel1.Text = "就绪";
             // 
             // label2
@@ -146,7 +143,7 @@
             this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label2.Location = new System.Drawing.Point(412, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 20);
+            this.label2.Size = new System.Drawing.Size(106, 24);
             this.label2.TabIndex = 15;
             this.label2.Text = "图片列表";
             // 
@@ -156,7 +153,7 @@
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(20, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.Size = new System.Drawing.Size(106, 24);
             this.label1.TabIndex = 14;
             this.label1.Text = "识别结果";
             // 
@@ -201,7 +198,7 @@
             this.label4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label4.Location = new System.Drawing.Point(389, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 24);
+            this.label4.Size = new System.Drawing.Size(101, 30);
             this.label4.TabIndex = 23;
             this.label4.Text = "选择模式";
             // 
@@ -304,7 +301,7 @@
             this.label5.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label5.Location = new System.Drawing.Point(543, 60);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(259, 20);
+            this.label5.Size = new System.Drawing.Size(310, 24);
             this.label5.TabIndex = 27;
             this.label5.Text = "直接为每个图片创建一个txt";
             // 

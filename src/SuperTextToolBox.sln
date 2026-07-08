@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.8.11925.187 insiders
+VisualStudioVersion = 18.8.11925.187
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperTextToolBox", "SuperTextToolBox\SuperTextToolBox.csproj", "{A59F9ACA-8CE0-454E-9625-BB99A8C86963}"
 EndProject
@@ -43,8 +43,8 @@ Global
 		{71960F62-048A-473F-B6D1-F90DAFC0516F}.Release|x64.Build.0 = Release|Any CPU
 		{71960F62-048A-473F-B6D1-F90DAFC0516F}.Release|x86.ActiveCfg = Release|Any CPU
 		{71960F62-048A-473F-B6D1-F90DAFC0516F}.Release|x86.Build.0 = Release|Any CPU
-		{3903E3C9-2D3D-4B1B-826F-7588023410A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3903E3C9-2D3D-4B1B-826F-7588023410A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3903E3C9-2D3D-4B1B-826F-7588023410A1}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{3903E3C9-2D3D-4B1B-826F-7588023410A1}.Debug|Any CPU.Build.0 = Debug|x64
 		{3903E3C9-2D3D-4B1B-826F-7588023410A1}.Debug|x64.ActiveCfg = Release|x64
 		{3903E3C9-2D3D-4B1B-826F-7588023410A1}.Debug|x64.Build.0 = Release|x64
 		{3903E3C9-2D3D-4B1B-826F-7588023410A1}.Debug|x86.ActiveCfg = Debug|Any CPU
