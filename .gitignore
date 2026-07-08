@@ -1,4 +1,41 @@
+# 编译产物
 /publish/
 **/bin
 **/obj
 /src/packages
+
+# 可执行文件 & 库
+*.exe
+*.dll
+*.pdb
+*.so
+*.dylib
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# NuGet
+**/packages/*
+!**/packages.config
+
+# 临时文件
+*.tmp
+*.temp
+*.log
+*.cache
+*.vsidx
+*.dtbcache.json
+
+# macOS
+.DS_Store
+
+# WorkBuddy
+.workbuddy/
+
+# Windows
+Thumbs.db
