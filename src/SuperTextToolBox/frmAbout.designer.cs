@@ -75,7 +75,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 24);
             this.label2.TabIndex = 2;
-            this.label2.Text = "版本2.5.18";
+            this.label2.Text = "版本2.6.19.0";
             // 
             // linkLabel1
             // 
